@@ -1,0 +1,85 @@
+---
+title: 刷数的最佳姿势
+description: 刷数的最佳姿势
+template: doc
+lastUpdated: 2025-01-21 22:58:58
+---
+
+import {LinkCard} from '@astrojs/starlight/components';
+
+
+#### 最佳实践
+游标
+
+![](/software-engineer/best-practices/Moatkon-flush-data.svg)
+
+#### 伪代码
+```python
+max_id = 0
+while True:
+    # 使用max_id作为起始ID查询数据
+    data = query_data(start_id=max_id, limit=page_size)
+    
+    if not data:
+        break  # 没有数据，结束查询
+    
+    process_data(data)
+    
+    # 更新max_id为当前批次的最大ID
+    max_id = get_max_id(data)
+```
+
+<LinkCard
+   title="刷数代码抽象"
+   description="落地的Java代码"
+   href="/software-engineer/best-practices/general-ability/flash-data"
+/>
+
+
+
+#### 优缺点
+使用最大ID作为分页起始ID（通常称为"ID游标分页"）相比传统的 LIMIT 和 OFFSET 分页方法，有以下几个显著优势：
+
+1. 性能优势
+   - 传统 LIMIT/OFFSET：随着页码增加，OFFSET 需要跳过大量记录，查询性能急剧下降
+   - ID游标分页：每次只查询大于上一批最大ID的数据，查询速度始终保持稳定
+
+2. 数据一致性
+   - LIMIT/OFFSET：在分页过程中，如果有新数据插入，可能导致同一条记录重复出现或被遗漏
+   - ID游标分页：使用严格的ID范围，可以避免数据重复和遗漏问题
+
+3. 扩展性
+   - 适合大数据量场景，特别是分布式数据库和海量数据查询
+   - 在数据量超过百万、千万级别时，性能优势更加明显
+
+示例对比：
+
+传统 LIMIT/OFFSET 方式：
+```sql
+-- 查询第 N 页，每页 10 条
+SELECT * FROM table 
+LIMIT 10 OFFSET (N-1) * 10
+```
+
+ID游标分页方式：
+```sql
+-- 查询大于上一批最大ID的 10 条数据
+SELECT * FROM table 
+WHERE id > last_max_id 
+LIMIT 10
+```
+
+实际应用中，ID游标分页特别适合：
+- 实时数据流处理
+- 消息系统
+- 日志查询
+- 高并发场景下的数据获取
+
+缺点是不直观，需要额外的业务逻辑来维护和传递"最后一个ID"。
+
+
+#### 自己的实践
+- 从mysql刷数据到es
+- 从mongodb读取历史数据,刷mysql  -- 使用游标很稳定,任务跑了6个多小时,没有性能问题。如果使用分页,十几分钟就会出现严重的性能问题。
+
+所以在操作大批量的数据的时候,需要优先考虑游标形式。为了保持游标的连续性，建议在内存中做条件处理，否则可能导致下一次取出的数据为空，中断整个流程。

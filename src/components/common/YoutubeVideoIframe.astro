@@ -1,0 +1,63 @@
+---
+// YoutubeVideoIframe.astro
+// Define the props with their types and default values
+interface Props {
+  // iframe的链接url
+  iframeUrl: string;
+  // 有的视频会被禁止,这里控制提示字符是否显示
+  forbidden: boolean;
+  // 当视频禁止了,传youtube视频链接
+  vurl: string;
+  // youtube博主url
+  yurl: string;
+  // youbube博主名
+  yname: string;
+  // 是否显示youtube信息,因为有的视频并没有博主
+  yshow: boolean;
+}
+
+// Default prop values
+const {
+  iframeUrl = '',
+  forbidden = false,
+  vurl = '',
+  yurl = '',
+  yname = '',
+  yshow = true
+} = Astro.props;
+---
+
+<div>
+  {yshow && (
+    <div>
+      <span style="font-weight: bolder;">视频博主: </span>
+      <a href={`https://www.youtube.com/${yurl}?utm_source=moatkon.com`}>{yname}</a>
+    </div>
+  )}
+  
+  <p style="font-weight: bolder;">Youtube视频:</p>
+  <blockquote><p>需要网络可以访问youtube,视频才会展示</p></blockquote>
+  
+  {forbidden ? (
+    <p>
+      <span style="color: green;">
+        视频所有者已禁止该视频在其他网站上播放此视频,请点击下方的
+        <a href={`https://www.youtube.com/watch?v=${vurl}?utm_source=moatkon.com`} style="color: red;">
+          在 YouTube 上观看
+        </a>
+        跳转到youtube上即可观看
+      </span>
+    </p>
+  ) : (
+    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+      <iframe 
+        src={`https://www.youtube.com/embed/${iframeUrl}`}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+      ></iframe>
+    </div>
+  )}
+</div>

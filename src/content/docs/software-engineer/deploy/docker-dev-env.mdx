@@ -1,0 +1,51 @@
+---
+title: 使用Docker搭建开发环境
+description: 使用Docker搭建开发环境
+template: doc
+lastUpdated: 2025-01-12 18:25:23
+---
+
+import {LinkCard } from '@astrojs/starlight/components';
+
+
+
+### PostgreSQL
+```sh
+docker pull postgres
+docker run --name mypostgres -d -p 5432:5432 -e POSTGRES_PASSWORD=123456 postgres
+```
+
+### MySQL 5.7
+```sh
+docker pull mysql:5.7
+docker run --name mysql5.7 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+```
+
+### Redis
+```sh
+docker pull redis:latest
+docker run --name redis -p 6379:6379 -d redis:latest redis-server --appendonly yes --requirepass 'sDF234sdf#@@$@$fdd'
+```
+> 注意: 启动redis时,windows上 --requirepass 的密码可以使用""包起来,mac上要使用''包起来
+
+### Kafka
+
+<LinkCard
+    title="Kafka安装及使用"
+    description=""
+    href="/software-engineer/mq/kafka/use"
+/>
+
+### RocketMQ
+
+<LinkCard
+    title="RocketMQ安装及使用"
+    description=""
+    href="/software-engineer/mq/rocketmq/use"
+/>
+
+### <div id="es-docker-install">ES安装</div>
+```sh
+docker pull elasticsearch:7.14.0
+docker run --name es7.14 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -d elasticsearch:7.14.0
+```

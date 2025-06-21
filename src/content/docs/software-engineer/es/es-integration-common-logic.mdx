@@ -1,0 +1,48 @@
+---
+title: 应用接入ES,通用逻辑抽象
+description: 应用接入ES,通用逻辑抽象
+template: doc
+lastUpdated: 2025-01-21 23:04:49
+---
+
+import {LinkCard} from '@astrojs/starlight/components';
+
+### 接入ES,通用流程
+![](/software-engineer/best-practices/use-es/Moatkon-UserEs.drawio.svg)
+
+### ES安装
+[docker](/software-engineer/deploy/docker-dev-env#es-docker-install)
+
+### 操作ES ORM框架
+https://www.easy-es.cn/
+> 🚀ElasticSearch搜索引擎ORM框架
+
+
+### Canal数据解析基类
+```java title="Canal数据封装"
+@Data
+public class BaseCanalData<T> { // 这里使用泛型来替代不同的表实体
+  private String type; // 操作类型 INSERET、UPDATE、DELETE
+  private String table;
+  private String database;
+  private List<T> data; // 当前数据
+  private List<T> old; // 旧数据
+  private Boolean isDdl;
+  private String sql;
+}
+```
+
+### 实时数据写入ES
+<LinkCard
+   title="Canal消息处理,写入ES"
+   description=""
+   href="/software-engineer/best-practices/general-ability/canal-handler"
+/>
+
+### 刷数脚本
+<LinkCard
+   title="抽象刷数逻辑"
+   description=""
+   href="/software-engineer/best-practices/general-ability/flash-data"
+/>
+

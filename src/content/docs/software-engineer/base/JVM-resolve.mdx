@@ -1,0 +1,43 @@
+---
+title: JVM排除、解决
+description: JVM
+template: doc
+lastUpdated: 2024-04-06 21:42:05
+---
+import { LinkCard } from '@astrojs/starlight/components';
+
+
+### CPU占用过高
+#### 排查方向
+- 是否新上线了版本后增高的,若果是且影响主流程,应该立马回滚
+- 收集不同的指标(CPU、内存、磁盘 IO、网络等等)
+- 分析应用日志
+- 分析 GC 日志
+- 获取线程转储并分析
+- 获取堆转储来进行分析
+
+#### 排查方法
+1. top命令: 查看系统内存、CPU使用率等
+2. jstat: 查看Java进程的情况，包括堆栈信息跟垃圾回收信息
+3. jstack: 可以查看线程的堆栈情况、是否死锁等
+4. jmap: 通过jmap可以查看jvm各项配置及使用情况 `jmap -heap Pid`
+5. `jmap -histo[:live] pid` 查看堆内存中的对象数目、大小统计直方图，如果带上 live 则只统计活对象。
+6. `jmap -dump:format=b,file=file Pid`: 把堆内存的使用情况 dump 到文件中
+
+> 看堆 使用jmap
+>
+> 看线程 使用jstack
+>
+> 监控 使用jstat
+>
+> 在系统层面,全局看,使用 top
+
+### 频繁Full GC
+堆内存不够就会频繁Full GC,排除重点就在是否有内存泄漏,导致无法回收和应用程序里存在大对象
+
+### 线上实际排查经历
+<LinkCard
+		title="Spring Cloud Gateway内存泄漏排查"
+		description="Spring Cloud Gateway内存泄漏排查"
+		href="/software-engineer/topics/spring-cloud-gateway-direct-memory-leak"
+	/>

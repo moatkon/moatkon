@@ -1,0 +1,31 @@
+{
+  "name": "moatkon",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/markdown-remark": "^6.3.2",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/starlight": "^0.34.3",
+    "@astrojs/starlight-docsearch": "^0.6.0",
+    "astro": "^5.9.2",
+    "markdown-it": "^14.1.0",
+    "prettier": "^3.4.2",
+    "sanitize-html": "^2.14.0",
+    "starlight-blog": "^0.20.0",
+    "starlight-image-zoom": "^0.10.0",
+    "starlight-llms-txt": "^0.5.1",
+    "starlight-scroll-to-top": "^0.1.1",
+    "starlight-showcases": "^0.3.0",
+    "starlight-view-modes": "^0.7.0",
+    "typescript": "^5.7.2"
+  }
+}

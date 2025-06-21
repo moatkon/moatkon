@@ -1,0 +1,152 @@
+---
+title: HashMap
+description: HashMap
+tableOfContents:
+  minHeadingLevel: 1
+  maxHeadingLevel: 4
+template: doc
+lastUpdated: 2024-12-28 18:15:11
+---
+import { Tabs, TabItem,Card } from '@astrojs/starlight/components';
+
+HashMap主要是用于存储键值对的。它基于哈希表的数据结构实现,提供了快速的查找和插入操作。
+
+### 1.原理是什么
+HashMap在JDK1.7和JDK1.8的底层实现是不一样的
+<Tabs>
+  <TabItem label="JDK1.8">
+    <Card>
+      底层是`数组`+`链表 或 红黑树`
+      ![](/software-engineer/drawio/Moatkon-HashMap1.8.drawio.svg)
+
+      #### 为什么HashMap在JDK1.8引入了红黑树
+      用空间换时间。
+      > 为什么红黑树可以做到空间换时间?
+      > 
+      > 平衡性： 红黑树保持了自身的平衡,确保在最坏情况下的查找、插入和删除操作的时间复杂度为 O(log n)。这是通过在树的每个节点上引入额外的信息(颜色信息)来实现的。
+      >
+      > 快速的查找： 由于红黑树是一种二叉搜索树,具有有序性质,所以查找操作可以在 O(log n) 的时间内完成。这相较于未经优化的链表(O(n))或者不平衡的二叉搜索树(可能退化为链表,O(n))具有更好的性能。
+      >
+      > 插入和删除的效率： 红黑树在插入和删除操作时能够保持较好的平衡,通过旋转和颜色调整等操作,使得树的高度相对较小,从而提高了插入和删除操作的效率。这对于在哈希表中解决哈希冲突时,能够防止链表过长的问题。
+
+      #### 那什么时候会切换到红黑树呢
+      在链表元素大小≥8的时候。
+      > 为了提高效率,将链表转换为红黑树前会判断,即使链表阈值大于8,但是数组长度小于64,此时并不会将链表变为红黑树,而是选择进行数组扩容。这个决策是为了在HashMap整体大小较小的情况下,避免引入红黑树的管理开销。
+
+      #### 那什么时候会回到链表呢
+      这个阈值是6。(≤6)
+      > 为什么不是8,如果是8就会触发上面的转换为红黑树.如果巧了,就会导致链表和红黑树的不断转换,导致资源浪费
+
+      回退到链表的原因: 这种回退的目的是为了在一些情况下,避免维护红黑树所带来的额外开销。虽然红黑树在处理大量元素时能够提供更好的性能,但对于少量元素,维护红黑树的成本可能超过了它的优势。
+
+      #### 为什么源码里有些数据是硬编码的,例如0.75啊,6啊,8啊之类的
+      全部是统计学的结果,没有为什么,是依据Java语言的大部分使用场景来计算的,即满足大部分的用户需求。
+      如果有小部分的用户有特殊需求,他们完全可以二开JDK或者基于HashMap实现自己的HashMapXXX
+    </Card>
+  </TabItem>
+    <TabItem label="JDK1.7(已过时)">
+    <Card>
+      底层是由`数组`+`链表`实现的
+      
+      ![](/software-engineer/drawio/Moatkon-HashMap1.7.drawio.svg)
+
+      在多线程的场景下会出现循环链表的问题。形成循环链表的原因是因为链表元素采用的是头插法,然后在链表扩容时会倒序,
+      在多线程的操作下,由于线程获得时间片的时机是偶然的,就会导致链表循环
+
+      #### 如何解决链表成环呢
+      > 思路: 将对应的资源锁住集合
+
+      - 加锁。但是加锁就会导致效率低下(因为涉及到用户态和内核态的切换)
+      - 升级到JDK1.8,JDK1.8使用的是尾插法
+    </Card>
+  </TabItem>
+</Tabs>
+
+### 2.如何解决Hash冲突
+首先Hash冲突是怎么产生的,根据Hash算法,同一个key可能会有一样的hash值。
+```java
+static final int hash(Object key) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+}
+// 上面的hashCode()是native方法
+public native int hashCode();
+```
+
+那么如何解决呢?一般是有三种方法的:
+1. 链地址法(拉链法)。简单点理解就是在链表上的下一个位置。这也是HashMap默认的解决Hash冲突的方法。
+   > 详细点:这种方法的基本思想是将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。
+2. 再Hash法。就是换另一个Hash算法来重新计算一个hash值
+3. 开放定址法。就是通过一定的策略(例如:线性探查、平方探查等)来寻址一个新的地址,这样可以很大概率降低冲突
+4. 建立公共溢出区域。这个简单的理解就是在独立出一部分区域,将冲突的元素放进来。<sub>(这种方法的基本思想是：将哈希表分为基本表和溢出表两部分,凡是和基本表发生冲突的元素,一律填入溢出表)</sub>
+
+> 开放定址法和再哈希法的区别是:开放定址法只能使用同一种hash函数进行再次hash,再哈希法可以调用多种不同的hash函数进行再次hash
+
+### 3.在实际场景中,为什么我们重写完equals方法后还需要重写hashCode呢?
+重写equals方法的原因是因为我们需要比较值,而不是地址(Object里面的equals比较的是对象地址)
+
+重写完equals方法后,我们需要保证hash算法能定位到具体的对象,所以需要进一步重写hashCode,让相同的对象是否返回相同的hash值,
+不同的对象返回不同的hash值
+
+
+### 4.HashMap是非线程安全的
+即不能再多线程环境下使用,在多线程操作下会导致值被覆盖。原因是每个线程要获取到CPU的时间片才会执行,那哪个线程先执行哪个线程后执行就不确定了,就会概率性出现值被覆盖的问题
+
+
+### 5.HashMap fail-fast 快速失败
+HashMap是**遍历**过程中,如果对集合做了修改,则会抛出`ConcurrentModification Exception`
+> HashMap是fail-fast的。fail-fast的基本实现原理是modCount标记
+
+### 6. 如何解决HashMap的线程安全问题
+- 加锁
+- 使用ConcurrentHashMap
+- 使用Collections.synchronizedMap(Map)创建线程安全的map集合
+
+### 7. HashMap和HashTable的区别
+- HashMap 是非线程安全的，HashTable 是线程安全的
+- HashMap 的键和值都允许有null 值存在，而HashTable 则不行
+- 因为线程安全的问题，HashMap 效率比HashTable 的要高
+- HashMap是继承自AbstractMap类，而HashTable是继承自Dictionary类。(不过它们都实现了同时实现了Map、Cloneable(可复制)、Serializable(可序列化)这三个接口)
+- HashMap的迭代器(Iterator)是fail-fast迭代器，而Hashtable的Enumerator迭代器不是fail-fast的
+
+### 8. Hashtable的安全失败机制（fail-safe）
+Hashtable使用的是安全失败机制（fail-safe），这种机制会使你此次读到的数据不一定是最新的数据(因为遍历的是拷贝的数据)。
+
+采用安全失败机制的集合容器，使用迭代器进行遍历时不是直接在集合内容上访问的，而是将原有集合内容进行**拷贝**，**在拷贝的集合上进行遍历**。
+
+**缺点:**
+- 无法保证读取到的数据是原集合中最新的数据，即迭代器进行遍历的是拷贝的集合，在遍历期间原集合发生的修改，迭代器是检测不到的。
+- 拷贝时产生大量的无效对象，开销大。
+
+### 9. HashSet
+HashSet 底层就是基于 HashMap 实现的。HashSet 的源码⾮常⾮常少，因为除了 clone() 、 writeObject() 、 readObject() 是 HashSet⾃⼰不得不实现之外，其他⽅法都是直接调⽤ HashMap 中的⽅法。
+
+### 10. LinkedHashMap、TreeMap
+HashMap是无序的，根据 hash 值随机插入。如果想使用有序的Map，可以使用LinkedHashMap 或者 TreeMap。
+
+#### LinkedHashMap怎么实现有序的？
+LinkedHashMap维护了一个双向链表，有头尾节点，同时 LinkedHashMap 节点 Entry 内部除了继承 HashMap 的 Node 属性，还有 before 和 after 用于标识前置节点和后置节点。
+
+#### TreeMap 怎么实现有序的？
+TreeMap 是按照 Key 的自然顺序或者 Comprator 的顺序进行排序，内部是通过红黑树来实现。所以要么 key 所属的类实现 Comparable 接口，或者自定义一个实现了 Comparator 接口的比较器，传给 TreeMap 用于 key 的比较。
+
+#### 如何给一个集合里的元素排序
+1. 利用集合框架提供的Collections.sort实现排序。需在结合元素对应的对象里实现比较器Comparable接口，并且实现其中compareTo接口
+2. 利用集合框架提供的Collections.sort实现排序。在调用sort接口时穿一个Comparator的对象，即匿名内部类，实现compare接口
+3. JDK1.8,利用stream流实现排序,无需实现compare接口
+
+```java
+list.sort(Comparator.comparing(User::getAge));
+list.sort(Comparator.comparing(User::getAge).reversed());
+
+// JDK 1.8
+list.stream().sorted(Comparator.comparing(User::getAge))
+list.stream().sorted(Comparator.comparing(User::getAge).reversed())
+// 复杂排序,先按什么,再按什么
+temp.stream().sorted(Comparator.comparing(User::getAge)
+                              .reversed()
+                              .thenComparing(Comparator.comparing(User::getGrade)) 
+                    
+
+
+```

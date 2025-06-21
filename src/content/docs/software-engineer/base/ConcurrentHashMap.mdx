@@ -1,0 +1,45 @@
+---
+title: ConcurrentHashMap
+description: ConcurrentHashMap
+template: doc
+tableOfContents: false
+# tableOfContents:
+#    minHeadingLevel: 1
+#    maxHeadingLevel: 3
+lastUpdated: 2025-05-25 16:09:37
+---
+import { Tabs, TabItem,Card } from '@astrojs/starlight/components';
+
+ConcurrentHashMap为什么是实现线程安全HashMap集合,具体实现上来说,JDK1.7(已过时)和JDK1.8是不同的
+<Tabs>
+  <TabItem label="JDK1.8">
+    <Card>
+      底层是`数组`+`链表或红黑树`。它是通过 CAS 或 synchronized 来实现线程安全的，并且它的锁粒度更小，查询性能也更高。
+
+      ![](/software-engineer/drawio/Moatkon-ConcurrentHashMap1.8.svg)
+
+      > 从结构上看,和JDK1.8的HashMap结构非常类似,ConcurrentHashMap都是Node
+
+      1.8 在 1.7 的数据结构上做了大的改动，采用红黑树之后可以保证查询效率（O(logn)），
+      甚至取消了 ReentrantLock 改为了 synchronized，这样可以看出在新版的 JDK 中对 synchronized 优化是很到位的!
+
+      加锁是给数组中的每一个头节点都加锁
+    </Card>
+  </TabItem>
+    <TabItem label="JDK1.7(已过时)">
+    <Card>
+      底层是由`数组`+`链表`实现的。其中数组分为两类：大数组 Segment 和小数组 HashEntry,
+      而加锁是通过给 Segment 添加 ReentrantLock 锁来实现线程安全的
+      > 辅助记忆: 大数组 Segment 可以理解为 MySQL 中的数据库，而每个数据库(Segment)中又有很多张表 HashEntry，每个 HashEntry 中又有多条数据，这些数据是用链表连接的
+      
+      ![](/software-engineer/drawio/Moatkon-ConcurrentHashMap1.7.svg)
+
+      ConcurrentHashMap 采用了分段锁技术，其中 Segment 继承于 ReentrantLock。
+      
+      理论上 ConcurrentHashMap 支持 CurrencyLevel (Segment 数组数量)的线程并发。每当一个线程占用锁访问一个 Segment 时，不会影响到其他的 Segment。
+      
+      就是说如果容量大小是16,它的并发度就是16，可以同时允许16个线程操作16个Segment而且还是线程安全的
+    </Card>
+  </TabItem>
+</Tabs>
+{/* https://blog.csdn.net/gupaoedu_tom/article/details/124449788 */}

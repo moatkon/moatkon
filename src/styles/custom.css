@@ -1,0 +1,350 @@
+
+
+[data-has-hero] header {
+	border-bottom: 1px solid transparent;
+	background-color: transparent;
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
+
+/* 调整卡片的圆角同LinkCard一致 */
+.card {
+    border-radius: 0.5rem;
+}
+
+/* 移除Blog作者图片外圈的黑色边框*/
+.author img {
+	border: none;
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-right: -2px;
+}
+
+
+/* 胜利的光环*/
+.victory-glow {
+	position: relative;
+	isolation: isolate;
+	box-sizing: border-box;
+	border-radius: 0.7rem;
+  }
+  
+  .victory-glow::before {
+	content: '';
+	position: absolute;
+	inset: -4px;
+	padding: 4px;
+	background: linear-gradient(
+	  45deg,
+	  #ff0000,
+	  #ff7300,
+	  #fffb00,
+	  #48ff00,
+	  #00ffd5,
+	  #002bff,
+	  #7a00ff,
+	  #ff00c8,
+	  #ff0000
+	);
+	border-radius: inherit;
+	background-size: 400%;
+	animation: glowing 20s linear infinite;
+	-webkit-mask: 
+	  linear-gradient(#fff 0 0) content-box,
+	  linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	-webkit-mask-composite: xor;
+	/* 多层阴影创造光晕效果 */
+	box-shadow: 
+	  /* 内层发光 */
+	  0 0 10px rgba(255, 0, 0, 0.7),
+	  0 0 20px rgba(255, 115, 0, 0.5),
+	  /* 中层光晕 */
+	  0 0 30px rgba(255, 251, 0, 0.3),
+	  0 0 40px rgba(72, 255, 0, 0.2),
+	  /* 外层扩散 */
+	  0 0 50px rgba(0, 255, 213, 0.1),
+	  0 0 60px rgba(0, 43, 255, 0.1);
+	z-index: -1;
+  }
+  
+  /* 额外的光晕层 */
+  .victory-glow::after {
+	content: '';
+	position: absolute;
+	inset: -8px;
+	/* background: radial-gradient(
+	  circle,
+	  rgba(255, 115, 0, 0.3) 0%,
+	  rgba(255, 251, 0, 0.2) 30%,
+	  rgba(72, 255, 0, 0.1) 60%,
+	  transparent 100%
+	); */
+	border-radius: inherit;
+	z-index: -2;
+	animation: pulse 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glowing {
+	0% {
+	  background-position: 0 0;
+	}
+	50% {
+	  background-position: 400% 0;
+	}
+	100% {
+	  background-position: 0 0;
+	}
+  }
+  
+  @keyframes pulse {
+	0% {
+	  opacity: 0.5;
+	  transform: scale(1);
+	}
+	100% {
+	  opacity: 0.8;
+	  transform: scale(1.05);
+	}
+  }
+  
+  /* 鼠标悬停增强效果 */
+  .victory-glow:hover::before {
+	animation-duration: 10s;
+	box-shadow: 
+	  /* 内层发光增强 */
+	  0 0 15px rgba(255, 0, 0, 0.8),
+	  0 0 30px rgba(255, 115, 0, 0.6),
+	  /* 中层光晕增强 */
+	  0 0 45px rgba(255, 251, 0, 0.4),
+	  0 0 60px rgba(72, 255, 0, 0.3),
+	  /* 外层扩散增强 */
+	  0 0 75px rgba(0, 255, 213, 0.2),
+	  0 0 90px rgba(0, 43, 255, 0.2);
+  }
+  
+  .victory-glow:hover::after {
+	animation-duration: 1s;
+  }
+
+
+  /* 定义滚动条的整体样式 */
+::-webkit-scrollbar {
+    width: 8px; /* 滚动条的宽度 */
+    height: 12px; /* 滚动条的高度（用于水平滚动条） */
+}
+
+/* 定义滚动条的轨道 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 轨道的背景颜色 */
+    border-radius: 10px; /* 轨道的圆角 */
+}
+
+/* 定义滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+    background: #888; /* 滑块的背景颜色 */
+    border-radius: 10px; /* 滑块的圆角 */
+}
+
+/* 定义滚动条滑块在悬停时的样式 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 滑块悬停时的背景颜色 */
+}
+
+/* 定义滚动条的角落（水平和垂直滚动条交汇处） */
+::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* 角落的背景颜色 */
+}
+
+
+
+
+/* Badges */
+.sl-badge:is(.sl-badge) {
+	font-family: var(--__sl-font);
+	font-weight: 500;
+	line-height: 1;
+
+	&.small {
+		padding: 0.2625em 0.425em;
+		font-size: var(--sl-text-2xs);
+	}
+	&.medium {
+		padding: 0.2625em 0.425em;
+		font-size: var(--sl-text-sm);
+	}
+	&.large {
+		padding: 0.2625em 0.425em;
+		font-size: var(--sl-text-body);
+	}
+
+	/* Default */
+	--sl-badge-default-border: var(--sl-color-accent);
+	--sl-badge-default-bg: var(--sl-badge-default-border);
+	--sl-badge-default-text: var(--sl-color-accent-low);
+	/* Note */
+	--sl-badge-note-border: var(--sl-color-blue);
+	--sl-badge-note-bg: var(--sl-badge-note-border);
+	--sl-badge-note-text: var(--sl-color-blue-low);
+	/* Danger */
+	--sl-badge-danger-border: var(--sl-color-red);
+	--sl-badge-danger-bg: var(--sl-badge-danger-border);
+	--sl-badge-danger-text: var(--sl-color-red-low);
+	/* Success */
+	--sl-badge-success-border: var(--sl-color-green);
+	--sl-badge-success-bg: var(--sl-badge-success-border);
+	--sl-badge-success-text: var(--sl-color-green-low);
+	/* Caution */
+	--sl-badge-caution-border: var(--sl-color-orange);
+	--sl-badge-caution-bg: var(--sl-badge-caution-border);
+	--sl-badge-caution-text: var(--sl-color-orange-low);
+	/* Tip */
+	--sl-badge-tip-border: var(--sl-color-purple);
+	--sl-badge-tip-bg: var(--sl-badge-tip-border);
+	--sl-badge-tip-text: var(--sl-color-purple-low);
+
+	[data-theme='light'] & {
+		/* Default */
+		--sl-badge-default-border: var(--sl-color-accent-low);
+		--sl-badge-default-text: var(--sl-color-accent-high);
+		/* Note */
+		--sl-badge-note-border: var(--sl-color-blue-low);
+		--sl-badge-note-text: var(--sl-color-blue-high);
+		/* Danger */
+		--sl-badge-danger-border: var(--sl-color-red-low);
+		--sl-badge-danger-text: var(--sl-color-red-high);
+		/* Success */
+		--sl-badge-success-border: var(--sl-color-green-low);
+		--sl-badge-success-text: var(--sl-color-green-high);
+		/* Caution */
+		--sl-badge-caution-border: var(--sl-color-orange-low);
+		--sl-badge-caution-text: var(--sl-color-orange-high);
+		/* Tip */
+		--sl-badge-tip-border: var(--sl-color-purple-low);
+		--sl-badge-tip-text: var(--sl-color-purple-high);
+	}
+}
+
+
+
+.sl-markdown-content {
+	font-size: var(--sl-text-body);
+
+	/* Links */
+	a:not(:where(.not-content *)) {
+		color: var(--sl-color-text);
+		text-underline-offset: 0.15em;
+
+		&:hover {
+			color: var(--sl-color-text-accent);
+		}
+	}
+
+	/* Blockquote */
+	blockquote:not(:where(.not-content *)) {
+		border-inline-start-width: 2px;
+	}
+
+	/* Inline code */
+	code:not(:where(.not-content *)) {
+		border-radius: 0.1875em;
+	}
+
+	/* Spacing */
+	:not(a, strong, em, del, span, input, code, br)
+		+ :not(a, strong, em, del, span, input, code, br, :where(.not-content *)) {
+		margin-top: 1em;
+	}
+	/* Headings after non-headings have more spacing. */
+	:not(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+		margin-top: 1.5em;
+	}
+	li + li:not(:where(.not-content *)),
+	dt + dt:not(:where(.not-content *)),
+	dt + dd:not(:where(.not-content *)),
+	dd + dd:not(:where(.not-content *)) {
+		margin-top: 0.25em;
+	}
+	li
+		> :last-child:not(
+			li,
+			ul,
+			ol,
+			a,
+			strong,
+			em,
+			del,
+			span,
+			input,
+			code,
+			br,
+			:where(.not-content *)
+		),
+	li > :nth-last-child(2):is(starlight-tabs) {
+		margin-bottom: 1.75em;
+	}
+
+	/* Asides */
+	.starlight-aside {
+		border: 0;
+		border-radius: 0.25rem;
+	}
+	.starlight-aside__title {
+		font-size: var(--sl-text-base);
+		font-weight: 500;
+	}
+	.starlight-aside__icon {
+		font-size: var(--sl-text-lg);
+	}
+
+	/* Steps */
+	.sl-steps {
+		& > li::before {
+			box-shadow: none;
+			background-color: var(--sl-color-gray-6);
+		}
+		& > li::after {
+			background-color: var(--sl-flexoki-shadow-shade);
+		}
+	}
+
+	/* Cards */
+	.card {
+		border: 0;
+		border-radius: 0.25rem;
+		background-color: var(--sl-color-gray-7, var(--sl-color-gray-6));
+		padding: 1.5em;
+
+		.title {
+			font-size: var(--sl-text-body);
+			gap: 0.5em;
+		}
+
+		.icon {
+			border: 0;
+			padding: 0;
+			background-color: transparent;
+		}
+	}
+
+	/* Link Cards */
+	.sl-link-card {
+		box-shadow: none;
+
+		.title {
+			font-size: var(--sl-text-body);
+		}
+		.description {
+			font-size: var(--sl-text-sm);
+		}
+	}
+
+	/* File Tree */
+	starlight-file-tree {
+		border: 0;
+		border-radius: 0.25rem;
+		background-color: var(--sl-color-gray-7, var(--sl-color-gray-6));
+	}
+}
+

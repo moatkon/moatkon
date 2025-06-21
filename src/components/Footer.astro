@@ -1,0 +1,27 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+import FootSameText from "./common/FootSameText.astro";
+import GoogleAd from "./common/GoogleAd.astro";
+
+// 首页
+const isHomepage = Astro.locals.starlightRoute.id === '';
+// 404页面
+const isNotFound = Astro.locals.starlightRoute.id === '404';
+// 是否是生产环境
+const isPrd = process.env.VERCEL_ENV == 'production';
+
+---
+{
+	(isHomepage || isNotFound || !isPrd) ? (
+	  <footer>
+		<FootSameText />
+	  </footer>
+	) : (
+	  <Default {...Astro.props}>
+		<slot />
+	  </Default>
+	  <GoogleAd />
+	)
+  }
+
+

@@ -1,0 +1,11 @@
+MoneyXYZ推荐的英语学习:
+https://www.lingoda.com/en/get-started/
+
+
+<LinkCard
+            title="https://www.youtube.com/watch?v=ZRv0Z-M7NqM"
+            description="这个视频我关注到是里面提到的英语学习网站,很nice,准备尝试一下"
+            href="https://www.youtube.com/watch?v=ZRv0Z-M7NqM?utm_source=moatkon.com"
+/>
+
+https://www.lingoda.com/en/

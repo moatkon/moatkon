@@ -1,0 +1,28 @@
+/* 基础容器 - 添加入场动画和通用过渡 */
+.starlight-aside {
+    padding: 1rem;
+    border-inline-start: 0.25rem solid var(--sl-color-asides-border);
+    color: var(--sl-color-white);
+  }
+
+  /* 内容展开动画 */
+  .starlight-aside__content {
+    overflow: hidden;
+    transition: 
+      max-height 0.5s ease-out,
+      opacity 0.3s ease;
+  }
+  /* 用于动态展开内容（需配合 JS 使用） */
+  .starlight-aside__content.collapsed {
+    max-height: 0 !important;
+    opacity: 0;
+  }
+  
+  /* 无障碍优化 */
+  @media (prefers-reduced-motion: reduce) {
+    .starlight-aside,
+    .starlight-aside__icon {
+      animation: none !important;
+      transition: none !important;
+    }
+  }

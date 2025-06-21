@@ -1,0 +1,42 @@
+---
+// 将日期格式化为 YYYY-MM-DD HH:mm:ss 格式
+function formatDateTime(date: Date) {
+	const utc8Time = new Date(date.getTime() + 8 * 60 * 60 * 1000); // Adjust to UTC+8
+  return utc8Time.toISOString().replace('T', ' ').substring(0, 11).replaceAll(':','').replaceAll(' ','').replaceAll('-','.'); // Format as YYYY-MM-DD HH:mm:ss
+
+}
+
+const buildDate = new Date();
+const version = formatDateTime(buildDate);
+---
+
+<p style="text-align:center;font-size:small;color:var(--sl-color-gray-3)">
+    <a class="kudos" href="https://starlight.astro.build">
+        基于Starlight构建
+    </a>
+	| 
+	<a class="kudos" href="/flexoki">
+        主题色: Flexoki
+    </a>
+	| 构建日期: {version} 	 | 
+	 <a class="kudos" href="/change-log">
+		Change Log
+    </a>
+</p>
+
+<style>
+	.kudos {
+		align-items: center;
+		gap: 0.5em;
+		margin: 1.5rem auto;
+		font-size: var(--sl-text-xs);
+		text-decoration: none;
+		color: var(--sl-color-gray-3);
+	}
+	.kudos :global(svg) {
+		color: var(--sl-color-orange);
+	}
+	.kudos:hover {
+		color: var(--sl-color-white);
+	}
+</style>

@@ -1,0 +1,53 @@
+/* 引用效果加强 */
+.sl-markdown-content blockquote:not(:where(.not-content *)) {
+	border-inline-start: 2.5px solid var(--sl-color-text-accent);
+	/*transition: border-color var(--sl-transition-normal),
+				background-color var(--sl-transition-normal);*/ /*控制动画*/
+	box-shadow: var(--sl-shadow-sm);/*控制阴影*/
+	border-radius: 0 0.5rem 0.5rem 0;
+	padding: 1rem 1.5rem;
+}
+
+/* .sl-markdown-content blockquote:hover:not(:where(.not-content *)) {
+	border-color: var(--sl-color-text-accent);
+	box-shadow: var(--sl-shadow-md);
+} */
+
+
+/* 加强超链接动画 */
+.sl-markdown-content a:not(:where(.not-content *)) {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+	transition: all var(--sl-transition-normal);
+}
+
+.sl-markdown-content a:hover:not(:where(.not-content *)) {
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 2px;
+}
+
+/* 图片居中显示 - 适用于所有主题 */
+.sl-markdown-content img:not(:where(.not-content *)) {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+}
+
+:root[data-theme="dark"] .sl-markdown-content img {
+	background-color: #FFFCF0;
+	border-radius: 0.5rem;
+	padding: 0.25rem;
+}
+
+:root[data-theme="dark"] .sl-markdown-content img:active {
+	background-color: #FFFCF0; /* 保留白色底色 */
+	transform: scale(1.5); /* 点击放大效果 */
+	transition: transform 0.3s ease;
+}
+
+:root[data-theme="dark"] .starlight-image-zoom-dialog img {
+	background-color: #FFFCF0; /* 保留白色底色 */
+	border-radius: 0.5rem;
+	padding: 0.25rem;
+}

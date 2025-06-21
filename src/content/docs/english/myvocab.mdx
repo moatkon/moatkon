@@ -1,0 +1,122 @@
+---
+title: myvocab
+description: myvocab
+template: doc
+lastUpdated: 2025-02-27 00:57:16
+tableOfContents: false
+banner:
+  content: |
+    <a href="https://www.myvocab.info/en?utm_source=moatkon.com">myVocab词汇自测官网</a>
+---
+
+:::tip[20250227结论]
+Your receptive vocabulary is 4300 word families
+:::
+
+
+:::danger[20250128结论·比上次测试下降了]
+
+- Your receptive vocabulary is 3900 word families. Your attention index is 100%. 比上周下降了。这是可以预见的，因为没有投入时间进来
+- You result is better than 18% respondents. 
+- Your vocabulary quantitatively corresponds to a vocabulary of a native speaker at age 5.
+- You result is better than 22% respondents.
+- According to IELTS classification, your level is non-user. You have no ability to use the language except a few isolated words.
+
+
+##### TODO
+- [x] 继续刷词,使用Anki。下次测试日期(`@20250208`)
+
+:::
+
+
+:::danger[20250110结论·目前很弱]
+
+- 4200个词类
+- 词汇量在数量上相当于**5**岁时母语人士的词汇量
+- 在理解口语和书面英语方面有很大困难
+- 与母语人士的比较,优于23% 的受访者
+- 与非母语人士的比较,优于27% 的受访者
+
+
+##### TODO
+- [x] [无痛单词](/english/auxiliary-tools/painless)刷词,快速提升词汇量,两周后(`@20250126`)再次测试
+
+:::
+
+
+import { Card } from '@astrojs/starlight/components';
+
+
+<Card title="测试结果">
+
+#### Results
+
+Your receptive vocabulary is **4200** word families. Your attention index is **100%**.
+
+#### Comparison with native speakers
+You result is better than **23%** respondents. On the following histogram, which shows a distribution of results obtained so far, the dark blue area is proportional to the number of test takers with vocabulary smaller than yours.
+![](/english/myvocab/1.png)
+
+
+A native speaker of age 6 knows on average 6000 words. This number goes up to 15500 by graduation from high school at age 18. An adult's vocabulary varies from 16000 to 19000 words. Your vocabulary quantitatively corresponds to a vocabulary of a native speaker at age **5**.
+![](/english/myvocab/2.png)
+
+#### Comparison with non-native speakers
+
+You result is better than **27%** respondents.
+![](/english/myvocab/3.png)
+
+
+According to IELTS classification, your level is **intermittent user**. You have great difficulty understanding spoken and written English.
+
+</Card>
+---
+
+<Card title="中文翻译">
+
+#### 结果
+
+您的接受词汇量为**4200**个词类。您的注意力指数为**100％**。
+
+#### 与母语人士的比较
+
+您的结果优于**23%** 的受访者。以下直方图显示了迄今为止获得的结果分布，深蓝色区域与词汇量小于您的测试者数量成正比。
+![](/english/myvocab/1.png)
+
+6岁的母语人士平均掌握 6000 个单词。到 18 岁高中毕业时，这个数字上升到 15500。成年人的词汇量从 16000 到 19000 个单词不等。您的词汇量在数量上相当于**5**岁时母语人士的词汇量。
+![](/english/myvocab/2.png)
+
+#### 与非母语人士的比较
+
+您的结果比**27%** 的受访者更好。
+![](/english/myvocab/3.png)
+
+根据雅思考试分类，您的级别为**间歇性使用者**。您在理解口语和书面英语方面有很大困难。
+
+</Card>
+
+---
+
+:::tip[工作原理]
+[原文](https://www.myvocab.info/en/howitworks)
+
+##### 工作原理
+测试评估的是接受性词汇量——你在阅读和听力中认识的单词数量。唯一能准确做到这一点的方法是拿出厚厚的词汇表（有数十万个单词），然后逐一检查你是否认识每个单词。好吧，没人愿意这样做。然而，多亏了项目反应理论 (IRT) ——一种用于设计、分析和评分测试的现代范式，我们找到了一种更好的方法。根据这一范式，我们假设你的词汇量是一种潜在的特质或能力，可以用数字来表示和衡量。测量包括一系列难度各异的测试词，这些词可以标记为已知或未知。例如，“cat”这个词的难度较低，而“recusant”——相反，难度非常高。难度等级与我们看到、听到或使用这些词的频率密切相关。IRT 给出了一种数学公式，说明如何根据对一组难度各异的测试项目的回答来计算一个人的能力——这正是我们所做的。
+
+为了使测试快速而准确，我们使用计算机化自适应测试 (CAT)技术 — 现代测试领域的另一项标准。我们在每次回答测试词后计算您的词汇量。然后，我们选择下一个测试词，这样它就不会太容易或太难 — 通过这种方式，我们可以最大限度地增加每个测试项目对测试的信息量。词汇计算的精确度每一步都会提高；当达到某个阈值时，测试就会停止。
+
+##### 频率数据
+为了计算测试单词难度，我们使用了 Paul Nation 基于两个语言语料库（BNC（英国国家语料库）和 COCA（当代美国英语语料库））的频率数据创建的词族列表。
+
+##### 什么是计量单位？
+测试评估词族中的词汇量。每个词族包括一个基本词、其所有常规变位形式以及所有可以使用常见词缀由基本词组成的单词。这些标准基于L. Bauer、P. Nation 的《词族》，《国际词汇杂志》第 6 卷 (1993 年)。例如，单词limit、limitation、limitations、limited、limitless、limitlessly、limits、unlimited属于同一词族。
+
+##### 欺骗测试有多容易？
+检查分为两种类型。首先，测试项目中有一些非词。其次，如果你将测试词标记为已知，你可能会被要求通过在 4 个定义中进行选择来澄清其含义。最后，我们用一个简单的公式(x+y)/(ax+ay)来计算注意力指数，其中x是标记为未知的非词的数量，ax是呈现的非词总数，y是正确回答的多项选择题数量，ay是呈现的多项选择题总数。最终的词汇量估计不受注意力指数的影响。该指数仅用于决定响应数据是否有效并可用于我们的研究。
+
+##### 统计数据
+母语人士的词汇量与年龄的关系数据，以及非母语人士的词汇量与其雅思考试成绩的依赖关系数据，均根据testyourvocab.com获得的结果进行缩放。
+
+##### 简而言之
+测试采用项目反应理论（单参数模型）和计算机化自适应测试设计。测试的每个步骤都使用贝叶斯预期后验（EAP）估计器。使用联合最大似然法计算测试项目的难度。
+:::

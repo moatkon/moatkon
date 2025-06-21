@@ -1,0 +1,95 @@
+---
+title: 自动维护文件的lastUpdated时间
+description: 使用Shell脚本自动维护本站的lastUpdated时间
+template: doc
+draft: false
+lastUpdated: 2024-07-18 00:24:16
+---
+
+使用Shell脚本自动维护本站的lastUpdated时间:
+
+```sh ins={"新增的检查项 2024.07.18":17-22} ins={"新增的检查项 2024.07.18":27-32}
+#!/bin/bash
+
+# 获取当前日期和时间，格式为：年-月-日 时:分:秒
+current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
+
+# 指定目录
+docs_dir="./src/content/docs"
+
+# 确保指定的目录存在
+if [ ! -d "$docs_dir" ]; then
+    echo "错误：目录 $docs_dir 不存在"
+    exit 1
+fi
+
+# 获取已修改的文件列表
+modified_files=$(git status --porcelain "$docs_dir" | grep '^ M' | awk '{print $2}' | grep -E '\.(md|mdx)$' )
+
+# 检查是否有修改的文件
+if [ -z "$modified_files" ]; then
+    echo "没有找到已修改的 *.md 或 *.mdx 文件"
+    exit 0
+fi
+
+# 遍历修改过的 .md 和 .mdx 文件
+echo "$modified_files" | while read -r file
+do
+
+    # 检查文件是否存在
+    if [ ! -f "$file" ]; then
+        echo "警告：文件 $file 不存在，跳过"
+        continue
+    fi
+
+    # 检查文件是否为空
+    if [ ! -s "$file" ]; then
+        # 文件为空，添加frontmatter和lastUpdated字段
+        echo "---" > "$file"
+        echo "lastUpdated: $current_datetime" >> "$file"
+        echo "---" >> "$file"
+        echo "更新了空文件: $file 的lastUpdated时间"
+    else
+        # 检查文件是否有frontmatter
+        if grep -q "^---" "$file"; then
+            # 文件有frontmatter，使用 awk 直接修改文件
+            awk -v datetime="$current_datetime" '
+            BEGIN {in_frontmatter=0; updated=0}
+            /^---$/ {
+                if (in_frontmatter == 0) {
+                    in_frontmatter = 1
+                } else {
+                    if (updated == 0) {
+                        print "lastUpdated: " datetime
+                    }
+                    in_frontmatter = 0
+                }
+                print
+                next
+            }
+            in_frontmatter == 1 {
+                if ($0 ~ /^lastUpdated:/) {
+                    print "lastUpdated: " datetime
+                    updated = 1
+                } else {
+                    print
+                }
+                next
+            }
+            {print}
+            ' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+        else
+            # 文件没有frontmatter，添加一个
+            sed -i '' '1i\
+---\
+lastUpdated: '"$current_datetime"'\
+---\
+' "$file"
+        fi
+        echo "更新了文件: $file 的lastUpdated时间"
+    fi
+done
+
+```
+
+> 脚本由[Claude](/ai#claude)生成

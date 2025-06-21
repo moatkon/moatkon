@@ -1,0 +1,28 @@
+---
+title: Jetbrains安装Claude
+description: Jetbrains安装Claude
+template: doc
+lastUpdated: 2025-05-26 16:08:44
+draft: true
+---
+
+#### 安装
+- [英文文档](https://docs.anthropic.com/en/docs/claude-code/getting-started)
+- [中文文档](https://docs.anthropic.com/zh-CN/docs/claude-code/getting-started)
+
+#### Jetbrains 插件地址(Beta)
+https://plugins.jetbrains.com/plugin/27310-claude-code-beta-
+
+#### 在Windows的WSL中按照Claude
+
+```sh
+# install
+npm install -g @anthropic-ai/claude-code --prefix ~/.npm-global
+echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# proxy 下面ip和端口配置可以正常访问claude服务的
+export HTTPS_PROXY=http://ip:port
+export HTTP_PROXY=http://ip:port
+```
+

@@ -1,0 +1,200 @@
+---
+title: DDD项目结构的演变
+description: DDD项目结构的演变
+template: doc
+tableOfContents:
+   minHeadingLevel: 1
+   maxHeadingLevel: 6
+lastUpdated: 2025-06-13 23:20:08
+---
+import { FileTree,Badge } from '@astrojs/starlight/components';
+
+
+{/* 
+<FileTree>
+
+- astro.config.mjs 一个 **重要** 的文件
+- package.json
+- README.md
+- src
+  - components
+    - **Header.astro**
+  - …
+- pages/
+
+</FileTree>
+ */}
+
+
+下图是我们最原始的订单DDD层级划分,第一版和第二版也是依据此来构建整体项目结构的。
+![](/software-engineer/ddd/Moatkon-order-ddd.drawio.svg)
+
+一开始,我们是期望domain、infrastructure、通用域和types是被不同的应用通用的
+
+#### 第一版
+
+<FileTree>
+
+- order-service
+   - order-starter/
+   - order-starter-job/
+   - order-starter-sync/
+   - order-interface/
+   - order-interface-job/
+   - order-interface-sync/
+   - order-application/
+   - order-application-job/
+   - order-application-sync/
+   - order-domain/
+   - order-infrastructure/
+   - order-types/
+   - order-common/
+   - pom.xml
+
+</FileTree>
+
+##### 缺点
+可读性不高,和图对应不上,starter、interface、application都平铺开了,moudle很多,对于新同学不友好
+
+#### 第二版
+
+<FileTree>
+
+- order-service
+   - order-starter-parent
+      - order-starter/
+      - order-job-starter/
+      - order-sync-starter/
+      - pom.xml
+   - order-interface-parent
+      - order-interface/
+      - order-interface-job/
+      - order-interface-sync/
+      - pom.xml
+   - order-application-parent
+      - order-application/
+      - order-application-job/
+      - order-application-sync/
+      - pom.xml
+   - order-domain/
+   - order-infrastructure/
+   - order-types/
+   - order-common/
+   - pom.xml
+
+</FileTree>
+
+##### 优点
+解决了第一版可读性的问题
+
+##### 缺点
+会增加发版频率,例如只改了order-job应用,但是因为变动改到了domain或infrastructure等复用的moudle,会迫使其他两个应用也要同步发版。这个对于线上服务的稳定性来说是有一定的冲击。
+
+但是换一个角度来思考,如果都发版也是合理的,因为当做bug处理就应该发版。
+
+> 这个其实在我们团队内部是有争议的,经过团队的沟通,我们采用了第三版,拆分。拆分的原因思考后,也是合理的,具体见第三版
+
+#### 第三版
+
+
+
+<FileTree>
+
+- order-service
+   - order-bootstrap/
+      - OrderServiceBootstrap.java
+   - order-interface/
+      - OrderController.java
+   - order-application/
+      - OrderApplicatonService.java
+   - order-domain/
+      - OrderAggragate.java
+   - order-infrastructure/
+   - order-types/
+   - order-common/
+   - pom.xml
+
+</FileTree>
+
+
+
+<FileTree>
+
+
+- order-sync
+   - order-sync-bootstrap/
+   - order-sync-interface/
+   - order-sync-application/
+   - order-sync-domain/
+   - order-sync-infrastructure/
+   - order-sync-types/
+   - order-sync-common/
+   - pom.xml
+
+</FileTree>
+
+order-service单独拆成一个仓库,用于处理主线业务
+
+order-sync和order-job合并为order-sync服务。处理非核心业务。将job合并到sync的原因经过评估后,差别不大,都是异步的,只不过一个是批处理异步、一个是消费消息的异步。
+> 在我之前的公司job和sync是拆开的。所以这里我想说的一点是,符合公司、团队的才是最好的,不一定都要按照某个规范来。大家灵活变通即可
+
+
+
+
+##### 为什么要拆仓库?为什么不复用底层moudle了?
+
+我先回答第二个问题,为什么不复用底层moudle了?因为每个应用所负责的功能侧重点不同,domain、infrastructure等都会渐渐的产生区别，会变得越来越符合当前应用的职责。故第一个问题也就自然有答案了，就是拆。
+既然后面差别会越来越大,还不如趁早拆开。而拆开后就自然而然解决了第二版方案中缺点
+
+
+#### 总结
+DDD只是思想,每个人对DDD的理解不同,自然项目结构也会不同,只要能解决问题就行。如果严格按照DDD的规范来做,就有点矫枉过正了。在DDD的实践过程中,允许一定的妥协。
+
+我这里也只是分享出来,仅供大家参考。如果有想法或者建议,欢迎留言讨论
+
+
+#### 项目结构更新 <Badge text='2024.6.9'  variant='tip' />
+在实践过程中,发现
+- order-types在order-sync服务和order-service中会经常会被使用到,而order-types在order-service中维护,会导致有时并不需要动order-service的代码却因为
+需要动order-types而被动到
+- order-common在order-sync和order-service中的高度相似,因此可以考虑独立出来
+
+基于以上两点考虑,新建了一个仓库order-framework,用来管理order-types和order-common
+
+##### order-framework
+<FileTree>
+
+- order-framework
+   - order-types/
+   - order-common/
+   - pom.xml
+
+</FileTree>
+
+##### order-sync和order-service代码组织结构变化
+
+<FileTree>
+
+
+- order-sync
+   - order-sync-bootstrap/
+   - order-sync-interface/
+   - order-sync-application/
+   - order-sync-domain/
+   - order-sync-infrastructure/
+   - pom.xml
+
+</FileTree>
+
+
+<FileTree>
+
+- order-service
+   - order-bootstrap/
+   - order-interface/
+   - order-application/
+   - order-domain/
+   - order-infrastructure/
+   - pom.xml
+
+</FileTree>
