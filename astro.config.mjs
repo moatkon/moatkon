@@ -539,6 +539,7 @@ export default defineConfig({
             {label: 'LocalSend', link: '/share/efficiency-tools/localsend',badge: {text: '文件传输',variant: 'note'}},
             {label: 'One UI', link: '/share/efficiency-tools/one-ui',badge: {text: '操作系统',variant: 'note'}},
             {label: 'Arc浏览器', link: '/share/efficiency-tools/arc',badge: {text: '浏览器',variant: 'note'}},
+            {label: '飞书', link: '/share/efficiency-tools/lark',badge: {text: 'Lark',variant: 'note'}},
           ]
         },
         {

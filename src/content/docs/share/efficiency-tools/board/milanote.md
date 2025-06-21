@@ -19,3 +19,8 @@ lastUpdated: 2024-06-30 00:58:52
 ![](/share/efficiency-tools/board/milanote/price.png)
 
 因为价格太贵的原因,我在网上搜索[Milanote](https://www.milanote.com/refer/rcEQUbN1p4mHYALX38?utm_source=moatkon.com)的替代品,找到了国内的[小画桌](/share/efficiency-tools/board/xiaohuazhuo)
+
+---
+:::note[20250621更新推荐]
+现在不推荐[小画桌](/share/efficiency-tools/board/xiaohuazhuo)了,推荐[飞书](/share/efficiency-tools/lark)
+:::
