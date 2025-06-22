@@ -2,7 +2,7 @@
 title: 飞书
 description: 飞书
 template: doc
-lastUpdated: 2025-06-21 16:44:26
+lastUpdated: 2025-06-23 00:31:50
 ---
 
 飞书官网: www.feishu.cn
@@ -23,6 +23,7 @@ lastUpdated: 2025-06-21 16:44:26
 
 我就在想,当初我在找[Milanote](/share/efficiency-tools/board/milanote)替代品的时候怎么就没有想到飞书呢,哈哈哈,完全把飞书这个产品忘了
 
+> _20250623 update_: 我想起来为什么不用飞书了,因为我当时很在意数据存在哪里,我的第一目标是数据可控,所以排除了云服务
 
 ---
 :::note
