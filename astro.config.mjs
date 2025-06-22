@@ -125,6 +125,7 @@ export default defineConfig({
     },
     social:[
       // { icon: 'x.com', label: '@moatkon', href: 'https://x.com/moatkon' },
+      { icon: 'github', label: '@moatkon', href: 'https://github.com/moatkon' },
       { icon: 'document', label: 'resume', href: `/resume/` },
       { icon: 'email', label: 'gmail', href: 'mailto:moatkon@gmail.com?subject=Moatkon护城河&body=构建你的护城河' },
       { icon: 'rss', label: 'rss', href: `${siteUrl}/rss.xml` },
