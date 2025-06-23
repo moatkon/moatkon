@@ -12,4 +12,4 @@
 # 待开源
 
 ## cv
-- https://github.com/moatkon/cv [个人简历](https://moatkon.com/resume)
+- https://github.com/moatkon/cv [Moatkon简历](https://moatkon.com/resume)
