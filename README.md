@@ -1,7 +1,7 @@
 # 开源项目
 
 ## 核心
-- https://github.com/moatkon/moatkon  [moatkon.com网站开源](moatkon.com)
+- https://github.com/moatkon/moatkon  [moatkon.com网站开源](https://moatkon.com)
 
 ## AI
 - https://github.com/moatkon/ai-assistant  AI助手
@@ -12,4 +12,4 @@
 # 待开源
 
 ## cv
-https://github.com/moatkon/cv [个人简历](moatkon.com/resume)
+https://github.com/moatkon/cv [个人简历](https://moatkon.com/resume)
