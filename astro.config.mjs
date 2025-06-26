@@ -383,18 +383,18 @@ export default defineConfig({
           {label: '数据迁移', link: '/software-engineer/best-practices/migration'},
         ]
       },
-      {
-        label: '电商独立站',
-        collapsed: false,
-        items: [
-          {label: '搜索广告', link: '/software-engineer/best-practices/business/advertising/google-search',badge: { text: '流量广告', variant: 'default' },},
-          // {label: 'README', link: '/software-engineer/topics/project-experience/advertising'/* ,badge: { text: '更新中', variant: 'default' }, */},
-          // {label: '购物广告', link: '/software-engineer/topics/project-experience/advertising/shopping',badge: { text: '待更新', variant: 'default' },},
-          // {label: '网红KOL', link: '/software-engineer/topics/project-experience/advertising/kol',badge: { text: '待更新', variant: 'default' },},
-          // {label: '广告监控', link: '/software-engineer/topics/project-experience/advertising/monitor-ad',badge: { text: '待更新', variant: 'default' },},
-          // {label: '效果数据', link: '/software-engineer/topics/project-experience/advertising/performance-data',badge: { text: '待更新', variant: 'default' },},
-        ],
-      },
+      // {
+      //   label: '电商独立站',
+      //   collapsed: false,
+      //   items: [
+      //     {label: '搜索广告', link: '/software-engineer/best-practices/business/advertising/google-search',badge: { text: '流量广告', variant: 'default' },},
+      //     // {label: 'README', link: '/software-engineer/topics/project-experience/advertising'/* ,badge: { text: '更新中', variant: 'default' }, */},
+      //     // {label: '购物广告', link: '/software-engineer/topics/project-experience/advertising/shopping',badge: { text: '待更新', variant: 'default' },},
+      //     // {label: '网红KOL', link: '/software-engineer/topics/project-experience/advertising/kol',badge: { text: '待更新', variant: 'default' },},
+      //     // {label: '广告监控', link: '/software-engineer/topics/project-experience/advertising/monitor-ad',badge: { text: '待更新', variant: 'default' },},
+      //     // {label: '效果数据', link: '/software-engineer/topics/project-experience/advertising/performance-data',badge: { text: '待更新', variant: 'default' },},
+      //   ],
+      // },
       {
         label: 'React',
         collapsed: true,
