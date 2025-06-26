@@ -3,7 +3,7 @@ title: Git
 description: git
 template: doc
 tableOfContents: false
-lastUpdated: 2025-06-20 18:15:44
+lastUpdated: 2025-06-26 10:20:41
 ---
 :::tip
 分享自己在开发中最常用的几个git命令
@@ -208,4 +208,9 @@ git config --global http.https://github.com.proxy socks5://127.0.0.1:33211
 #### Git长路径支持
 ```bash
 git config --system core.longpaths true
+```
+
+#### Github access token 配置
+```bash
+https://<username>:<access token>@github.com/<username>/<repositoryname>.git
 ```
