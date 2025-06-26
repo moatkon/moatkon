@@ -587,6 +587,7 @@ export default defineConfig({
       items: [
         {label: 'AI',   link: '/ai'},
         {label: 'Dify',   link: '/ai/dify'},
+        {label: 'Gemini Cli',   link: '/ai/gemini/cli'},
         // {label: 'AI时代下，程序员的焦虑与出路',link: '/ai/ai-era-programmer-anxiety',badge: {text: 'Grok3',variant: 'default'}},
       ]
     },
