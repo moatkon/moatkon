@@ -6,6 +6,7 @@ import starlightImageZoom from 'starlight-image-zoom';
 import starlightBlog from 'starlight-blog';
 import starlightScrollToTop from 'starlight-scroll-to-top';
 import starlightLlmsTxt from 'starlight-llms-txt';
+import mermaid from 'astro-mermaid';
 // import starlightDocSearch from '@astrojs/starlight-docsearch';
 // https://github.com/matteotagliatti/astro-music-player
 // https://github.com/AREA44/astro-audionaut
@@ -16,7 +17,10 @@ const siteUrl = isPrd ? 'https://moatkon.com':'http://localhost:4321';
 // 详细配置方式 https://docs.astro.build/zh-cn/reference/configuration-reference/
 export default defineConfig({
   site: siteUrl,
-  integrations: [starlight({
+  integrations: [
+    mermaid({
+        theme: 'forest'
+    }),starlight({
     expressiveCode: {
       styleOverrides: { borderRadius: '0.6rem' },
       // themes:['starlight-dark']
