@@ -4,7 +4,7 @@ description: Gemini Cli
 template: doc
 draft: false
 tableOfContents: false
-lastUpdated: 2025-06-27 10:57:45
+lastUpdated: 2025-06-28 08:25:03
 ---
 
 ### 开源
@@ -41,5 +41,5 @@ $env:HTTP_PROXY = "http://<ip>:<port>"
 #### 安装完成后
 ![](/ai/gemini/cli/index.png)
 
-使用:
+使用Demo:
 ![](/ai/gemini/cli/i2.png)
