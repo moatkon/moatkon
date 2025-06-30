@@ -1,12 +1,9 @@
 ---
-title: Dify
-description: Dify
+title: Docker安装Dify
+description: Docker安装Dify
 template: doc
 draft: false
-tableOfContents: false
-lastUpdated: 2025-03-31 11:18:33
-banner:
-  content: 编写中
+lastUpdated: 2025-06-30 16:36:42
 ---
 
 :::note
@@ -18,8 +15,7 @@ https://cloud.dify.ai/
 :::
 
 
-
-
+#### Docker安装
 ```sh title="安装"
 git clone https://github.com/langgenius/dify.git
 cd dify/
@@ -33,8 +29,8 @@ docker compose up -d
 ```
 
 
-#### 使用Dify来发布moatkon.com
-![](/ai/dify/2.png)
+#### Dify用例
+[发布moatkon.com](/ai/dify/project/deploy)
 
 #### 使用Dify接入DeepSeek
 ![](/ai/dify/1.png)
