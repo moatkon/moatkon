@@ -3,11 +3,14 @@ title: 基于Dify发布moatkon.com网站
 description: 基于Dify发布moatkon.com网站
 template: doc
 draft: false
-lastUpdated: 2025-03-31 11:18:33
+lastUpdated: 2025-06-30 20:47:49
 ---
 
 ### 流程
 ![](/ai/dify/project/发布moatkon.png)
+
+### 运行结果
+![](/ai/dify/project/发布moatkon_result.png)
 
 ### DSL
 ```yaml
