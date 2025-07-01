@@ -24,14 +24,13 @@ function calculateDaysDiff(current: string, expire: string): number {
 }
 
 const daysDiff = calculateDaysDiff(currentDate, expireDate);
-const isExpired = daysDiff < 0;
-const displayText = isExpired ? '已到期' : `倒计时: ${daysDiff} 天`;
-const badgeVariant = isExpired ? 'danger' : (daysDiff <= 7 ? 'caution' : 'tip');
+const isExpired = daysDiff <= 0;
+const displayText = isExpired ? '可以观看了' : `倒计时: ${daysDiff} 天`;
 ---
 
 
   <span 
-    class={`countdown-badge ${isExpired ? 'expired' : daysDiff <= 7 ? 'warning' : 'normal'}`}
+    class={`countdown-badge ${isExpired ? 'normal' : (daysDiff <= 7 ? 'red' : 'orange')}`}
   >
     {displayText}
   </span>
@@ -47,11 +46,11 @@ const badgeVariant = isExpired ? 'danger' : (daysDiff <= 7 ? 'caution' : 'tip');
     color: white;
   }
   
-  .countdown-badge.expired {
+  .countdown-badge.red {
     background-color: var(--sl-color-red);
   }
   
-  .countdown-badge.warning {
+  .countdown-badge.orange {
     background-color: var(--sl-color-orange);
   }
   
