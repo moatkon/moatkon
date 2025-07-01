@@ -3,8 +3,11 @@ title: 基于Dify发布moatkon.com网站
 description: 基于Dify发布moatkon.com网站
 template: doc
 draft: false
-lastUpdated: 2025-06-30 20:47:49
+lastUpdated: 2025-07-01 20:29:43
 ---
+
+### 说明
+代码是在Github上维护的,云服务商是Cloudflare(后面简称CF)。功能是CF实现的,使用Dify就是触发了CF的一个Webhook而已
 
 ### 流程
 ![](/ai/dify/project/发布moatkon.png)
