@@ -1,0 +1,61 @@
+---
+const { currentDate, expireDate } = Astro.props;
+
+// 解析日期字符串 (格式: YYYYMMDD)
+function parseDate(dateStr) {
+  const year = parseInt(dateStr.substring(0, 4));
+  const month = parseInt(dateStr.substring(4, 6)) - 1; // 月份从0开始
+  const day = parseInt(dateStr.substring(6, 8));
+  return new Date(year, month, day);
+}
+
+// 计算天数差
+function calculateDaysDiff(current, expire) {
+  const currentDateObj = parseDate(current);
+  const expireDateObj = parseDate(expire);
+  
+  // 计算时间差（毫秒）
+  const timeDiff = expireDateObj.getTime() - currentDateObj.getTime();
+  
+  // 转换为天数
+  const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  
+  return daysDiff;
+}
+
+const daysDiff = calculateDaysDiff(currentDate, expireDate);
+const isExpired = daysDiff < 0;
+const displayText = isExpired ? '已到期' : `倒计时: ${daysDiff} 天`;
+const badgeVariant = isExpired ? 'danger' : (daysDiff <= 7 ? 'caution' : 'tip');
+---
+
+
+  <span 
+    class={`countdown-badge ${isExpired ? 'expired' : daysDiff <= 7 ? 'warning' : 'normal'}`}
+  >
+    {displayText}
+  </span>
+
+
+<style>
+  .countdown-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .countdown-badge.expired {
+    background-color: var(--sl-color-red);
+  }
+  
+  .countdown-badge.warning {
+    background-color: var(--sl-color-orange);
+  }
+  
+  .countdown-badge.normal {
+    background-color: var(--sl-color-green);
+  }
+</style>
