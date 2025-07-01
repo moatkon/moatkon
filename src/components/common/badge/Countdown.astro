@@ -2,7 +2,7 @@
 const { currentDate, expireDate } = Astro.props;
 
 // 解析日期字符串 (格式: YYYYMMDD)
-function parseDate(dateStr) {
+function parseDate(dateStr: string): Date {
   const year = parseInt(dateStr.substring(0, 4));
   const month = parseInt(dateStr.substring(4, 6)) - 1; // 月份从0开始
   const day = parseInt(dateStr.substring(6, 8));
@@ -10,7 +10,7 @@ function parseDate(dateStr) {
 }
 
 // 计算天数差
-function calculateDaysDiff(current, expire) {
+function calculateDaysDiff(current: string, expire: string): number {
   const currentDateObj = parseDate(current);
   const expireDateObj = parseDate(expire);
   
