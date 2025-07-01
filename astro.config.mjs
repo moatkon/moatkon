@@ -555,6 +555,7 @@ export default defineConfig({
             {label: '电影P2',link: '/share/movie/p2'},
             {label: '电影P3',link: '/share/movie/p3'},
             {label: '电影P4',link: '/share/movie/p4'},
+            {label: '计划观看',link: '/share/movie/plan-to-watch'},
             {label: '资源',link: '/share/movie/source'},
           ]
         },
