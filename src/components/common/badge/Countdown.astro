@@ -1,5 +1,5 @@
 ---
-const { currentDate, expireDate } = Astro.props;
+const { expireDate } = Astro.props;
 
 // 解析日期字符串 (格式: YYYYMMDD)
 function parseDate(dateStr: string): Date {
@@ -10,20 +10,27 @@ function parseDate(dateStr: string): Date {
 }
 
 // 计算天数差
-function calculateDaysDiff(current: string, expire: string): number {
-  const currentDateObj = parseDate(current);
+function calculateDaysDiff(expire: string): number {
+  // 获取当前日期并格式化为 YYYYMMDD 字符串
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0'); // 月份从0开始，需要+1
+  const day = String(now.getDate()).padStart(2, '0');
+  const currentDateStr = `${year}${month}${day}`;
+
+  const currentDateObj = parseDate(currentDateStr);
   const expireDateObj = parseDate(expire);
-  
+
   // 计算时间差（毫秒）
   const timeDiff = expireDateObj.getTime() - currentDateObj.getTime();
-  
+
   // 转换为天数
   const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-  
+
   return daysDiff;
 }
 
-const daysDiff = calculateDaysDiff(currentDate, expireDate);
+const daysDiff = calculateDaysDiff(expireDate);
 const isExpired = daysDiff <= 0;
 const displayText = isExpired ? '可以观看了' : `倒计时: ${daysDiff} 天`;
 ---
