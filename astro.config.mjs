@@ -597,9 +597,11 @@ export default defineConfig({
           items: [
             {label: 'Docker安装Dify',link: '/ai/dify'},
             {label: '发布moatkon.com流程', link: '/ai/dify/project/deploy' },
+            {label: '知识库开发记录', link: '/ai/dify/knowledge-base' }, 
           ]
         },
         {label: 'Gemini Cli',   link: '/ai/gemini/cli'},
+        {label: 'AI相关的Github项目',   link: '/ai/github'},
         // {label: 'AI时代下，程序员的焦虑与出路',link: '/ai/ai-era-programmer-anxiety',badge: {text: 'Grok3',variant: 'default'}},
       ]
     },
