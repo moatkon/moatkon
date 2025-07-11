@@ -597,6 +597,7 @@ export default defineConfig({
           items: [
             {label: 'Docker安装Dify',link: '/ai/dify'},
             {label: '发布moatkon.com流程', link: '/ai/dify/project/deploy' },
+            {label: '知识库开发记录', link: '/ai/dify/knowledge-base' }, 
           ]
         },
         {label: 'Gemini Cli',   link: '/ai/gemini/cli'},
