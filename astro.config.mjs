@@ -548,7 +548,7 @@ export default defineConfig({
           ]
         },
         {
-          label: '电影',
+          label: '电影🎬',
           collapsed: true,
           items: [
             {label: '电影P1',link: '/share/movie'},
