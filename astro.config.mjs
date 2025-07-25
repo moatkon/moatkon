@@ -626,6 +626,26 @@ export default defineConfig({
   })
   ],
   vite: {
+    server: {
+      watch: {
+        // 排除不必要的文件监听,mac风扇一直转
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/dist/**',
+          '**/.astro/**',
+          '**/coverage/**',
+          '**/.nyc_output/**',
+          '**/.cache/**',
+          '**/logs/**',
+          '**/*.log',
+          '**/tmp/**',
+          '**/temp/**'
+        ],
+        // 使用轮询模式，减少 CPU 使用
+        usePolling: false,
+      },
+    },
     build: {
       rollupOptions: {
         onwarn(warning, warn) {
