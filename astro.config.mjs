@@ -7,6 +7,7 @@ import starlightBlog from 'starlight-blog';
 import starlightScrollToTop from 'starlight-scroll-to-top';
 import starlightLlmsTxt from 'starlight-llms-txt';
 import mermaid from 'astro-mermaid';
+import starlightAutoDrafts from 'starlight-auto-drafts';
 // import starlightDocSearch from '@astrojs/starlight-docsearch';
 // https://github.com/matteotagliatti/astro-music-player
 // https://github.com/AREA44/astro-audionaut
@@ -39,6 +40,7 @@ export default defineConfig({
       'root': { label: '简体中文', lang: 'zh-CN' },
     },
     plugins: [
+      starlightAutoDrafts(),
       starlightLlmsTxt(),
       starlightScrollToTop({
         position: 'right',
