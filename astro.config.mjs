@@ -3,10 +3,11 @@ import starlight from '@astrojs/starlight';
 import react from "@astrojs/react";
 const isPrd = process.env.VERCEL_ENV == 'production';
 import starlightImageZoom from 'starlight-image-zoom';
-import starlightBlog from 'starlight-blog';
+// import starlightBlog from 'starlight-blog';
 import starlightScrollToTop from 'starlight-scroll-to-top';
 import starlightLlmsTxt from 'starlight-llms-txt';
 import mermaid from 'astro-mermaid';
+import starlightAutoDrafts from 'starlight-auto-drafts';
 // import starlightDocSearch from '@astrojs/starlight-docsearch';
 // https://github.com/matteotagliatti/astro-music-player
 // https://github.com/AREA44/astro-audionaut
@@ -39,6 +40,7 @@ export default defineConfig({
       'root': { label: '简体中文', lang: 'zh-CN' },
     },
     plugins: [
+      starlightAutoDrafts(),
       starlightLlmsTxt(),
       starlightScrollToTop({
         position: 'right',
@@ -51,17 +53,17 @@ export default defineConfig({
         borderRadius: '50',
    }),
       starlightImageZoom({showCaptions:false}),
-      starlightBlog({
-        title: 'Blog',
-        authors: {
-          moatkon: {
-            name: 'Moatkon',
-            picture: '/moatkon/moatkon.svg',
-            url: isPrd ? 'https://www.moatkon.com/contact' : 'http://localhost:4321/contact'
-          },
-        },
-        prefix: 'blog' // 文档目录也要修改
-      }),
+      // starlightBlog({
+      //   title: 'Blog',
+      //   authors: {
+      //     moatkon: {
+      //       name: 'Moatkon',
+      //       picture: '/moatkon/moatkon.svg',
+      //       url: isPrd ? 'https://www.moatkon.com/contact' : 'http://localhost:4321/contact'
+      //     },
+      //   },
+      //   prefix: 'blog' // 文档目录也要修改
+      // }),
       // 搜索效果不好,注释掉即恢复到以前的检索
       // starlightDocSearch({
       //   appId: 'JF4GTEW6FH',
@@ -130,7 +132,7 @@ export default defineConfig({
     social:[
       // { icon: 'x.com', label: '@moatkon', href: 'https://x.com/moatkon' },
       { icon: 'github', label: '@moatkon', href: 'https://github.com/moatkon' },
-      { icon: 'document', label: 'resume', href: `/resume/` },
+      { icon: 'document', label: 'resume', href: `https://resume.moatkon.com/` },
       { icon: 'email', label: 'gmail', href: 'mailto:moatkon@gmail.com?subject=Moatkon护城河&body=构建你的护城河' },
       { icon: 'rss', label: 'rss', href: `${siteUrl}/rss.xml` },
     ],
@@ -385,6 +387,7 @@ export default defineConfig({
           {label: '接口超时治理', link: '/software-engineer/best-practices/interface-timeout-management'},
           {label: '刷数的最佳姿势', link: '/software-engineer/best-practices/flush-data'},
           {label: '数据迁移', link: '/software-engineer/best-practices/migration'},
+          {label: 'Http Proxy', link: '/software-engineer/best-practices/http-proxy'},
         ]
       },
       // {
@@ -626,6 +629,26 @@ export default defineConfig({
   })
   ],
   vite: {
+    server: {
+      watch: {
+        // 排除不必要的文件监听,mac风扇一直转
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/dist/**',
+          '**/.astro/**',
+          '**/coverage/**',
+          '**/.nyc_output/**',
+          '**/.cache/**',
+          '**/logs/**',
+          '**/*.log',
+          '**/tmp/**',
+          '**/temp/**'
+        ],
+        // 使用轮询模式，减少 CPU 使用
+        usePolling: false,
+      },
+    },
     build: {
       rollupOptions: {
         onwarn(warning, warn) {
