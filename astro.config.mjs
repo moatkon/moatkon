@@ -3,7 +3,7 @@ import starlight from '@astrojs/starlight';
 import react from "@astrojs/react";
 const isPrd = process.env.VERCEL_ENV == 'production';
 import starlightImageZoom from 'starlight-image-zoom';
-import starlightBlog from 'starlight-blog';
+// import starlightBlog from 'starlight-blog';
 import starlightScrollToTop from 'starlight-scroll-to-top';
 import starlightLlmsTxt from 'starlight-llms-txt';
 import mermaid from 'astro-mermaid';
@@ -53,17 +53,17 @@ export default defineConfig({
         borderRadius: '50',
    }),
       starlightImageZoom({showCaptions:false}),
-      starlightBlog({
-        title: 'Blog',
-        authors: {
-          moatkon: {
-            name: 'Moatkon',
-            picture: '/moatkon/moatkon.svg',
-            url: isPrd ? 'https://www.moatkon.com/contact' : 'http://localhost:4321/contact'
-          },
-        },
-        prefix: 'blog' // 文档目录也要修改
-      }),
+      // starlightBlog({
+      //   title: 'Blog',
+      //   authors: {
+      //     moatkon: {
+      //       name: 'Moatkon',
+      //       picture: '/moatkon/moatkon.svg',
+      //       url: isPrd ? 'https://www.moatkon.com/contact' : 'http://localhost:4321/contact'
+      //     },
+      //   },
+      //   prefix: 'blog' // 文档目录也要修改
+      // }),
       // 搜索效果不好,注释掉即恢复到以前的检索
       // starlightDocSearch({
       //   appId: 'JF4GTEW6FH',
