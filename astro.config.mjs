@@ -387,6 +387,7 @@ export default defineConfig({
           {label: '接口超时治理', link: '/software-engineer/best-practices/interface-timeout-management'},
           {label: '刷数的最佳姿势', link: '/software-engineer/best-practices/flush-data'},
           {label: '数据迁移', link: '/software-engineer/best-practices/migration'},
+          {label: 'Http Proxy', link: '/software-engineer/best-practices/http-proxy'},
         ]
       },
       // {
