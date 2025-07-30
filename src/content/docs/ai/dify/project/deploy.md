@@ -1,9 +1,9 @@
 ---
-title: 基于Dify发布moatkon网站及其子域
+title: 发布moatkon网站及其子域
 description: 基于Dify发布moatkon网站
 template: doc
 draft: false
-lastUpdated: 2025-07-30 11:20:17
+lastUpdated: 2025-07-30 11:31:43
 ---
 
 #### 说明
