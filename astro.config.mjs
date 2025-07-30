@@ -600,7 +600,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             {label: 'Docker安装Dify',link: '/ai/dify'},
-            {label: '发布moatkon.com流程', link: '/ai/dify/project/deploy' },
+            {label: '发布moatkon网站及其子域', link: '/ai/dify/project/deploy' },
             {label: '知识库开发记录', link: '/ai/dify/knowledge-base' }, 
           ]
         },
@@ -630,26 +630,6 @@ export default defineConfig({
   })
   ],
   vite: {
-    server: {
-      watch: {
-        // 排除不必要的文件监听,mac风扇一直转
-        ignored: [
-          '**/node_modules/**',
-          '**/.git/**',
-          '**/dist/**',
-          '**/.astro/**',
-          '**/coverage/**',
-          '**/.nyc_output/**',
-          '**/.cache/**',
-          '**/logs/**',
-          '**/*.log',
-          '**/tmp/**',
-          '**/temp/**'
-        ],
-        // 使用轮询模式，减少 CPU 使用
-        usePolling: false,
-      },
-    },
     build: {
       rollupOptions: {
         onwarn(warning, warn) {
