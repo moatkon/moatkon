@@ -2,7 +2,6 @@
 title: 知识库开发记录
 description: 知识库开发记录
 template: doc
-draft: true
 lastUpdated: 2025-07-11 10:56:21
 ---
 
