@@ -25,9 +25,9 @@ docker compose up -d
 ```
 
 ```sh title="访问"
- http://localhost/install 
+ http://localhost/install
 ```
 
 
 #### Dify用例
-[发布moatkon.com](/ai/dify/project/deploy)
+[发布moatkon网站及其子域](/ai/dify/project/deploy)
