@@ -20,6 +20,11 @@ lastUpdated: 2025-08-06 00:31:50
 
 开源: https://github.com/zed-industries/zed
 
+### 非官方Windows版本
+https://github.com/deevus/zed-windows-builds
+
+每天从 main 分支拉取代码并构建发布
+
 ### 使用初体验
 - 快! 我的老电脑终于不卡了。相比于Visual Studio Code来说,电脑再也没有卡过了。
 - 界面太简洁了。非常喜欢❤️ 我就是喜欢简单、高效的工具
