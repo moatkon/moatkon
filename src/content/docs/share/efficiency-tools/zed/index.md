@@ -2,7 +2,7 @@
 title: Zed
 description: Zed
 template: doc
-lastUpdated: 2025-08-06 00:31:50
+lastUpdated: 2025-08-09 12:30:38
 ---
 
 ### 为什么会找到Zed
@@ -33,3 +33,9 @@ https://github.com/deevus/zed-windows-builds
 
 
 > 我之前以为是电脑不行了,都想换电脑了,在使用了Zed后,我觉得可以不用换了。换电脑，成本有点太高了
+
+### 2025.08.09
+用了几天,Zed的体验超出我的预期。我比较喜欢的是以下几点:
+- git
+- terminal  会记住窗口,不像其他IDE每次打开，都要重新打开
+- project manage
