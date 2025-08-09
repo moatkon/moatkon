@@ -2,7 +2,7 @@
 title: Zed
 description: Zed
 template: doc
-lastUpdated: 2025-08-09 12:36:22
+lastUpdated: 2025-08-09 12:38:02
 ---
 
 ### 为什么会找到Zed
@@ -42,4 +42,4 @@ https://github.com/deevus/zed-windows-builds
 
 相比Visual Studio Code,虽然上述功能都有,甚至说Visual Studio Code更胜一筹，但是Visual Studio Code会让我的电脑风扇一直转，就很难受。Zed不会,使用Zed的过程,很安静
 
-我之前使用Sublime Text,也很方便。但是Sublime Text的terminal是插件的形式,很不好用，有小的缺陷。
+我之前使用Sublime Text,也很方便。但是Sublime Text的terminal是插件的形式,这么说吧，外面的插件很难用，即使是termius为Sublime Text做的插件。
