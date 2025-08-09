@@ -1,2 +1,2 @@
-/resume      https://resume.moatkon.com/       301
+/resume/*      https://resume.moatkon.com/       301
 /blog/*      https://blog.moatkon.com/    301
