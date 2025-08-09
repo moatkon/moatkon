@@ -1,15 +1,8 @@
-# :earth_asia: 开源
-
-## :partly_sunny: 核心
-- https://github.com/moatkon/moatkon :point_right: [moatkon.com](https://moatkon.com)
-- https://github.com/moatkon/blog :point_right: [博客](https://blog.moatkon.com)
+## :partly_sunny: Core
+- https://github.com/moatkon/moatkon :point_right: [Moatkon.站点](https://moatkon.com)
+- [Moatkon·博客](https://blog.moatkon.com)
+- [Moatkon·简历](https://moatkon.com/resume)
 
 
 ## :lock: 已归档
 - https://github.com/moatkon/upupor  UGC网站
-
----
-
-# :hourglass: 待开源
-
-#### :point_right: [Moatkon简历](https://moatkon.com/resume)
