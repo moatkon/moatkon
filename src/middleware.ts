@@ -3,19 +3,19 @@ import type { MiddlewareHandler } from "astro";
 
 export const onRequest: MiddlewareHandler = (context, next) => {
   // 路由
-  if (context.url.pathname === "/resume") {
+  if (context.url.pathname === "/resume/") {
     return context.redirect("https://resume.moatkon.com/", 301);
   }
 
-  if (context.url.pathname === "/blog") {
+  if (context.url.pathname === "/blog/") {
     return context.redirect("https://blog.moatkon.com/", 301);
   }
 
-  if (context.url.pathname === "/blog/0") {
+  if (context.url.pathname === "/blog/0/") {
     return context.redirect("https://blog.moatkon.com/", 301);
   }
 
-  if (context.url.pathname === "/blog/1") {
+  if (context.url.pathname === "/blog/1/") {
     return context.redirect("https://blog.moatkon.com/", 301);
   }
 
