@@ -1,7 +1,8 @@
 # :earth_asia: 开源
 
 ## :partly_sunny: 核心
-- https://github.com/moatkon/moatkon  :point_right: [moatkon.com网站开源](https://moatkon.com)
+- https://github.com/moatkon/moatkon :point_right: [moatkon.com](https://moatkon.com)
+- https://github.com/moatkon/blog :point_right: [博客](https://blog.moatkon.com)
 
 
 ## :lock: 已归档
