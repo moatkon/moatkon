@@ -2,7 +2,7 @@
 title: Zed
 description: Zed
 template: doc
-lastUpdated: 2025-08-09 12:30:38
+lastUpdated: 2025-08-09 12:34:11
 ---
 
 ### 为什么会找到Zed
@@ -39,3 +39,5 @@ https://github.com/deevus/zed-windows-builds
 - git
 - terminal  会记住窗口,不像其他IDE每次打开，都要重新打开
 - project manage
+
+相比Visual Studio Code,虽然上述功能都有,甚至说Visual Studio Code更胜一筹，但是Visual Studio Code会让我的电脑风扇一直转，就很难受。Zed不会,使用Zed的过程,很安静
