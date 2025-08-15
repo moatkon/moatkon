@@ -131,6 +131,7 @@ export default defineConfig({
       // pagination: false,
       components: {
         Footer: "./src/components/Footer.astro",
+        Header: './src/components/Header.astro',
       },
       social: [
         // { icon: 'x.com', label: '@moatkon', href: 'https://x.com/moatkon' },
