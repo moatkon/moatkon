@@ -27,12 +27,12 @@
 <style>
   html:is(:not([data-has-hero]), [data-has-sidebar], [data-has-toc]) .progress-scroll-container {
     position: fixed;
-    top: var(--sl-nav-height);
+    top: 0;
     left: 0;
     height: 0.25rem;
     width: 100%;
     background-color: transparent;
-    z-index: 3;
+    z-index: 9999;
   }
 
   #progress-scroll {
