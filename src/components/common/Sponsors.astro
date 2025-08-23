@@ -33,13 +33,17 @@ const sponsors = [
     width: 100%;
     margin-top: 1rem;
   }
+
   a {
     width: 34%;
     flex-grow: 1;
+    text-decoration: none;
   }
+
   a.large {
     width: 100%;
   }
+
   article {
     display: flex;
     background-color: var(--sl-color-gray-6);
@@ -47,16 +51,49 @@ const sponsors = [
     align-items: center;
     padding: 1.5rem;
     width: 100%;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    box-shadow: var(--sl-shadow-sm);
   }
+/* 
   article:hover {
-    background-color: var(--sl-color-gray-1);
+    background-color: var(--sl-color-gray-5);
+    border-color: var(--sl-color-accent);
+    box-shadow: var(--sl-shadow-md);
+  } */
+
+  /* 图片滤镜处理 */
+  article :global(img) {
+    transition: filter 0.3s ease, transform 0.2s ease;
+    opacity: 0.8;
   }
+
   article:hover :global(img) {
+    opacity: 1;
     filter: none !important;
+    transform: translateY(-2px);
   }
+
+  /* Dark 主题下的图片处理 */
+  :root[data-theme='dark'] article :global(img) {
+    filter: grayscale(0.3) brightness(0.9);
+  }
+
+  :root[data-theme='dark'] article:hover :global(img) {
+    filter: grayscale(0) brightness(1);
+  }
+
+  /* Light 主题下的图片处理 */
+  :root[data-theme='light'] article :global(img) {
+    filter: grayscale(0.2) brightness(0.95);
+  }
+
   :root[data-theme='light'] article:hover :global(img) {
-    filter: grayscale(1) invert(1) !important;
+    filter: grayscale(0) brightness(1);
   }
+
+  /* 无障碍访问 - 隐藏标题但保持可访问性 */
   h4 {
     position: absolute;
     width: 1px;
@@ -66,7 +103,22 @@ const sponsors = [
     clip-path: inset(50%);
     overflow: hidden;
   }
-  :root[data-theme='dark'] article :global(img) {
-    filter: grayscale(1) invert(1);
+
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    a {
+      width: 100%;
+    }
+
+    article {
+      padding: 1rem;
+    }
+  }
+
+  /* 焦点状态 */
+  a:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
   }
 </style>
