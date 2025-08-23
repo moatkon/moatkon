@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets'
+import kofi from '../../assets/ko-fi.png'
+
+const sponsors = [
+  {
+    name: 'Ko-fi',
+    img: kofi,
+    url: 'https://ko-fi.com/moatkon',
+    size: 'large'
+  }
+]
+---
+
+<section>
+  {sponsors.map(sponsor => (
+    <a href={sponsor.url} class={sponsor.size ?? ''}>
+      <article>
+        <h4>{sponsor.name}</h4>
+        <Image height={sponsor.size === 'large' ? 24 : 12} src={sponsor.img} alt={sponsor.name}/>
+      </article>
+    </a>
+  ))}
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    gap: 0.25rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  a {
+    width: 34%;
+    flex-grow: 1;
+  }
+  a.large {
+    width: 100%;
+  }
+  article {
+    display: flex;
+    background-color: var(--sl-color-gray-6);
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  article:hover {
+    background-color: var(--sl-color-gray-1);
+  }
+  article:hover :global(img) {
+    filter: none !important;
+  }
+  :root[data-theme='light'] article:hover :global(img) {
+    filter: grayscale(1) invert(1) !important;
+  }
+  h4 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+  }
+  :root[data-theme='dark'] article :global(img) {
+    filter: grayscale(1) invert(1);
+  }
+</style>
