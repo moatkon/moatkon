@@ -141,16 +141,6 @@ export default defineConfig({
           href: "https://github.com/moatkon",
         },
         {
-          icon: "document",
-          label: "resume",
-          href: `https://resume.moatkon.com/`,
-        },
-        {
-          icon: "seti:notebook",
-          label: "notebook",
-          href: `https://blog.moatkon.com/`,
-        },
-        {
           icon: "email",
           label: "gmail",
           href: "mailto:moatkon@gmail.com?subject=Moatkon护城河&body=构建你的护城河",
