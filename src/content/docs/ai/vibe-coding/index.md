@@ -3,7 +3,7 @@ title: Vibe coding
 description: Vibe coding
 template: doc
 draft: false
-lastUpdated: 2025-07-11 17:36:53
+lastUpdated: 2025-08-25 13:57:46
 ---
 
 最近看了MoneyXYZ的 [ALL in AI: 為什麼你要立即開始Vibe Coding?](https://www.youtube.com/watch?v=sgD0UKYQC6Y) 的视频,对Vibe coding有了新的理解。
