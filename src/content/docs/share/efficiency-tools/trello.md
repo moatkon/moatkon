@@ -2,7 +2,7 @@
 title: Trello
 description: Trello
 template: doc
-lastUpdated: 2025-01-27 10:21:46
+lastUpdated: 2025-08-26 16:43:18
 banner:
   content: |
     <a href="https://trello.com/b/mJVv4R8c">Trello·增长计划</a>
@@ -43,9 +43,9 @@ banner:
 ---
 还有很多,这里就不过多展示了。如果想交流Trello的使用经验,可以[联系我](/contact)
 
-<br />
+<!-- <br />
 
 
 <a href="https://trello.com/b/mJVv4R8c" target="_blank" style="cursor: pointer;">
   <img src="/growth/Moatkon-Trello·增长计划.drawio.png" alt="Trello·增长计划" style="cursor: pointer;pointer-events: none; user-select: none;"></img>
-</a>
+</a> -->
