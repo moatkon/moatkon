@@ -2,10 +2,10 @@
 title: Trello
 description: Trello
 template: doc
-lastUpdated: 2025-08-26 16:43:18
-banner:
-  content: |
-    <a href="https://trello.com/b/mJVv4R8c">Trello·增长计划</a>
+lastUpdated: 2025-08-26 16:43:52
+# banner:
+#   content: |
+#     <a href="https://trello.com/b/mJVv4R8c">Trello·增长计划</a>
 ---
 
 ![](/share/efficiency-tools/trello/trello-logo-gradient-blue@2x.png)
