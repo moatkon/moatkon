@@ -74,41 +74,34 @@ if (!hasRequiredConfig) {
 )}
 
 <script>
-  // 获取当前主题
-  function getCurrentTheme() {
-    const theme = document.documentElement.getAttribute('data-theme');
-    return theme === 'light' ? 'light' : 'dark_dimmed';
-  }
-
-  // 更新giscus主题
+  // 使用与网站相同的主题切换机制
   function updateGiscusTheme() {
     const giscusFrame = document.querySelector('iframe.giscus-frame') as HTMLIFrameElement;
     if (giscusFrame && giscusFrame.contentWindow) {
-      const theme = getCurrentTheme();
+      const theme = document.documentElement.getAttribute('data-theme');
+      const giscusTheme = theme === 'light' ? 'light' : 'dark_dimmed';
+
       giscusFrame.contentWindow.postMessage({
-        giscus: { setConfig: { theme } }
+        giscus: { setConfig: { theme: giscusTheme } }
       }, 'https://giscus.app');
     }
   }
 
-  // 隐藏加载指示器并设置初始主题
-  function onGiscusLoad() {
-    const loading = document.getElementById('giscus-loading');
-    if (loading) loading.style.display = 'none';
-
-    // 设置正确的初始主题
-    setTimeout(updateGiscusTheme, 100);
-  }
-
-  // 监听giscus加载
+  // 监听giscus加载并设置初始主题
   const checkInterval = setInterval(() => {
     if (document.querySelector('iframe.giscus-frame')) {
       clearInterval(checkInterval);
-      onGiscusLoad();
-    }
-  }, 500);
 
-  // 监听主题变化
+      // 隐藏加载指示器
+      const loading = document.getElementById('giscus-loading');
+      if (loading) loading.style.display = 'none';
+
+      // 立即设置正确主题
+      updateGiscusTheme();
+    }
+  }, 100);
+
+  // 监听data-theme属性变化，与网站主题切换同步
   new MutationObserver(() => {
     updateGiscusTheme();
   }).observe(document.documentElement, {
@@ -133,6 +126,15 @@ if (!hasRequiredConfig) {
   .giscus-container :global(.giscus-frame) {
     border: none !important;
     background: transparent;
+  }
+
+  /* 使用网站的主题机制 - 与其他组件保持一致 */
+  :root[data-theme="light"] .giscus-container {
+    color-scheme: light;
+  }
+
+  :root[data-theme="dark"] .giscus-container {
+    color-scheme: dark;
   }
 
   /* 加载指示器样式 */
