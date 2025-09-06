@@ -28,23 +28,43 @@ if (!hasRequiredConfig) {
       <p>正在加载评论...</p>
     </div>
 
-    <script
-      is:inline
-      src="https://giscus.app/client.js"
-      data-repo={config.repo}
-      data-repo-id={config.repoId}
-      data-category={config.category}
-      data-category-id={config.categoryId}
-      data-mapping={config.mapping}
-      data-strict={config.strict}
-      data-reactions-enabled={config.reactionsEnabled}
-      data-emit-metadata={config.emitMetadata}
-      data-input-position={config.inputPosition}
-      data-theme="preferred_color_scheme"
-      data-lang={config.lang}
-      data-loading={config.loading}
-      crossorigin="anonymous"
-      async>
+    <script is:inline define:vars={{
+      repo: config.repo,
+      repoId: config.repoId,
+      category: config.category,
+      categoryId: config.categoryId,
+      mapping: config.mapping,
+      strict: config.strict,
+      reactionsEnabled: config.reactionsEnabled,
+      emitMetadata: config.emitMetadata,
+      inputPosition: config.inputPosition,
+      lang: config.lang,
+      loading: config.loading
+    }}>
+      // 动态设置正确的初始主题
+      (function() {
+        const theme = document.documentElement.getAttribute('data-theme');
+        const giscusTheme = theme === 'light' ? 'light' : 'dark_dimmed';
+
+        const script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.setAttribute('data-repo', repo);
+        script.setAttribute('data-repo-id', repoId);
+        script.setAttribute('data-category', category);
+        script.setAttribute('data-category-id', categoryId);
+        script.setAttribute('data-mapping', mapping);
+        script.setAttribute('data-strict', strict);
+        script.setAttribute('data-reactions-enabled', reactionsEnabled);
+        script.setAttribute('data-emit-metadata', emitMetadata);
+        script.setAttribute('data-input-position', inputPosition);
+        script.setAttribute('data-theme', giscusTheme);
+        script.setAttribute('data-lang', lang);
+        script.setAttribute('data-loading', loading);
+        script.crossOrigin = 'anonymous';
+        script.async = true;
+
+        document.getElementById('giscus-container').appendChild(script);
+      })();
     </script>
   </div>
 ) : (
@@ -54,192 +74,47 @@ if (!hasRequiredConfig) {
 )}
 
 <script>
-  // 主题切换监听器 - 优化版本，减少延迟
-  function updateGiscusTheme(forceUpdate = false) {
+  // 获取当前主题
+  function getCurrentTheme() {
     const theme = document.documentElement.getAttribute('data-theme');
+    return theme === 'light' ? 'light' : 'dark_dimmed';
+  }
 
-    // 根据网站主题选择对应的giscus主题
-    let giscusTheme;
-    if (theme === 'light') {
-      giscusTheme = 'light';
-    } else if (theme === 'dark') {
-      giscusTheme = 'dark_dimmed';
-    } else {
-      // 如果没有明确的主题属性，根据系统偏好设置
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      giscusTheme = prefersDark ? 'dark_dimmed' : 'light';
-    }
-
-    // 避免重复设置相同主题
-    if (!forceUpdate && currentGiscusTheme === giscusTheme) {
-      return;
-    }
-
-    currentGiscusTheme = giscusTheme;
-
-    // 查找giscus iframe
+  // 更新giscus主题
+  function updateGiscusTheme() {
     const giscusFrame = document.querySelector('iframe.giscus-frame') as HTMLIFrameElement;
     if (giscusFrame && giscusFrame.contentWindow) {
-      try {
-        // 立即发送主题更新消息
-        giscusFrame.contentWindow.postMessage(
-          {
-            giscus: {
-              setConfig: {
-                theme: giscusTheme
-              }
-            }
-          },
-          'https://giscus.app'
-        );
-
-        // 多次尝试确保主题更新成功
-        setTimeout(() => {
-          if (giscusFrame.contentWindow) {
-            giscusFrame.contentWindow.postMessage(
-              {
-                giscus: {
-                  setConfig: {
-                    theme: giscusTheme
-                  }
-                }
-              },
-              'https://giscus.app'
-            );
-          }
-        }, 100);
-
-      } catch (error) {
-        console.warn('Failed to update giscus theme:', error);
-      }
+      const theme = getCurrentTheme();
+      giscusFrame.contentWindow.postMessage({
+        giscus: { setConfig: { theme } }
+      }, 'https://giscus.app');
     }
   }
 
-  // 隐藏加载指示器
-  function hideLoadingIndicator() {
-    const loadingElement = document.getElementById('giscus-loading');
-    if (loadingElement) {
-      loadingElement.style.display = 'none';
-    }
+  // 隐藏加载指示器并设置初始主题
+  function onGiscusLoad() {
+    const loading = document.getElementById('giscus-loading');
+    if (loading) loading.style.display = 'none';
+
+    // 设置正确的初始主题
+    setTimeout(updateGiscusTheme, 100);
   }
 
-  // 监听giscus加载完成
-  function setupGiscusLoadListener() {
-    // 监听iframe加载
-    const checkGiscusLoaded = () => {
-      const giscusFrame = document.querySelector('iframe.giscus-frame');
-      if (giscusFrame) {
-        hideLoadingIndicator();
-        // 延迟一下确保giscus完全加载后再设置主题
-        setTimeout(() => {
-          updateGiscusTheme();
-        }, 100);
-        return true;
-      }
-      return false;
-    };
-
-    // 定期检查giscus是否已加载
-    const loadCheckInterval = setInterval(() => {
-      if (checkGiscusLoaded()) {
-        clearInterval(loadCheckInterval);
-      }
-    }, 500);
-
-    // 超时处理（10秒后停止检查）
-    setTimeout(() => {
-      clearInterval(loadCheckInterval);
-      hideLoadingIndicator();
-    }, 10000);
-  }
-
-  // 全局变量声明
-  let currentGiscusTheme = '';
-  let themeUpdateTimeout: ReturnType<typeof setTimeout> | null = null;
-
-  // 优化的主题更新函数
-  function immediateThemeUpdate() {
-    if (themeUpdateTimeout) {
-      clearTimeout(themeUpdateTimeout);
+  // 监听giscus加载
+  const checkInterval = setInterval(() => {
+    if (document.querySelector('iframe.giscus-frame')) {
+      clearInterval(checkInterval);
+      onGiscusLoad();
     }
+  }, 500);
 
-    // 添加视觉反馈 - 临时降低透明度
-    const container = document.getElementById('giscus-container');
-    if (container) {
-      container.classList.add('theme-switching');
-    }
-
-    // 立即更新
-    updateGiscusTheme(true);
-
-    // 延迟再次确认更新，并移除视觉反馈
-    themeUpdateTimeout = setTimeout(() => {
-      updateGiscusTheme(true);
-      if (container) {
-        container.classList.remove('theme-switching');
-      }
-    }, 200);
-  }
-
-  // 监听主题变化 - 使用多种方式确保快速响应
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-        immediateThemeUpdate();
-      }
-    });
-  });
-
-  // 开始观察主题变化
-  observer.observe(document.documentElement, {
+  // 监听主题变化
+  new MutationObserver(() => {
+    updateGiscusTheme();
+  }).observe(document.documentElement, {
     attributes: true,
     attributeFilter: ['data-theme']
   });
-
-  // 监听starlight主题切换事件
-  document.addEventListener('starlight:theme-changed', () => {
-    immediateThemeUpdate();
-  });
-
-  // 监听系统主题变化
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      setTimeout(immediateThemeUpdate, 10);
-    });
-  }
-
-  // 监听主题切换按钮点击 - 最快响应
-  function setupThemeButtonListener() {
-    // 查找starlight主题切换按钮
-    const themeButton = document.querySelector('starlight-theme-select button');
-    if (themeButton) {
-      themeButton.addEventListener('click', () => {
-        // 立即响应，不等待DOM更新
-        setTimeout(immediateThemeUpdate, 0);
-      });
-    }
-
-    // 也监听键盘快捷键
-    document.addEventListener('keydown', (e) => {
-      // 如果是主题切换快捷键，立即响应
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'L') {
-        setTimeout(immediateThemeUpdate, 0);
-      }
-    });
-  }
-
-  // 页面加载完成后初始化
-  document.addEventListener('DOMContentLoaded', () => {
-    setupGiscusLoadListener();
-    setupThemeButtonListener();
-  });
-
-  // 如果DOM已经加载完成，立即设置监听器
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupThemeButtonListener);
-  } else {
-    setupThemeButtonListener();
-  }
 </script>
 
 <style>
@@ -254,42 +129,10 @@ if (!hasRequiredConfig) {
     width: 100%;
   }
 
-  /* 移除giscus iframe的边框，让它与网站背景融为一体 */
+  /* 移除giscus边框，与网站融合 */
   .giscus-container :global(.giscus-frame) {
     border: none !important;
-    border-radius: 0;
     background: transparent;
-    box-shadow: none !important;
-  }
-
-  /* 确保giscus内容与网站主题保持一致 */
-  .giscus-container :global(.giscus) {
-    background: transparent;
-  }
-
-  /* 进一步优化giscus样式，确保与网站完美融合 */
-  .giscus-container :global(.giscus-frame) {
-    width: 100% !important;
-    max-width: none !important;
-  }
-
-  /* 确保在不同主题下giscus都能正确显示 */
-  :global([data-theme="light"]) .giscus-container {
-    color-scheme: light;
-  }
-
-  :global([data-theme="dark"]) .giscus-container {
-    color-scheme: dark;
-  }
-
-  /* 添加过渡效果，减少主题切换时的视觉跳跃 */
-  .giscus-container :global(.giscus-frame) {
-    transition: opacity 0.15s ease-in-out;
-  }
-
-  /* 在主题切换时临时降低透明度，减少闪烁感 */
-  .giscus-container.theme-switching :global(.giscus-frame) {
-    opacity: 0.7;
   }
 
   /* 加载指示器样式 */
