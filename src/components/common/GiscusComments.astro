@@ -2,30 +2,14 @@
 
 ---
 <div id="giscus-container" class="giscus-container">
-  <!-- 懒加载占位符 -->
-  <div id="giscus-placeholder" class="giscus-placeholder">
-    <div class="placeholder-content">
-      <div class="comment-icon">💬</div>
-      <p>滚动到此处加载评论</p>
-      <small>使用 GitHub 讨论功能</small>
-    </div>
-  </div>
-
-  <!-- 加载状态指示器 -->
-  <div id="giscus-loading" class="giscus-loading" style="display: none;">
-    <div class="loading-spinner"></div>
-    <p>正在加载评论...</p>
-  </div>
 </div>
 
 <script>
   // 懒加载 Giscus 评论系统
   function initGiscusLazyLoading() {
     const container = document.getElementById('giscus-container');
-    const placeholder = document.getElementById('giscus-placeholder');
-    const loading = document.getElementById('giscus-loading');
 
-    if (!container || !placeholder || !loading) return;
+    if (!container) return;
 
     let giscusLoaded = false;
 
@@ -46,20 +30,7 @@
 
     observer.observe(container);
 
-    // 添加点击占位符加载功能
-    placeholder.addEventListener('click', () => {
-      if (!giscusLoaded) {
-        giscusLoaded = true;
-        loadGiscus();
-        observer.unobserve(container);
-      }
-    });
-
     function loadGiscus() {
-      // 隐藏占位符，显示加载指示器
-      if (placeholder) placeholder.style.display = 'none';
-      if (loading) loading.style.display = 'flex';
-
       // 动态设置正确的初始主题
       const theme = document.documentElement.getAttribute('data-theme');
       const giscusTheme = theme === 'light' ? 'light' : 'dark_dimmed';
@@ -82,41 +53,15 @@
       script.crossOrigin = 'anonymous';
       script.async = true;
 
-      // 监听 Giscus 加载完成
+      // 监听 Giscus 加载完成后设置主题
       script.onload = () => {
-        // 使用 MutationObserver 监听 iframe 的插入
-        const iframeObserver = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
-              if (node.nodeType === Node.ELEMENT_NODE &&
-                  (node as Element).classList.contains('giscus-frame')) {
-                if (loading) loading.style.display = 'none';
-                updateGiscusTheme();
-                iframeObserver.disconnect();
-              }
-            });
-          });
-        });
-
-        if (container) {
-          iframeObserver.observe(container, {
-            childList: true,
-            subtree: true
-          });
-        }
-
-        // 备用方案：如果 5 秒后还没检测到 iframe，隐藏加载指示器
+        // 延迟一下确保 iframe 已经创建
         setTimeout(() => {
-          if (loading && loading.style.display !== 'none') {
-            loading.style.display = 'none';
-          }
-          iframeObserver.disconnect();
-        }, 5000);
+          updateGiscusTheme();
+        }, 1000);
       };
 
-      if (container) {
-        container.appendChild(script);
-      }
+      container.appendChild(script);
     }
 
     function updateGiscusTheme() {
@@ -171,90 +116,7 @@
     color-scheme: dark;
   }
 
-  /* 懒加载占位符样式 */
-  .giscus-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem;
-    text-align: center;
-    border: 2px dashed var(--sl-color-gray-4);
-    border-radius: 0.75rem;
-    background: var(--sl-color-gray-6);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    min-height: 200px;
-  }
 
-  .giscus-placeholder:hover {
-    border-color: var(--sl-color-accent);
-    background: var(--sl-color-accent-low);
-    transform: translateY(-2px);
-  }
-
-  .placeholder-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .comment-icon {
-    font-size: 2.5rem;
-    opacity: 0.7;
-    transition: transform 0.3s ease;
-  }
-
-  .giscus-placeholder:hover .comment-icon {
-    transform: scale(1.1);
-  }
-
-  .giscus-placeholder p {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--sl-color-text);
-  }
-
-  .giscus-placeholder small {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--sl-color-gray-3);
-    opacity: 0.8;
-  }
-
-  /* 加载指示器样式 */
-  .giscus-loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-    color: var(--sl-color-gray-3);
-    min-height: 200px;
-  }
-
-  .loading-spinner {
-    width: 32px;
-    height: 32px;
-    border: 3px solid var(--sl-color-gray-5);
-    border-top: 3px solid var(--sl-color-accent);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
-  }
-
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  .giscus-loading p {
-    margin: 0;
-    font-size: 0.9rem;
-  }
 
   /* 配置警告样式 */
   .giscus-config-warning {
