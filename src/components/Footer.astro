@@ -24,13 +24,11 @@ const shouldShowComments = !isHomepage && !isNotFound && isPrd;
 	  </footer>
 	) : (
 	  <>
-		{/* 添加评论组件 */}
-		{shouldShowComments && <GiscusComments />}
-
 		<Default {...Astro.props}>
 		  <slot />
 		</Default>
 		<GoogleAd />
+		{shouldShowComments && <GiscusComments />}
 	  </>
 	)
   }
