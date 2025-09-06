@@ -2,6 +2,7 @@
 import Default from '@astrojs/starlight/components/Footer.astro';
 import FootSameText from "./common/FootSameText.astro";
 import GoogleAd from "./common/GoogleAd.astro";
+import GiscusComments from "./common/GiscusComments.astro";
 
 // 首页
 const isHomepage = Astro.locals.starlightRoute.id === '';
@@ -10,17 +11,27 @@ const isNotFound = Astro.locals.starlightRoute.id === '404';
 // 是否是生产环境
 const isPrd = process.env.VERCEL_ENV == 'production';
 
+// 判断是否应该显示评论
+// 只在非首页、非404页面、生产环境下显示评论
+const shouldShowComments = !isHomepage && !isNotFound && isPrd;
+
 ---
 {
 	(isHomepage || isNotFound || !isPrd) ? (
 	  <footer>
+		<GiscusComments />
 		<FootSameText />
 	  </footer>
 	) : (
-	  <Default {...Astro.props}>
-		<slot />
-	  </Default>
-	  <GoogleAd />
+	  <>
+		{/* 添加评论组件 */}
+		{shouldShowComments && <GiscusComments />}
+
+		<Default {...Astro.props}>
+		  <slot />
+		</Default>
+		<GoogleAd />
+	  </>
 	)
   }
 

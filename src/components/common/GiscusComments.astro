@@ -1,0 +1,273 @@
+---
+// GiscusComments.astro
+// Giscus评论组件，支持light/dark主题切换
+
+import { giscusConfig, type GiscusConfig } from '../../config/giscus';
+
+interface Props extends Partial<GiscusConfig> {
+  // 允许通过props覆盖默认配置
+}
+
+// 合并默认配置和传入的props
+const config = { ...giscusConfig, ...Astro.props };
+
+// 检查必要的配置是否存在
+const hasRequiredConfig = config.repo && config.repoId && config.categoryId;
+
+// 如果缺少必要配置，显示提示信息
+if (!hasRequiredConfig) {
+  console.warn('Giscus配置不完整，请检查 src/config/giscus.ts 文件');
+}
+---
+
+{hasRequiredConfig ? (
+  <div id="giscus-container" class="giscus-container">
+    <!-- 加载状态指示器 -->
+    <div id="giscus-loading" class="giscus-loading">
+      <div class="loading-spinner"></div>
+      <p>正在加载评论...</p>
+    </div>
+
+    <script
+      is:inline
+      src="https://giscus.app/client.js"
+      data-repo={config.repo}
+      data-repo-id={config.repoId}
+      data-category={config.category}
+      data-category-id={config.categoryId}
+      data-mapping={config.mapping}
+      data-strict={config.strict}
+      data-reactions-enabled={config.reactionsEnabled}
+      data-emit-metadata={config.emitMetadata}
+      data-input-position={config.inputPosition}
+      data-theme="preferred_color_scheme"
+      data-lang={config.lang}
+      data-loading={config.loading}
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+) : (
+  <div class="giscus-config-warning">
+    <p>⚠️ Giscus评论系统加载失败</p>
+  </div>
+)}
+
+<script>
+  // 主题切换监听器
+  function updateGiscusTheme() {
+    const theme = document.documentElement.getAttribute('data-theme');
+
+    // 根据网站主题选择对应的giscus主题
+    let giscusTheme;
+    if (theme === 'light') {
+      giscusTheme = 'light';
+    } else if (theme === 'dark') {
+      giscusTheme = 'dark_dimmed'; // 使用dark_dimmed主题，更适合网站的深色主题
+    } else {
+      // 如果没有明确的主题属性，根据系统偏好设置
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      giscusTheme = prefersDark ? 'dark_dimmed' : 'light';
+    }
+
+    // 查找giscus iframe
+    const giscusFrame = document.querySelector('iframe.giscus-frame') as HTMLIFrameElement;
+    if (giscusFrame && giscusFrame.contentWindow) {
+      try {
+        // 向giscus发送主题更新消息
+        giscusFrame.contentWindow.postMessage(
+          {
+            giscus: {
+              setConfig: {
+                theme: giscusTheme
+              }
+            }
+          },
+          'https://giscus.app'
+        );
+      } catch (error) {
+        console.warn('Failed to update giscus theme:', error);
+      }
+    }
+  }
+
+  // 隐藏加载指示器
+  function hideLoadingIndicator() {
+    const loadingElement = document.getElementById('giscus-loading');
+    if (loadingElement) {
+      loadingElement.style.display = 'none';
+    }
+  }
+
+  // 监听giscus加载完成
+  function setupGiscusLoadListener() {
+    // 监听iframe加载
+    const checkGiscusLoaded = () => {
+      const giscusFrame = document.querySelector('iframe.giscus-frame');
+      if (giscusFrame) {
+        hideLoadingIndicator();
+        // 延迟一下确保giscus完全加载后再设置主题
+        setTimeout(() => {
+          updateGiscusTheme();
+        }, 100);
+        return true;
+      }
+      return false;
+    };
+
+    // 定期检查giscus是否已加载
+    const loadCheckInterval = setInterval(() => {
+      if (checkGiscusLoaded()) {
+        clearInterval(loadCheckInterval);
+      }
+    }, 500);
+
+    // 超时处理（10秒后停止检查）
+    setTimeout(() => {
+      clearInterval(loadCheckInterval);
+      hideLoadingIndicator();
+    }, 10000);
+  }
+
+  // 监听主题变化
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        updateGiscusTheme();
+      }
+    });
+  });
+
+  // 开始观察主题变化
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
+
+  // 页面加载完成后初始化
+  document.addEventListener('DOMContentLoaded', () => {
+    setupGiscusLoadListener();
+  });
+</script>
+
+<style>
+  .giscus-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+
+  /* 确保giscus在不同主题下的样式一致性 */
+  :global(.giscus) {
+    width: 100%;
+  }
+
+  /* 移除giscus iframe的边框，让它与网站背景融为一体 */
+  .giscus-container :global(.giscus-frame) {
+    border: none !important;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none !important;
+  }
+
+  /* 确保giscus内容与网站主题保持一致 */
+  .giscus-container :global(.giscus) {
+    background: transparent;
+  }
+
+  /* 进一步优化giscus样式，确保与网站完美融合 */
+  .giscus-container :global(.giscus-frame) {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* 确保在不同主题下giscus都能正确显示 */
+  :global([data-theme="light"]) .giscus-container {
+    color-scheme: light;
+  }
+
+  :global([data-theme="dark"]) .giscus-container {
+    color-scheme: dark;
+  }
+
+  /* 加载指示器样式 */
+  .giscus-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--sl-color-gray-3);
+  }
+
+  .loading-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--sl-color-gray-5);
+    border-top: 3px solid var(--sl-color-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .giscus-loading p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  /* 配置警告样式 */
+  .giscus-config-warning {
+    background-color: var(--sl-color-orange-low);
+    border: 1px solid var(--sl-color-orange);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .giscus-config-warning p {
+    margin: 0.5rem 0;
+    color: var(--sl-color-orange-high);
+  }
+
+  .giscus-config-warning a {
+    color: var(--sl-color-orange-high);
+    text-decoration: underline;
+  }
+
+  .giscus-config-warning code {
+    background-color: var(--sl-color-gray-6);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: var(--sl-font-mono);
+    font-size: 0.9em;
+  }
+
+  .config-details {
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .config-details summary {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--sl-color-orange-high);
+  }
+
+  .config-details ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .config-details li {
+    margin: 0.25rem 0;
+    color: var(--sl-color-orange-high);
+  }
+</style>
