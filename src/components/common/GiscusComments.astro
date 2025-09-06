@@ -1,77 +1,30 @@
 ---
-// GiscusComments.astro
-// Giscus评论组件，支持light/dark主题切换
 
-import { giscusConfig, type GiscusConfig } from '../../config/giscus';
-
-interface Props extends Partial<GiscusConfig> {
-  // 允许通过props覆盖默认配置
-}
-
-// 合并默认配置和传入的props
-const config = { ...giscusConfig, ...Astro.props };
-
-// 检查必要的配置是否存在
-const hasRequiredConfig = config.repo && config.repoId && config.categoryId;
-
-// 如果缺少必要配置，显示提示信息
-if (!hasRequiredConfig) {
-  console.warn('Giscus配置不完整，请检查 src/config/giscus.ts 文件');
-}
 ---
-
-{hasRequiredConfig ? (
-  <div id="giscus-container" class="giscus-container">
-    <!-- 加载状态指示器 -->
-    <div id="giscus-loading" class="giscus-loading">
-      <div class="loading-spinner"></div>
-      <p>正在加载评论...</p>
-    </div>
-
-    <script is:inline define:vars={{
-      repo: config.repo,
-      repoId: config.repoId,
-      category: config.category,
-      categoryId: config.categoryId,
-      mapping: config.mapping,
-      strict: config.strict,
-      reactionsEnabled: config.reactionsEnabled,
-      emitMetadata: config.emitMetadata,
-      inputPosition: config.inputPosition,
-      lang: config.lang,
-      loading: config.loading
-    }}>
-      // 动态设置正确的初始主题
-      (function() {
-        const theme = document.documentElement.getAttribute('data-theme');
-        const giscusTheme = theme === 'light' ? 'light' : 'dark_dimmed';
-
-        const script = document.createElement('script');
-        script.src = 'https://giscus.app/client.js';
-        script.setAttribute('data-repo', repo);
-        script.setAttribute('data-repo-id', repoId);
-        script.setAttribute('data-category', category);
-        script.setAttribute('data-category-id', categoryId);
-        script.setAttribute('data-mapping', mapping);
-        script.setAttribute('data-strict', strict);
-        script.setAttribute('data-reactions-enabled', reactionsEnabled);
-        script.setAttribute('data-emit-metadata', emitMetadata);
-        script.setAttribute('data-input-position', inputPosition);
-        script.setAttribute('data-theme', giscusTheme);
-        script.setAttribute('data-lang', lang);
-        script.setAttribute('data-loading', loading);
-        script.crossOrigin = 'anonymous';
-        script.async = true;
-
-        document.getElementById('giscus-container').appendChild(script);
-      })();
-    </script>
+<div id="giscus-container" class="giscus-container">
+  <!-- 加载状态指示器 -->
+  <div id="giscus-loading" class="giscus-loading">
+    <div class="loading-spinner"></div>
+    <p>正在加载评论...</p>
   </div>
-) : (
-  <div class="giscus-config-warning">
-    <p>⚠️ Giscus评论系统加载失败</p>
-  </div>
-)}
+
+  <script src="https://giscus.app/client.js"
+      data-repo="moatkon/moatkon"
+      data-repo-id="R_kgDOO_cyBw"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOO_cyB84CvDL1"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
 
 <script>
   // 使用与网站相同的主题切换机制
