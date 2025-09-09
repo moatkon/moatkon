@@ -2,7 +2,7 @@
 title: DDD在公司的实践记录
 description: DDD在公司的实践记录
 template: doc
-lastUpdated: 2025-06-13 22:54:36
+lastUpdated: 2025-09-09 20:14:54
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 6
@@ -116,3 +116,6 @@ com.moatkon.{business-domain}.{module-name-short}
 
 例如: 订单侧的共享内核是order-framework项目,专注于订单内部共享。order-framework项目内部包含order-common、order-types等子module
 
+
+## 感悟
+- DDD的魅力在于代码纠错。前提是基于moudle构建的DDD服务,每个Module的代码都要物理隔离。发现一个功能实现不下去的时候，大概率是你写错module了
