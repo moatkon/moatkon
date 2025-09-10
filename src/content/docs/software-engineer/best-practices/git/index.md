@@ -3,7 +3,7 @@ title: Git
 description: git
 template: doc
 tableOfContents: false
-lastUpdated: 2025-09-10 17:18:18
+lastUpdated: 2025-09-10 17:18:42
 ---
 :::tip
 分享自己在开发中最常用的几个git命令
@@ -186,7 +186,7 @@ git branch <branch-name> # 创建分支
 
 git branch -b <branch-name> # 创建分支并切换到新分支
 
-git checkout -b <new-branch-name> origin/<remote-branch-name> # 从远处分支创建分支并切换
+git checkout -b 分支名 origin/分支名 #直接 checkout 并跟踪远程分支
 
 
 git fetch origin # 拉远处分支到本地,这样在本地就可以看到
@@ -202,7 +202,7 @@ git branch -a #查看所有分支（本地 + 远程）
 
 git branch -r #只看远程分支
 
-git checkout -b 分支名 origin/分支名 #直接 checkout 并跟踪远程分支
+
 ```
 
 #### Git代理设置
