@@ -3,7 +3,7 @@ title: Git
 description: git
 template: doc
 tableOfContents: false
-lastUpdated: 2025-06-26 10:20:41
+lastUpdated: 2025-09-10 17:18:18
 ---
 :::tip
 分享自己在开发中最常用的几个git命令
@@ -198,6 +198,11 @@ git branch -D <branch-name> # 强制删除
 
 git push origin HEAD # 在远程创建一个新分支,很你的本地分支一样
 
+git branch -a #查看所有分支（本地 + 远程）
+
+git branch -r #只看远程分支
+
+git checkout -b 分支名 origin/分支名 #直接 checkout 并跟踪远程分支
 ```
 
 #### Git代理设置
