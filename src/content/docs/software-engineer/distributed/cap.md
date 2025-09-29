@@ -2,7 +2,7 @@
 title: CAP理论
 description: CAP理论
 template: doc
-lastUpdated: 2025-09-29 13:52:04
+lastUpdated: 2025-09-29 13:52:59
 ---
 > 在一次面试经历中,被问到了Base理论和CAP理论,我没有想到会问的这么深,不仅仅是要把Base理论和CAP理论是什么讲出来,还要讲出来自己对这2个理论的理解及应用
 
@@ -49,12 +49,4 @@ flowchart TD
     C --> G[实现方案, 如分布式锁]
     E --> H[实现方案, 如缓存、消息队列]
     
-    style A fill:#e1f5ff
-    style B fill:#e1f5ff
-    style C fill:#e1f5ff
-    style D fill:#e1f5ff
-    style E fill:#e1f5ff
-    style F fill:#e1f5ff
-    style G fill:#e1f5ff
-    style H fill:#e1f5ff
 ```
