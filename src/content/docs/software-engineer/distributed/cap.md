@@ -2,7 +2,7 @@
 title: CAP理论
 description: CAP理论
 template: doc
-lastUpdated: 2024-04-06 21:50:42
+lastUpdated: 2025-09-29 13:52:04
 ---
 > 在一次面试经历中,被问到了Base理论和CAP理论,我没有想到会问的这么深,不仅仅是要把Base理论和CAP理论是什么讲出来,还要讲出来自己对这2个理论的理解及应用
 
@@ -35,3 +35,26 @@ Lynch 教授通过不可辩驳的证明告诉业界的工程师们，如果在�
 和 ZooKeeper 相对的是 Eureka，Eureka 是 Spring Cloud 微服务技术栈中的服务发现组件，Eureka 的各个节点都是平等的，几个节点挂掉不影响正常节点的工作，剩余的节点依然可以提供注册和查询服务，只要有一台 Eureka 还在，就能保证注册服务可用，只不过查到的信息可能不是最新的版本，不保证一致性。
 
 [点击前往Base理论](/software-engineer/distributed/base)
+
+
+### 架构设计思考路径图
+
+```mermaid
+flowchart TD
+    A[明确业务需求] --> B{是否需要强一致性?}
+    B -->|是| C[选择CP模型]
+    B -->|否| D{是否需要高可用性?}
+    D -->|是| E[选择AP模型]
+    D -->|否| F[其他设计]
+    C --> G[实现方案, 如分布式锁]
+    E --> H[实现方案, 如缓存、消息队列]
+    
+    style A fill:#e1f5ff
+    style B fill:#e1f5ff
+    style C fill:#e1f5ff
+    style D fill:#e1f5ff
+    style E fill:#e1f5ff
+    style F fill:#e1f5ff
+    style G fill:#e1f5ff
+    style H fill:#e1f5ff
+```
