@@ -1,8 +1,8 @@
 ---
-title: DDD在公司的实践记录
-description: DDD在公司的实践记录
+title: DDD分层规范文档(module)
+description: DDD分层规范文档(module)
 template: doc
-lastUpdated: 2025-09-09 20:14:54
+lastUpdated: 2025-10-09 21:45:08
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 6
