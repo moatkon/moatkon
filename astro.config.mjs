@@ -1067,6 +1067,7 @@ export default defineConfig({
             { label: "音乐🎵", link: "/share/music" },
             { label: "网站", link: "/share/website" },
             { label: "视频", link: "/share/video" },
+            { label: "UI组件库", link: "/share/ui-component-library" },
           ],
         },
         {
