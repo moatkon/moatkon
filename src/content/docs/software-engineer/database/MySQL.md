@@ -5,7 +5,7 @@ template: doc
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 5
-lastUpdated: 2025-10-16 10:11:08
+lastUpdated: 2025-10-21 16:03:05
 ---
 ### 1. 如何去分析一个MySQL语句
 使用Explain解释计划。
@@ -121,8 +121,8 @@ redo log 主要是节省随机写磁盘的IO消耗；如果没有 redo log，则
 - ALTER 语句中可以指定参数 ALGORITHM 和 LOCK 分别指定 DDL 执行的方式和 DDL 期间 DML 的并发控制。
    - ALGORITHM=INPLACE,表示执行DDL的过程中不发生表拷贝，过程中允许并发执行DML（INPLACE不需要像COPY一样占用大量的磁盘I/O和CPU，减少了数据库负载。同时减少了buffer pool的使用，避免 buffer pool 中原有的查询缓存被大量删除而导致的性能问题）
    - ALGORITHM=COPY，DDL 就会按 MySQL 5.6 之前的方式，采用表拷贝的方式进行，过程中会阻塞所有的DML
-   - ALGORITHEM=DAFAULT，让 MySQL 以尽量保证 DML 并发操作的原则选择执行方式
-   - ALGORITHEM=INSTANT，在数据字典中修改元数据。**生产环境中优先推荐此种方式**。[MySQL 8.0支持](https://dev.mysql.com/blog-archive/mysql-8-0-innodb-now-supports-instant-add-column/)
+   - ALGORITHM=DAFAULT，让 MySQL 以尽量保证 DML 并发操作的原则选择执行方式
+   - ALGORITHM=INSTANT，在数据字典中修改元数据。**生产环境中优先推荐此种方式**。[MySQL 8.0支持](https://dev.mysql.com/blog-archive/mysql-8-0-innodb-now-supports-instant-add-column/)
 - LOCK
   - **NONE**: 表示对 DML 操作不加锁，DDL 过程中允许所有的 DML 操作。
   - EXCLUSIVE: 持有排它锁，阻塞所有的请求，适用于需要尽快完成DDL或者服务库空闲的场景
