@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/markdown-remark": "^6.3.7",
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/markdown-remark": "^6.3.8",
     "@astrojs/react": "^4.4.0",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/starlight": "^0.36.0",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/starlight": "^0.36.1",
     "@astrojs/starlight-docsearch": "^0.6.0",
-    "astro": "^5.14.1",
+    "astro": "^5.15.1",
     "astro-mermaid": "^1.0.3",
     "markdown-it": "^14.1.0",
     "mermaid": "^11.7.0",
