@@ -794,14 +794,7 @@ export default defineConfig({
         {
           label: "钢琴🎹",
           collapsed: true,
-          items: [
-            { label: "钢琴🎹学习", link: "/music/piano/study" },
-            { label: "钢琴🎹乐理知识Part1", link: "/music/piano/study-p1" },
-            { label: "钢琴🎹乐理知识Part2", link: "/music/piano/study-p2" },
-            { label: "钢琴🎹乐理知识Part3", link: "/music/piano/study-p3" },
-            { label: "钢琴🎹乐理知识Part4", link: "/music/piano/study-p4" },
-            { label: "钢琴🎹乐理知识Part5", link: "/music/piano/study-p5" },
-          ],
+          autogenerate: { directory: '/music/piano'},
         },
         {
           label: "分享",
