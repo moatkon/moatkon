@@ -887,16 +887,7 @@ export default defineConfig({
             {
               label: "电影🎬",
               collapsed: true,
-              
-              items: [
-                { label: "电影P1", link: "/share/movie" },
-                { label: "电影P2", link: "/share/movie/p2" },
-                { label: "电影P3", link: "/share/movie/p3" },
-                { label: "电影P4", link: "/share/movie/p4" },
-                { label: "电影P5", link: "/share/movie/p5" },
-                { label: "计划观看", link: "/share/movie/plan-to-watch" },
-                { label: "资源", link: "/share/movie/source" },
-              ],
+              autogenerate: { directory: '/share/movie'},
             },
             {
               label: "实用",
