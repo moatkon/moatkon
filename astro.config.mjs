@@ -418,38 +418,8 @@ export default defineConfig({
             },
             {
               label: "算法",
+              autogenerate: { directory: '/software-engineer/algorithm'},
               collapsed: true,
-              items: [
-                { label: "算法", link: "/software-engineer/algorithm" },
-                {
-                  label: "B树和B+树的区别",
-                  link: "/software-engineer/algorithm/b-tree-and-b-tree-plus",
-                },
-                {
-                  label: "A*算法",
-                  link: "/software-engineer/algorithm/a-star",
-                },
-                {
-                  label: "如何判断一个链表是否有环?",
-                  link: "/software-engineer/algorithm/how-to-determine-whether-a-linked-list-has-a-cycle",
-                },
-                {
-                  label: "限流算法",
-                  link: "/software-engineer/algorithm/limiting-algorithm",
-                },
-                {
-                  label: "负载均衡",
-                  link: "/software-engineer/algorithm/load-balance",
-                },
-                {
-                  label: "雪花算法Id",
-                  link: "/software-engineer/algorithm/snow-flake-id",
-                },
-                {
-                  label: "翻转链表",
-                  link: "/software-engineer/algorithm/how-to-reverse-linkedlist",
-                },
-              ],
             },
             {
               label: "ES",
@@ -469,18 +439,8 @@ export default defineConfig({
             },
             {
               label: "部署",
-              collapsed: true,
-              items: [
-                {
-                  label: "Docker",
-                  link: "/software-engineer/deploy/docker" /* ,badge: { text: '进行中', variant: 'success' } */,
-                },
-                { label: "K8s", link: "/software-engineer/deploy/k8s" },
-                {
-                  label: "Docker搭建开发环境",
-                  link: "/software-engineer/deploy/docker-dev-env" /* ,badge: { text: '进行中', variant: 'success' } */,
-                },
-              ],
+              autogenerate: { directory: '/software-engineer/deploy/'},
+              collapsed: true
             },
             {
               label: "DDD应用架构",
@@ -1012,6 +972,7 @@ export default defineConfig({
             {
               label: "电影🎬",
               collapsed: true,
+              
               items: [
                 { label: "电影P1", link: "/share/movie" },
                 { label: "电影P2", link: "/share/movie/p2" },
