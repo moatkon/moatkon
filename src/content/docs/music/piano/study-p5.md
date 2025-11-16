@@ -1,6 +1,6 @@
 ---
-title: 钢琴🎹乐理知识 第五部分 | 第一本书结束📚
-lastUpdated: 2023-06-20T23:21:13Z
+title: 钢琴🎹乐理知识 第五部分
+lastUpdated: 2025-11-16 16:50:37
 template: doc
 ---
 > 历史回顾: [钢琴🎹乐理知识 第四部分](/music/piano/study-p4)
