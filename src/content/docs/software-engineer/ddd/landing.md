@@ -2,10 +2,14 @@
 title: DDD在公司的实践记录
 description: DDD在公司的实践记录
 template: doc
-lastUpdated: 2025-06-13 23:20:08
+lastUpdated: 2025-11-20 17:13:30
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 6
+sidebar:
+  badge:
+    text: 落地阶段
+    variant: default
 ---
 > 初步实践,有很多不足的地方,请多多指教
 <!-- 

@@ -5,7 +5,11 @@ template: doc
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 3
-lastUpdated: 2025-06-13 23:20:08
+lastUpdated: 2025-11-20 17:13:30
+sidebar:
+  badge:
+    text: 初识
+    variant: default
 ---
 > 有次面试被问到了
 

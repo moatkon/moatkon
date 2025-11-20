@@ -5,7 +5,11 @@ template: doc
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 6
-lastUpdated: 2025-06-13 23:20:08
+lastUpdated: 2025-11-20 17:13:30
+sidebar:
+  badge:
+    text: 分享
+    variant: default
 ---
 ## 现在的MVC开发模式有什么问题?
 现有的业务代码里经常包含了参数校验、数据读取存储、业务计算、调用外部服务、发送消息等多种逻辑。这样的代码样式叫做事务脚本Transaction Script。
