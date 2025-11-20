@@ -445,36 +445,7 @@ export default defineConfig({
             {
               label: "DDD应用架构",
               collapsed: true,
-              items: [
-                {
-                  label: "DDD 领域驱动设计",
-                  link: "/software-engineer/ddd",
-                  badge: { text: "初识", variant: "default" },
-                },
-                {
-                  label: "DDD在公司的实践记录",
-                  link: "/software-engineer/ddd/landing",
-                  badge: { text: "落地阶段", variant: "default" },
-                },
-                {
-                  label: "DDD整体分享",
-                  link: "/software-engineer/ddd/share",
-                  badge: { text: "分享", variant: "default" },
-                },
-                {
-                  label: "DDD项目结构的演变",
-                  link: "/software-engineer/ddd/project-structure",
-                },
-                {
-                  label: "使用DDD来重构现有系统",
-                  link: "/software-engineer/ddd/use-ddd-to-refactor",
-                  badge: { text: "编写中", variant: "default" },
-                },
-                {
-                  label: "DDD分层规范文档(module)",
-                  link: "/software-engineer/ddd/layering-specification",
-                },
-              ],
+              autogenerate: { directory: '/software-engineer/ddd'},
             },
             {
               label: "Linux",

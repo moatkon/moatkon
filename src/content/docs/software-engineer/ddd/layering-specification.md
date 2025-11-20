@@ -1,8 +1,8 @@
 ---
-title: DDD分层规范文档(module)
-description: DDD分层规范文档(module)
+title: DDD分层规范文档
+description: DDD分层规范文档
 template: doc
-lastUpdated: 2025-10-09 21:45:08
+lastUpdated: 2025-11-20 17:09:24
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 6
