@@ -511,25 +511,14 @@ export default defineConfig({
               label: "React",
               collapsed: true,
               badge: { text: "前端", variant: "tip" },
-              items: [
-                { label: "React学习1/n", link: "/software-engineer/react" },
-                { label: "React学习2/n", link: "/software-engineer/react/2" },
-                { label: "React学习3/n", link: "/software-engineer/react/3" },
-                { label: "React学习4/n", link: "/software-engineer/react/4" },
-                { label: "React学习5/n", link: "/software-engineer/react/5" },
-                { label: "React学习6/n", link: "/software-engineer/react/6" },
-                { label: "React学习7/n", link: "/software-engineer/react/7" },
-                { label: "React学习8/n", link: "/software-engineer/react/8" },
-                { label: "React学习9/n", link: "/software-engineer/react/9" },
-              ],
-            },
+              autogenerate: { directory: '/software-engineer/react'},
             // {
             //   label: 'AI Assistant',
             //   collapsed: true,
             //   items: [
             //      {label: 'Claude',link: '/software-engineer/ai-assistant/jetbrains-claude'}
             //   ]
-            // },
+            },
           ],
         },
         {
