@@ -406,17 +406,18 @@ export default defineConfig({
                 {
                   label: "Git",
                   collapsed: false,
-                  items: [
-                    {
-                      label: "Git",
-                      link: "/software-engineer/best-practices/git",
-                      badge: { text: "纯记录", variant: "default" },
-                    },
-                    {
-                      label: "Git分支管理",
-                      link: "/software-engineer/best-practices/git/branch-manage",
-                    },
-                  ],
+                  autogenerate: {directory: "/software-engineer/best-practices/git"},
+                  // items: [
+                  //   {
+                  //     label: "Git",
+                  //     link: "/software-engineer/best-practices/git",
+                  //     badge: { text: "纯记录", variant: "default" },
+                  //   },
+                  //   {
+                  //     label: "Git分支管理",
+                  //     link: "/software-engineer/best-practices/git/branch-manage",
+                  //   },
+                  // ],
                 },
                 {
                   label: "通用能力建设",

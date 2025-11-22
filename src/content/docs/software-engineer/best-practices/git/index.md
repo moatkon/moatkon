@@ -3,7 +3,11 @@ title: Git
 description: git
 template: doc
 tableOfContents: false
-lastUpdated: 2025-09-10 17:18:42
+lastUpdated: 2025-11-22 15:36:08
+sidebar:
+  badge:
+    text: 纯记录
+    variant: default
 ---
 :::tip
 分享自己在开发中最常用的几个git命令

@@ -1,9 +1,9 @@
 ---
-title: Git分支管理——最佳实践
-description: Git分支管理——最佳实践
+title: Git分支管理
+description: Git分支管理
 template: doc
 tableOfContents: false
-lastUpdated: 2025-03-27 00:27:08
+lastUpdated: 2025-11-22 15:36:08
 ---
 
 ### Git分支最佳实践
