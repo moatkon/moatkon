@@ -407,43 +407,11 @@ export default defineConfig({
                   label: "Git",
                   collapsed: false,
                   autogenerate: {directory: "/software-engineer/best-practices/git"},
-                  // items: [
-                  //   {
-                  //     label: "Git",
-                  //     link: "/software-engineer/best-practices/git",
-                  //     badge: { text: "纯记录", variant: "default" },
-                  //   },
-                  //   {
-                  //     label: "Git分支管理",
-                  //     link: "/software-engineer/best-practices/git/branch-manage",
-                  //   },
-                  // ],
                 },
                 {
                   label: "通用能力建设",
                   collapsed: false,
-                  items: [
-                    {
-                      label: "Canal消息处理,写入ES",
-                      link: "/software-engineer/best-practices/general-ability/canal-handler",
-                    },
-                    {
-                      label: "刷数",
-                      link: "/software-engineer/best-practices/general-ability/flash-data",
-                    },
-                    {
-                      label: "数量一致性校验",
-                      link: "/software-engineer/best-practices/general-ability/consistency-check",
-                    },
-                    {
-                      label: "操作ES",
-                      link: "/software-engineer/best-practices/general-ability/es-operate",
-                    },
-                    {
-                      label: "数据清理",
-                      link: "/software-engineer/best-practices/general-ability/data-clean",
-                    },
-                  ],
+                  autogenerate: {directory: "/software-engineer/best-practices/general-ability/"},
                 },
                 {
                   label: "如何设置超时",
