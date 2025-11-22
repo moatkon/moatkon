@@ -1,9 +1,13 @@
 ---
-title: React-Start
+title: React Step0
 description: React学习
 template: doc
-lastUpdated: 2025-11-22 15:31:19
+lastUpdated: 2025-11-22 15:33:17
 tableOfContents: false
+sidebar:
+  badge:
+    text: Start
+    variant: default
 banner:
   content: 已经学习
 ---
