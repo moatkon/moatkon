@@ -8,14 +8,9 @@ import starlightScrollToTop from "starlight-scroll-to-top";
 import starlightLlmsTxt from "starlight-llms-txt";
 import mermaid from "astro-mermaid";
 import starlightAutoDrafts from "starlight-auto-drafts";
-// import starlightDocSearch from '@astrojs/starlight-docsearch';
-// https://github.com/matteotagliatti/astro-music-player
-// https://github.com/AREA44/astro-audionaut
 
 const siteUrl = isPrd ? "https://moatkon.com" : "http://localhost:4321";
 
-// https://astro.build/config
-// 详细配置方式 https://docs.astro.build/zh-cn/reference/configuration-reference/
 export default defineConfig({
   site: siteUrl,
   integrations: [
@@ -158,56 +153,12 @@ export default defineConfig({
             {
               label: "基础",
               collapsed: true,
-              items: [
-                {
-                  label: "ArrayList",
-                  link: "/software-engineer/base/arraylist",
-                },
-                { label: "HashMap", link: "/software-engineer/base/hashmap" },
-                {
-                  label: "ConcurrentHashMap",
-                  link: "/software-engineer/base/concurrenthashmap",
-                },
-                {
-                  label: "Java锁",
-                  link: "/software-engineer/base/javalock" /* ,badge:  { text: '进行中', variant: 'success' } */,
-                },
-                {
-                  label: "AQS 抽象队列同步器",
-                  link: "/software-engineer/base/aqs" /* ,badge: {text: '重绘了图片',variant: 'tip'} */,
-                },
-                {
-                  label: "ReentrantLock",
-                  link: "/software-engineer/base/reentrantlock",
-                },
-                {
-                  label: "ThreadLocal",
-                  link: "/software-engineer/base/threadlocal",
-                },
-                { label: "volatile", link: "/software-engineer/base/volatile" },
-                {
-                  label: "JVM相关",
-                  collapsed: false,
-                  items: [
-                    {
-                      label: "JVM基础知识",
-                      link: "/software-engineer/base/jvm",
-                    },
-                    {
-                      label: "JVM线上排查方法",
-                      link: "/software-engineer/base/jvm-resolve",
-                    },
-                    {
-                      label: "垃圾回收算法",
-                      link: "/software-engineer/base/jvm-gc-algo",
-                    },
-                  ],
-                },
-                { label: "线程", link: "/software-engineer/base/thread" },
-                { label: "线程池", link: "/software-engineer/base/threadpool" },
-                { label: "IO", link: "/software-engineer/base/io" },
-                { label: "网络", link: "/software-engineer/base/network" },
-              ],
+              autogenerate:{directory:"/software-engineer/base"},
+            },
+            {
+              label: "JVM",
+              collapsed: true,
+              autogenerate:{directory:"/software-engineer/jvm"},
             },
             {
               label: "数据库",

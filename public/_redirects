@@ -1,2 +1,8 @@
 /resume/*      https://resume.moatkon.com/       301
-/blog/*      https://blog.moatkon.com/    301
+/blog/*        https://blog.moatkon.com/         301
+
+/software-engineer/base/jvm-gc-algo/     /software-engineer/jvm/gc-algo/    301
+/software-engineer/base/jvm/             /software-engineer/jvm/            301
+/software-engineer/base/jvm-resolve/     /software-engineer/jvm/resolve/    301
+
+

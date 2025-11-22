@@ -1,5 +1,5 @@
 ---
-title: 垃圾回收算法
+title: JVM垃圾回收算法
 description: 垃圾回收算法
 template: doc
 lastUpdated: 2024-04-06 21:42:35
