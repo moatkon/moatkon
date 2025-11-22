@@ -2,7 +2,7 @@
 title: "解决Elasticsearch请求不能执行,I/O reactor status:STOPPED"
 description: "解决Elasticsearch报错: Request cannot be executed; I/O reactor status: STOPPED"
 template: doc
-lastUpdated: 2025-02-25 01:27:42
+lastUpdated: 2025-11-22 15:49:03
 tableOfContents: false
 ---
 

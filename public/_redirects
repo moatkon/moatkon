@@ -4,5 +4,6 @@
 /software-engineer/base/jvm-gc-algo/     /software-engineer/jvm/gc-algo/    301
 /software-engineer/base/jvm/             /software-engineer/jvm/            301
 /software-engineer/base/jvm-resolve/     /software-engineer/jvm/resolve/    301
-/software-engineer/best-practices/linux/log /software-engineer/linux/log 301
+/software-engineer/best-practices/linux/log/ /software-engineer/linux/log/    301
+/software-engineer/best-practices/resolve-es-client-io-reactor-status-stopped/ /software-engineer/es/resolve-es-client-io-reactor-status-stopped/ 301
 

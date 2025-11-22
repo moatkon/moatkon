@@ -327,18 +327,7 @@ export default defineConfig({
             {
               label: "ES",
               collapsed: true,
-              items: [
-                {
-                  label: "解决Elasticsearch请求不能执行",
-                  link: "/software-engineer/best-practices/resolve-es-client-io-reactor-status-stopped",
-                  badge: { text: "线上排查", variant: "danger" },
-                },
-                {
-                  label: "应用接入ES,通用逻辑抽象",
-                  link: "/software-engineer/es/es-integration-common-logic",
-                },
-                { label: "正确的使用ES", link: "/software-engineer/es/es-use" },
-              ],
+              autogenerate: { directory: '/software-engineer/es/'},
             },
             {
               label: "部署",
