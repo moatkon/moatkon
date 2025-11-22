@@ -1,9 +1,13 @@
 ---
-title: "解决Elasticsearch请求不能执行,I/O reactor status:STOPPED"
+title: 解决Elasticsearch请求不能执行
 description: "解决Elasticsearch报错: Request cannot be executed; I/O reactor status: STOPPED"
 template: doc
-lastUpdated: 2025-11-22 15:49:03
+lastUpdated: 2025-11-22 15:50:32
 tableOfContents: false
+sidebar:
+  badge:
+    text: 线上排查
+    variant: danger
 ---
 
 #### 异常报错
