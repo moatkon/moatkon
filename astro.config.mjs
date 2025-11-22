@@ -272,50 +272,17 @@ export default defineConfig({
                 {
                   label: "Spring框架",
                   collapsed: false,
-                  items: [
-                    {
-                      label: "Spring,SpringBoot,SpringMVC",
-                      link: "/software-engineer/framework/spring",
-                    },
-                    {
-                      label: "Spring Cloud",
-                      link: "/software-engineer/framework/spring/spring-cloud",
-                    },
-                    {
-                      label: "AOP",
-                      link: "/software-engineer/framework/spring/aop",
-                    },
-                    {
-                      label: "IOC、DI",
-                      link: "/software-engineer/framework/spring/ioc_di",
-                    },
-                    {
-                      label: "Spring事务",
-                      link: "/software-engineer/framework/spring/transaction-impl-principle",
-                    },
-                    {
-                      label: "Spring事务失效的场景",
-                      link: "/software-engineer/framework/spring/transaction-invalid",
-                    },
-                  ],
+                  autogenerate: { directory: '/software-engineer/framework/spring/'},
                 },
                 {
                   label: "Dubbo框架",
                   collapsed: false,
-                  items: [
-                    {
-                      label: "Dubbo",
-                      link: "/software-engineer/framework/dubbo",
-                    },
-                    {
-                      label: "RPC",
-                      link: "/software-engineer/framework/dubbo/rpc",
-                    },
-                  ],
+                  autogenerate: { directory: '/software-engineer/framework/dubbo/'},
                 },
                 {
                   label: "MyBatis",
-                  link: "/software-engineer/framework/mybatis",
+                  collapsed: false,
+                  autogenerate: { directory: '/software-engineer/framework/mybatis/'},
                 },
               ],
             },
