@@ -312,55 +312,7 @@ export default defineConfig({
             {
               label: "分布式",
               collapsed: true,
-              items: [
-                {
-                  label: "分布式事务",
-                  items: [
-                    {
-                      label: "分布式事务",
-                      link: "/software-engineer/distributed/distributed-transactions",
-                    },
-                    {
-                      label: "分布式事务之Seata",
-                      link: "/software-engineer/distributed/distributed-transactions-of-seata",
-                    },
-                  ],
-                },
-                {
-                  label: "分布式锁",
-                  link: "/software-engineer/distributed/distributed-lock" /* ,badge: { text: '进行中', variant: 'success' } */,
-                },
-                {
-                  label: "Zookeeper",
-                  link: "/software-engineer/distributed/zookeeper",
-                },
-                {
-                  label: "CAP理论",
-                  link: "/software-engineer/distributed/cap",
-                },
-                {
-                  label: "Base理论",
-                  link: "/software-engineer/distributed/base",
-                },
-                // 暂时隐藏
-                // {label: '分布式链路追踪', link: '/software-engineer/distributed/trace'},
-                // {
-                // 	label: 'Nacos架构与原理',
-                // 	badge: { text: '进行中', variant: 'tip' },
-                // 	collapsed: true,
-                // 	items: [
-                // 		{label: 'README', link: '/software-engineer/nacos' },
-                // 	],
-                // },
-                {
-                  label: "雪花算法在分布式场景下生成重复的Id",
-                  link: "/software-engineer/distributed/snowflake-work-id",
-                },
-                {
-                  label: "分布式任务调度分片",
-                  link: "/software-engineer/distributed/task-sharding",
-                },
-              ],
+              autogenerate: { directory: '/software-engineer/distributed/'},
             },
             {
               label: "框架",
