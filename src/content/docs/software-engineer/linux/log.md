@@ -3,7 +3,7 @@ title: 在Liunx上筛查日志技巧
 description: 在Liunx上筛查日志技巧
 template: doc
 tableOfContents: false
-lastUpdated: 2024-03-12 23:43:38
+lastUpdated: 2025-11-22 15:46:17
 ---
 :::tip
 日常工作中最常用的一些命令

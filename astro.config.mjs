@@ -353,20 +353,7 @@ export default defineConfig({
             {
               label: "Linux",
               collapsed: true,
-              items: [
-                {
-                  label: "在Liunx上筛查日志技巧",
-                  link: "/software-engineer/best-practices/linux/log",
-                },
-                {
-                  label: "Linux命令",
-                  link: "/software-engineer/linux/command",
-                },
-                {
-                  label: '本站"上次更新时间"自动维护',
-                  link: "/software-engineer/linux/last-updated",
-                },
-              ],
+              autogenerate: {directory: "/software-engineer/linux/"},
             },
             {
               label: "Spring Cloud Gateway",
