@@ -2,7 +2,11 @@
 title: Spring Cloud Gateway网关使用规范
 description: Spring Cloud Gateway网关使用规范
 template: doc
-lastUpdated: 2025-06-13 22:53:01
+lastUpdated: 2025-11-22 15:43:09
+sidebar:
+  badge:
+    text: 网关使用规范
+    variant: tip
 ---
 ### 1. 引言
 

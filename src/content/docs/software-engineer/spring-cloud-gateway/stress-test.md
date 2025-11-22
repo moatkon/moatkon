@@ -2,7 +2,11 @@
 title: Spring Cloud Gateway 网关压测
 description: Spring Cloud Gateway 网关压测
 template: doc
-lastUpdated: 2025-06-13 23:01:18
+lastUpdated: 2025-11-22 15:43:09
+sidebar:
+  badge:
+    text: 压测
+    variant: tip
 ---
 #### 背景
 公司的API网关出现了重启

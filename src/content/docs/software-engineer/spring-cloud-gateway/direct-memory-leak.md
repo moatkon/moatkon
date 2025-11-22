@@ -2,7 +2,11 @@
 title: Spring Cloud Gateway内存泄漏排查
 description: Spring Cloud Gateway 内存泄漏排查排查
 template: doc
-lastUpdated: 2025-06-13 23:01:18
+lastUpdated: 2025-11-22 15:43:09
+sidebar:
+  badge:
+    text: 线上排查
+    variant: danger
 ---
 ### 背景
 线上Spring Cloud Gateway网关运行一段时间后会自动重启。通过Prometheus监控可以观察到现象是内存使用量持续上升

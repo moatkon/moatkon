@@ -3,7 +3,11 @@ title: Spring Cloud Gateway Reactive
 description: Spring Cloud Gateway Reactive
 template: doc
 draft: false
-lastUpdated: 2025-06-13 23:01:18
+lastUpdated: 2025-11-22 15:43:09
+sidebar:
+  badge:
+    text: 响应式
+    variant: tip
 ---
 
 ## 背景

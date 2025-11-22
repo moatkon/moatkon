@@ -371,28 +371,7 @@ export default defineConfig({
             {
               label: "Spring Cloud Gateway",
               collapsed: true,
-              items: [
-                {
-                  label: "内存泄漏排查",
-                  link: "/software-engineer/spring-cloud-gateway/direct-memory-leak",
-                  badge: { text: "线上排查", variant: "danger" },
-                },
-                {
-                  label: "网关压测",
-                  link: "/software-engineer/spring-cloud-gateway/stress-test",
-                  badge: { text: "压测", variant: "tip" },
-                },
-                {
-                  label: "使用响应式Redis替代同步Redis",
-                  link: "/software-engineer/spring-cloud-gateway/reactive",
-                  badge: { text: "响应式", variant: "tip" },
-                },
-                {
-                  label: "网关规范",
-                  link: "/software-engineer/spring-cloud-gateway/usage-specification",
-                  badge: { text: "规范", variant: "tip" },
-                },
-              ],
+              autogenerate: {directory: "/software-engineer/spring-cloud-gateway/"},
             },
             {
               label: "最佳实践",
