@@ -3,7 +3,11 @@ title: One UI
 description: One UI
 template: doc
 tableOfContents: false
-lastUpdated: 2024-12-08 11:12:23
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: 操作系统
+    variant: note
 ---
 
 :::note[我对于OneUI的评价]

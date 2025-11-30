@@ -2,7 +2,11 @@
 title: Zed
 description: Zed
 template: doc
-lastUpdated: 2025-08-09 12:38:02
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: IDE
+    variant: note
 ---
 
 ### 为什么会找到Zed

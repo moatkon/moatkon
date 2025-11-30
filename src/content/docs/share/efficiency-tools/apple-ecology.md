@@ -2,7 +2,11 @@
 title: 苹果生态
 description: 苹果生态
 template: doc
-lastUpdated: 2024-07-20 16:27:11
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: Apple
+    variant: note
 ---
 
 :::note[前提]

@@ -2,7 +2,11 @@
 title: 罗技MX Master
 description: 效率工具
 template: doc
-lastUpdated: 2024-07-21 02:57:39
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: 鼠标
+    variant: note
 ---
 #### 购买理由
 1. 对自己好点。因为自己的主业是软件工程师,在工作中会长时间使用鼠标。而公司的鼠标,包括我家里使用的鼠标是比较传统的,对手部没有很好的支撑,长时间使用下来手会累。所以想换一个符合人体工程学的键盘,让使用鼠标的体验有所提升。故最终选择了[MX Master](https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAQcJK1olXDYCVV9cC0kQBG0IH1slGVlaCgFtUQ5SQi0DBUVNGFJeSwUIFxlJX3EIGloUXgQFU1xdDEsIWipURmtLWV9JMTYjai5zcRB-GwNTQ1hWM1oLBEcnAl8LGlsRWgAHVlpVOHsXBF9edVsUXAcDVV9eDUInAl8IHVgVWQcCUFdaDUoQM2gIEmtOCGgGAQ4JABxDBmcMS1hAbTYyV25aCEIDBR1JSU8TLzYyVG5eOEsWA2cLG1sUVAQLSF5YC00XB3MIHVgVWQcCUFhbDEMTM20JGl8cbTYyFBpeajVvSylPWBhiLn9gDDc_bywUVi51dVlXCFVyFwAfUQxzQhBcQgBNGDYHZA)

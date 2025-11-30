@@ -422,78 +422,7 @@ export default defineConfig({
             {
               label: "效率工具",
               collapsed: true,
-              items: [
-                { label: "README", link: "/share/efficiency-tools" },
-                {
-                  label: "画板",
-                  collapsed: true,
-                  items: [
-                    {
-                      label: "Milanote",
-                      link: "/share/efficiency-tools/board/milanote",
-                    },
-                    {
-                      label: "小画桌",
-                      link: "/share/efficiency-tools/board/xiaohuazhuo",
-                    },
-                  ],
-                },
-                {
-                  label: "Trello",
-                  link: "/share/efficiency-tools/trello",
-                  badge: { text: "个人重度依赖", variant: "note" },
-                },
-                {
-                  label: "Focalboard",
-                  link: "/share/efficiency-tools/board/focalboard",
-                  badge: { text: "开源", variant: "note" },
-                },
-                {
-                  label: "罗技MX Master",
-                  link: "/share/efficiency-tools/logi-mx-master",
-                  badge: { text: "鼠标", variant: "note" },
-                },
-                {
-                  label: "罗技MX Keys",
-                  link: "/share/efficiency-tools/logi-mx-keys",
-                  badge: { text: "键盘", variant: "note" },
-                },
-                {
-                  label: "Apple生态",
-                  link: "/share/efficiency-tools/apple-ecology",
-                  badge: { text: "Apple", variant: "note" },
-                },
-                {
-                  label: "WF-1000XM5",
-                  link: "/share/efficiency-tools/wf-1000xm5",
-                  badge: { text: "耳机", variant: "note" },
-                },
-                {
-                  label: "LocalSend",
-                  link: "/share/efficiency-tools/localsend",
-                  badge: { text: "文件传输", variant: "note" },
-                },
-                {
-                  label: "One UI",
-                  link: "/share/efficiency-tools/one-ui",
-                  badge: { text: "操作系统", variant: "note" },
-                },
-                {
-                  label: "Arc浏览器",
-                  link: "/share/efficiency-tools/arc",
-                  badge: { text: "浏览器", variant: "note" },
-                },
-                {
-                  label: "飞书",
-                  link: "/share/efficiency-tools/lark",
-                  badge: { text: "Lark", variant: "note" },
-                },
-                {
-                  label: "Zed",
-                  link: "/share/efficiency-tools/zed",
-                  badge: { text: "IDE", variant: "note" },
-                },
-              ],
+              autogenerate: { directory: '/share/efficiency-tools'},
             },
             {
               label: "电影🎬",

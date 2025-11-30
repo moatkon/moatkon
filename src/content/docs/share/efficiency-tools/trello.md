@@ -2,7 +2,11 @@
 title: Trello
 description: Trello
 template: doc
-lastUpdated: 2025-08-26 16:43:52
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: 个人重度依赖
+    variant: note
 # banner:
 #   content: |
 #     <a href="https://trello.com/b/mJVv4R8c">Trello·增长计划</a>

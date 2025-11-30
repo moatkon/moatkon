@@ -1,9 +1,9 @@
 ---
-title: 效率工具
-description: 效率工具
+title: 首页
+description: 首页
 template: doc
 tableOfContents: false
-lastUpdated: 2025-01-27 10:21:46
+lastUpdated: 2025-11-30 17:40:19
 ---
 这里主要分享好用的工具,来提升工作效率。从而节省出大量的时间来给到美好的生活
 

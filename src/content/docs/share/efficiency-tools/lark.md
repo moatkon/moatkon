@@ -2,7 +2,11 @@
 title: 飞书
 description: 飞书
 template: doc
-lastUpdated: 2025-06-23 00:31:50
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: Lark
+    variant: note
 ---
 
 飞书官网: www.feishu.cn

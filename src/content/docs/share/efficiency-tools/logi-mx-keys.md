@@ -3,7 +3,11 @@ title: 罗技MX Keys
 description: 罗技MX Keys
 template: doc
 tableOfContents: false
-lastUpdated: 2024-07-21 02:57:39
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: 键盘
+    variant: note
 ---
 #### 购买理由
 1. 因为买了[罗技MX Master](/share/efficiency-tools/logi-mx-master),需要想买罗技[MX Keys](https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAQcJK1olXDYCVV9cDEMfCm8OHlklGVlaCgFtUQ5SQi0DBUVNGFJeSwUIFxlJX3EIGloUWQ4KXV5bDUkIWipURmtuHw9iEQ4cbylefS13c1kTJkRAVV0LBEcnAl8LGlsRWgAHVlpVOHsXBF9edVsUXAcDVV9eDUInAl8IHVgVWQcCUlhbDUMTM2gIEmtOCGgGAQ4JABxDBmcMS1hAbTYyV25aCEIDBR1JSU8TLzYyVG5eOEsWA2cKGlkWXg4ASF5dC0kWB3MIHVgVWQcCUl9fCUMeM20JGl8cbTYyKC0oTh8UASYMaCRCBl15HCQGVDITSxpMdVloNmZgFT8Na09ERBhdaTJzOjYHZA)。于是就买了。

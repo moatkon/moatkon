@@ -4,7 +4,11 @@ description: Focalboard
 template: doc
 tableOfContents: false
 draft: false
-lastUpdated: 2024-12-08 10:43:44
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: 开源
+    variant: note
 ---
 
 ### 先看

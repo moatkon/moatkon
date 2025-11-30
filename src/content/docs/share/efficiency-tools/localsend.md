@@ -2,7 +2,11 @@
 title: LocalSend——文件传输
 description: LocalSend
 template: doc
-lastUpdated: 2024-09-17 00:55:04
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: 文件传输
+    variant: note
 ---
 
 ### 背景

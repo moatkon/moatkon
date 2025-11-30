@@ -1,9 +1,13 @@
 ---
-title: 效率工具
-description: 效率工具
+title: Arc
+description: Arc
 template: doc
 tableOfContents: false
-lastUpdated: 2025-01-27 16:01:33
+lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  badge:
+    text: 浏览器
+    variant: note
 ---
 
 官网: [Arc浏览器官网](https://arc.net?utm_source=moatkon.com)
