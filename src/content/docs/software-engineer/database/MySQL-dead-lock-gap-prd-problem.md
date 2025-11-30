@@ -1,8 +1,12 @@
 ---
-title: MySQL死锁-线上问题排查案例
+title: MySQL死锁排查案例
 description: MySQL死锁
 template: doc
-lastUpdated: 2025-04-02 23:16:12
+lastUpdated: 2025-11-30 17:19:23
+sidebar:
+  badge:
+    text: 线上排查
+    variant: danger
 ---
 ## 业务处理流程示意图
 ![](/software-engineer/mysql/Moatkon-mysql-deal-lock-of-gap-lock.drawio.png)
