@@ -53,24 +53,6 @@ export default defineConfig({
           borderRadius: "50",
         }),
         starlightImageZoom({ showCaptions: false }),
-        // starlightBlog({
-        //   title: 'Blog',
-        //   authors: {
-        //     moatkon: {
-        //       name: 'Moatkon',
-        //       picture: '/moatkon/moatkon.svg',
-        //       url: isPrd ? 'https://www.moatkon.com/contact' : 'http://localhost:4321/contact'
-        //     },
-        //   },
-        //   prefix: 'blog' // 文档目录也要修改
-        // }),
-        // 搜索效果不好,注释掉即恢复到以前的检索
-        // starlightDocSearch({
-        //   appId: 'JF4GTEW6FH',
-        //   apiKey: 'd06e6625fb77b9016e634d03927e62a2',
-        //   indexName: 'moatkon',
-        //   maxResultsPerGroup: 10
-        // })
       ],
       title: isPrd ? "Moatkon" : "Dev",
       lastUpdated: true,
@@ -167,47 +149,7 @@ export default defineConfig({
             {
               label: "数据库",
               collapsed: true,
-              items: [
-                {
-                  label: "MySQL",
-                  items: [
-                    {
-                      label: "MySQL",
-                      link: "/software-engineer/database/mysql",
-                    },
-                    {
-                      label: "MySQL锁",
-                      link: "/software-engineer/database/mysql-lock" /* ,badge:  { text: '进行中', variant: 'success' } */,
-                    },
-                    {
-                      label: "MySQL死锁",
-                      link: "/software-engineer/database/mysql-dead-lock" /* ,badge:  { text: '进行中', variant: 'success' } */,
-                    },
-                    {
-                      label: "MySQL QA",
-                      link: "/software-engineer/database/mysql-qa",
-                    },
-                    {
-                      label: "MySQL死锁问题排查",
-                      link: "/software-engineer/database/mysql-dead-lock-gap-prd-problem",
-                      badge: { text: "线上问题排查", variant: "danger" },
-                    },
-                    {
-                      label: "MySQL Buffer Pool",
-                      link: "/software-engineer/database/mysql-buffer-pool",
-                    },
-                  ],
-                },
-                {
-                  label: "MongoDB",
-                  items: [
-                    {
-                      label: "MongoDB初见",
-                      link: "/software-engineer/database/mongodb",
-                    },
-                  ],
-                },
-              ],
+              autogenerate:{directory:"/software-engineer/database/"},
             },
             {
               label: "消息队列",
