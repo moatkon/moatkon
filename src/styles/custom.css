@@ -367,3 +367,8 @@
     font-weight: 800;
     letter-spacing: -0.02em;
   }
+
+
+.main-pane {
+  --sl-content-margin-inline: auto;
+}
