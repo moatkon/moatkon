@@ -2,7 +2,8 @@
 title: 分布式
 description: 分布式
 template: doc
-lastUpdated: 2023-12-12 00:21:25
+draft: true
+lastUpdated: 2025-11-30 15:47:50
 ---
 <!-- ### 非分布式场景下,正常线程进程同步的机制有哪些？
 - 互斥：互斥的机制，保证同一时间只有一个线程可以操作共享资源 synchronized，Lock等
