@@ -9,6 +9,7 @@ import starlightLlmsTxt from "starlight-llms-txt";
 import mermaid from "astro-mermaid";
 import starlightAutoDrafts from "starlight-auto-drafts";
 import starlightPageActions from 'starlight-page-actions';
+import starlightUiTweaks from 'starlight-ui-tweaks';
 
 const siteUrl = isPrd ? "https://moatkon.com" : "http://localhost:4321";
 
@@ -37,6 +38,19 @@ export default defineConfig({
         root: { label: "简体中文", lang: "zh-CN" },
       },
       plugins: [
+        starlightUiTweaks({
+          // navbarLinks: [
+          //   { label: "Documentation", href: "/docs" },
+          //   { label: "API Reference", href: "/api" },
+          // ],
+          ad: { // 不能赋写TableOfContents组件
+            image: "/kofi.svg",
+            title: "Coffee",
+            description: "",
+            buttonLabel: "去点一杯咖啡",
+            buttonHref: "https://ko-fi.com/moatkon",
+          },
+        }),
         starlightSidebarSwipe(),
         starlightPageActions({
           baseUrl: "https://moatkon.com/",
@@ -114,7 +128,7 @@ export default defineConfig({
       components: {
         Footer: "./src/components/Footer.astro",
         Header: './src/components/Header.astro',
-        TableOfContents: './src/components/TableOfContents.astro',
+        // TableOfContents: './src/components/TableOfContents.astro',
       },
       social: [
         // { icon: 'x.com', label: '@moatkon', href: 'https://x.com/moatkon' },

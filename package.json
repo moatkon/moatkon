@@ -29,6 +29,7 @@
     "starlight-scroll-to-top": "0.1.1",
     "starlight-showcases": "^0.3.0",
     "starlight-sidebar-swipe": "^0.1.1",
+    "starlight-ui-tweaks": "^0.1.0",
     "starlight-view-modes": "^0.7.0",
     "typescript": "^5.7.2"
   }
