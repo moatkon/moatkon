@@ -266,11 +266,6 @@ export default defineConfig({
               label: "最佳实践",
               collapsed: true,
               items: [
-                // {label: 'README', link: '/software-engineer/topics/readme'/* ,badge: { text: '进行中', variant: 'success' } */ },
-                // {label: '电商ERP', link: '/software-engineer/topics/e-commerce/erp',badge: { text: '编写中', variant: 'default' } },
-                // {label: '独立站ToC', link: '/software-engineer/topics/e-commerce/to-c',badge: { text: '编写中', variant: 'default' } },
-                // {label: '独立站流量广告', link: '/software-engineer/collapsed: falsetopics/e-commerce/traffic-advertising',badge: { text: '编写中', variant: 'default' } },
-                // {label: '社交', link: '/software-engineer/topics/social-contact',badge: { text: '编写中', variant: 'default' } },
                 {
                   label: "Git",
                   collapsed: false,
@@ -332,29 +327,11 @@ export default defineConfig({
                 },
               ],
             },
-            // {
-            //   label: '电商独立站',
-            //   collapsed: false,
-            //   items: [
-            //     {label: '搜索广告', link: '/software-engineer/best-practices/business/advertising/google-search',badge: { text: '流量广告', variant: 'default' },},
-            //     // {label: 'README', link: '/software-engineer/topics/project-experience/advertising'/* ,badge: { text: '更新中', variant: 'default' }, */},
-            //     // {label: '购物广告', link: '/software-engineer/topics/project-experience/advertising/shopping',badge: { text: '待更新', variant: 'default' },},
-            //     // {label: '网红KOL', link: '/software-engineer/topics/project-experience/advertising/kol',badge: { text: '待更新', variant: 'default' },},
-            //     // {label: '广告监控', link: '/software-engineer/topics/project-experience/advertising/monitor-ad',badge: { text: '待更新', variant: 'default' },},
-            //     // {label: '效果数据', link: '/software-engineer/topics/project-experience/advertising/performance-data',badge: { text: '待更新', variant: 'default' },},
-            //   ],
-            // },
             {
               label: "React",
               collapsed: true,
               badge: { text: "前端", variant: "tip" },
               autogenerate: { directory: '/software-engineer/react'},
-            // {
-            //   label: 'AI Assistant',
-            //   collapsed: true,
-            //   items: [
-            //      {label: 'Claude',link: '/software-engineer/ai-assistant/jetbrains-claude'}
-            //   ]
             },
           ],
         },
@@ -423,71 +400,12 @@ export default defineConfig({
             {
               label: "视频",
               collapsed: true,
-              items: [
-                {
-                  label: "两个美国女生最日常的交流",
-                  link: "/english/videos/daily-communication-between-two-american-girls",
-                },
-                {
-                  label: "美国人在工作中最真实的聊天，你能听懂多少？",
-                  link: "/english/videos/the-most-authentic-chat-in-the-movie-the-intern",
-                },
-                {
-                  label: "刻意练习英语听力",
-                  link: "/english/videos/english-listening-practice-vibe-1",
-                },
-                {
-                  label: "描述自己/自我介绍",
-                  link: "/english/videos/describe-yourself",
-                },
-                {
-                  label: "How to Stop Translating in Your Head",
-                  link: "/english/videos/how-to-stop-translating-in-your-head",
-                },
-                {
-                  label: "她们几乎以同样方式，英语达到近母语水平！",
-                  link: "/english/videos/achieve-near-native-english",
-                  badge: { text: "学习方法", variant: "default" },
-                },
-                {
-                  label: "马云纽约演讲",
-                  link: "/english/videos/jack-ma-new-york-speech",
-                },
-                {
-                  label:
-                    "如何自学一门外语？7门语言博主超详细干货分享！ 或者 任何一个技能",
-                  link: "/english/videos/how-to-study-english",
-                  badge: { text: "干货", variant: "default" },
-                },
-                {
-                  label: "如何克服开口恐惧？ 流利说外语！",
-                  link: "/english/videos/speaking-fear-overcome",
-                },
-                {
-                  label: "我是怎么学英语的？原来学会这项技能环游世界都不怕了！",
-                  link: "/english/videos/how-i-learned-english-producer1573",
-                },
-              ],
+              autogenerate: { directory: '/english/videos'},
             },
             {
-              label: "辅助",
+              label: "辅助工具",
               collapsed: true,
-              items: [
-                {
-                  label: "Trancy沉浸式AI语言学习",
-                  link: "/english/auxiliary-tools/trancy",
-                },
-                {
-                  label: "沉浸式翻译",
-                  link: "/english/auxiliary-tools/immersivetranslate",
-                  badge: { text: "对照翻译", variant: "default" },
-                },
-                {
-                  label: "无痛单词 | Painless",
-                  link: "/english/auxiliary-tools/painless",
-                  badge: { text: "背单词", variant: "default" },
-                },
-              ],
+              autogenerate: { directory: '/english/auxiliary-tools'},
             },
           ],
         },

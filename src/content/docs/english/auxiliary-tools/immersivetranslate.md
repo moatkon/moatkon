@@ -3,7 +3,11 @@ title: 沉浸式翻译
 description: 沉浸式翻译
 template: doc
 tableOfContents: false
-lastUpdated: 2024-02-09
+lastUpdated: 2025-11-30 17:31:16
+sidebar:
+  badge:
+    text: 对照翻译
+    variant: default
 ---
 #### 之前我使用过的网页翻译插件的痛点
 - 直接翻译网页,看不到对比的原文

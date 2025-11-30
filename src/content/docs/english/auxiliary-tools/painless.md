@@ -2,7 +2,11 @@
 title: 无痛单词 | Painless
 description: 无痛单词 | Painless
 template: doc
-lastUpdated: 2024-07-13 20:38:51
+lastUpdated: 2025-11-30 17:31:16
+sidebar:
+  badge:
+    text: 背单词
+    variant: default
 ---
 
 #### 图标
