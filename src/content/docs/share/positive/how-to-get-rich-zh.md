@@ -3,7 +3,11 @@ title: 如何致富
 description: 如何致富
 template: doc
 # tableOfContents: false
-lastUpdated: 2025-05-28 00:34:47
+lastUpdated: 2025-11-30 18:08:34
+sidebar:
+  badge:
+    text: 译文
+    variant: tip
 ---
 
 :::note[英文原文]

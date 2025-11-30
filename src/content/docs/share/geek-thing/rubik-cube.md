@@ -3,7 +3,11 @@ title: 第一次恢复魔方
 description: 第一次恢复魔方
 template: doc
 tableOfContents: false
-lastUpdated: 2024-12-30 18:12:28
+lastUpdated: 2025-11-30 18:08:34
+sidebar:
+  badge:
+    text: 含文字步骤
+    variant: default
 ---
 :::note[记录一下第一次恢复成功]
 这是我第一次恢复魔方的照片,太激动了，哈哈

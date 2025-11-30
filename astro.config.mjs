@@ -396,44 +396,19 @@ export default defineConfig({
             {
               label: "实用",
               collapsed: true,
-              items: [
-                { label: "开源", link: "/share/useful/open-source" },
-                {
-                  label: "Avenue GPX Viewer",
-                  link: "/share/useful/avenue-gpx-viewer",
-                },
-              ],
+              autogenerate: { directory: '/share/useful'},
             },
             {
-              label: "纯分享",
+              label: "正向",
               collapsed: true,
-              items: [
-                {
-                  label: "第一次恢复魔方",
-                  link: "/share/geek-thing/rubik-cube",
-                  badge: { text: "含文字步骤", variant: "default" },
-                },
-                {
-                  label: "压力来自于忽视你不应该忽视的事情",
-                  link: "/share/positive/pressure-ignoring-important",
-                },
-                {
-                  label: "How to Get Rich",
-                  link: "/share/positive/how-to-get-rich",
-                },
-                {
-                  label: "如何致富",
-                  link: "/share/positive/how-to-get-rich-zh",
-                  badge: { text: "译文", variant: "tip" },
-                },
-                // {label: '摘录', link: '/share/extract-share' },
-              ],
+              autogenerate: { directory: '/share/positive'},
             },
             { label: "博主", link: "/share/youtube" },
             { label: "音乐🎵", link: "/share/music" },
             { label: "网站", link: "/share/website" },
             { label: "视频", link: "/share/video" },
             { label: "UI组件库", link: "/share/ui-component-library" },
+            { label: "第一次恢复魔方", link: "/share/geek-thing/rubik-cube" },
           ],
         },
         {
