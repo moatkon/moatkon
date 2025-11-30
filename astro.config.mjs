@@ -3,7 +3,7 @@ import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
 const isPrd = process.env.VERCEL_ENV == "production";
 import starlightImageZoom from "starlight-image-zoom";
-// import starlightBlog from 'starlight-blog';
+import starlightSidebarSwipe from 'starlight-sidebar-swipe';
 import starlightScrollToTop from "starlight-scroll-to-top";
 import starlightLlmsTxt from "starlight-llms-txt";
 import mermaid from "astro-mermaid";
@@ -37,6 +37,7 @@ export default defineConfig({
         root: { label: "简体中文", lang: "zh-CN" },
       },
       plugins: [
+        starlightSidebarSwipe(),
         starlightPageActions({
           baseUrl: "https://moatkon.com/",
         }),
