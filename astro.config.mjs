@@ -158,36 +158,15 @@ export default defineConfig({
                 { label: "消息队列", link: "/software-engineer/mq" },
                 {
                   label: "Kafka",
-                  items: [
-                    { label: "Kafka", link: "/software-engineer/mq/kafka" },
-                    {
-                      label: "Kafka安装及使用",
-                      link: "/software-engineer/mq/kafka/use",
-                    },
-                  ],
+                  autogenerate:{directory:"/software-engineer/mq/kafka"},
                 },
                 {
                   label: "RabbitMQ",
-                  items: [
-                    {
-                      label: "RabbitMQ",
-                      link: "/software-engineer/mq/rabbitmq",
-                    },
-                  ],
+                  autogenerate:{directory:"/software-engineer/mq/rabbitmq"},
                 },
                 {
                   label: "RocketMQ",
-                  items: [
-                    {
-                      label: "RocketMQ",
-                      link: "/software-engineer/mq/rocketmq",
-                      badge: { text: "推荐", variant: "tip" },
-                    },
-                    {
-                      label: "RocketMQ安装及使用",
-                      link: "/software-engineer/mq/rocketmq/use",
-                    },
-                  ],
+                  autogenerate:{directory:"/software-engineer/mq/rocketmq"},
                 },
               ],
             },
