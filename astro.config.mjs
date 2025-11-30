@@ -242,14 +242,14 @@ export default defineConfig({
               autogenerate: {directory: "/software-engineer/spring-cloud-gateway/"},
             },
             {
+              label: "Git",
+              collapsed: true,
+              autogenerate: {directory: "/software-engineer/git/"},
+            },
+            {
               label: "最佳实践",
               collapsed: true,
               items: [
-                {
-                  label: "Git",
-                  collapsed: false,
-                  autogenerate: {directory: "/software-engineer/best-practices/git"},
-                },
                 {
                   label: "通用能力建设",
                   collapsed: false,

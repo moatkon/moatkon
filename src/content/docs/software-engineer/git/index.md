@@ -6,7 +6,7 @@ tableOfContents: false
 lastUpdated: 2025-11-22 15:36:08
 sidebar:
   badge:
-    text: 纯记录
+    text: 常用命令
     variant: default
 ---
 :::tip
