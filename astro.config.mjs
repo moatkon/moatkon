@@ -8,6 +8,7 @@ import starlightScrollToTop from "starlight-scroll-to-top";
 import starlightLlmsTxt from "starlight-llms-txt";
 import mermaid from "astro-mermaid";
 import starlightAutoDrafts from "starlight-auto-drafts";
+import starlightPageActions from 'starlight-page-actions';
 
 const siteUrl = isPrd ? "https://moatkon.com" : "http://localhost:4321";
 
@@ -36,6 +37,9 @@ export default defineConfig({
         root: { label: "简体中文", lang: "zh-CN" },
       },
       plugins: [
+        starlightPageActions({
+          baseUrl: "https://moatkon.com/",
+        }),
         starlightAutoDrafts(),
         starlightLlmsTxt(),
         starlightScrollToTop({
