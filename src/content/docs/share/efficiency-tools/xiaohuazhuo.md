@@ -4,7 +4,11 @@ description: 小画桌
 template: doc
 tableOfContents: false
 draft: false
-lastUpdated: 2024-06-30 00:58:52
+lastUpdated: 2025-11-30 18:03:37
+sidebar:
+  badge:
+    text: 画板
+    variant: note
 ---
 #### 官网
 [小画桌](https://www.xiaohuazhuo.com/i/63fd9d41a26bc65338e9d7b7?utm_source=moatkon.com)

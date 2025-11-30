@@ -1,10 +1,15 @@
 /resume/*      https://resume.moatkon.com/       301
 /blog/*        https://blog.moatkon.com/         301
-/software-engineer/best-practices/git/                      /software-engineer/git/                                                     301
-/software-engineer/best-practices/git/branch-manage/        /software-engineer/git/branch-manage/                                       301
+
 /software-engineer/base/jvm-gc-algo/     /software-engineer/jvm/gc-algo/    301
 /software-engineer/base/jvm/             /software-engineer/jvm/            301
 /software-engineer/base/jvm-resolve/     /software-engineer/jvm/resolve/    301
 /software-engineer/best-practices/linux/log/ /software-engineer/linux/log/    301
 /software-engineer/best-practices/resolve-es-client-io-reactor-status-stopped/ /software-engineer/es/resolve-es-client-io-reactor-status-stopped/ 301
+
+/software-engineer/best-practices/git/                      /software-engineer/git/                                                     301
+/software-engineer/best-practices/git/branch-manage/        /software-engineer/git/branch-manage/                                       301
+/share/efficiency-tools/board/focalboard/                   /share/efficiency-tools/focalboard/                                         301
+/share/efficiency-tools/board/milanote/                     /share/efficiency-tools/milanote/                                           301
+/share/efficiency-tools/board/xiaohuazhuo/                  /share/efficiency-tools/xiaohuazhuo/                                        301
 

@@ -427,11 +427,6 @@ export default defineConfig({
                   badge: { text: "译文", variant: "tip" },
                 },
                 // {label: '摘录', link: '/share/extract-share' },
-                {
-                  label: "iPad mini 6",
-                  link: "/share/efficiency-tools/useless-ipad-mini-6",
-                  badge: { text: "Just For Me · 无用", variant: "danger" },
-                },
               ],
             },
             { label: "博主", link: "/share/youtube" },

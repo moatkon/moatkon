@@ -2,9 +2,13 @@
 title: iPad mini 6
 description: 分享一个对我无用的产品 —— iPad mini 6
 template: doc
-lastUpdated: 2025-05-26 16:45:54
+lastUpdated: 2025-11-30 18:03:37
 draft: false
 tableOfContents: false
+sidebar:
+  badge:
+    text: Just For Me · 无用
+    variant: danger
 ---
 
 :::danger[注意]

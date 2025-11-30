@@ -4,7 +4,11 @@ description: Milanote
 template: doc
 tableOfContents: false
 draft: false
-lastUpdated: 2024-06-30 00:58:52
+lastUpdated: 2025-11-30 18:03:37
+sidebar:
+  badge:
+    text: 画板
+    variant: note
 ---
 #### 官网
 [Milanote](https://www.milanote.com/refer/rcEQUbN1p4mHYALX38?utm_source=moatkon.com)

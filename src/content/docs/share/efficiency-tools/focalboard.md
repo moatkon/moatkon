@@ -4,10 +4,10 @@ description: Focalboard
 template: doc
 tableOfContents: false
 draft: false
-lastUpdated: 2025-11-30 17:40:19
+lastUpdated: 2025-11-30 18:03:37
 sidebar:
   badge:
-    text: 开源
+    text: 画板·开源
     variant: note
 ---
 
