@@ -359,22 +359,7 @@ export default defineConfig({
             {
               label: "网络",
               collapsed: true,
-              items: [
-                {
-                  label: "OpenAI CEO Sam Altman被解雇",
-                  link: "/english/internet/sama-fired-from-openai",
-                  badge: { text: "Sam Altman", variant: "default" },
-                },
-                {
-                  label: "What I Learned Working For Mark Zuckerberg",
-                  link: "/english/internet/what-i-learned-working-for-mark-zuckerberg",
-                  badge: { text: "Mark Zuckerberg", variant: "default" },
-                },
-                {
-                  label: "Study From Reddit",
-                  link: "/english/internet/study-from-reddit",
-                },
-              ],
+              autogenerate: { directory: '/english/internet'},
             },
             {
               label: "视频",

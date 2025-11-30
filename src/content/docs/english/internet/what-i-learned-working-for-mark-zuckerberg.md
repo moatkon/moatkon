@@ -4,6 +4,10 @@ description: What I Learned Working For Mark Zuckerberg
 template: doc
 tableOfContents: false
 lastUpdated: 2024-09-13 09:27:13
+sidebar:
+  badge:
+    text: Zuckerberg
+    variant: default
 ---
 
 [原文](https://noahkagan.com/what-i-learned-working-for-mark-zuckerberg/)
