@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
 const isPrd = process.env.VERCEL_ENV == "production";
-// import starlightImageZoom from "starlight-image-zoom";
+import starlightImageZoom from 'starlight-image-zoom';
 import starlightSidebarSwipe from 'starlight-sidebar-swipe';
 import starlightScrollToTop from "starlight-scroll-to-top";
 import starlightLlmsTxt from "starlight-llms-txt";
@@ -38,6 +38,7 @@ export default defineConfig({
         root: { label: "简体中文", lang: "zh-CN" },
       },
       plugins: [
+        starlightImageZoom(),
         starlightUiTweaks({
           // navbarLinks: [
           //   { label: "Documentation", href: "/docs" },
