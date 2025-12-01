@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
 const isPrd = process.env.VERCEL_ENV == "production";
-import starlightImageZoom from "starlight-image-zoom";
+// import starlightImageZoom from "starlight-image-zoom";
 import starlightSidebarSwipe from 'starlight-sidebar-swipe';
 import starlightScrollToTop from "starlight-scroll-to-top";
 import starlightLlmsTxt from "starlight-llms-txt";
@@ -67,7 +67,7 @@ export default defineConfig({
           svgStrokeWidth: 1,
           borderRadius: "50",
         }),
-        starlightImageZoom({ showCaptions: false }),
+        // starlightImageZoom({ showCaptions: false }),
       ],
       title: isPrd ? "Moatkon" : "Dev",
       lastUpdated: true,
