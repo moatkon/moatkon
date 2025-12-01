@@ -78,6 +78,22 @@ export default defineConfig({
       // },
       description: "Build your moat.",
       head: [
+        // Font preload for better performance
+        {
+          tag: "link",
+          attrs: {
+            rel: "preconnect",
+            href: "https://fonts.googleapis.com",
+          },
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "preconnect",
+            href: "https://fonts.gstatic.com",
+            crossorigin: "anonymous",
+          },
+        },
         //ga 已经使用cf标记管理来设置ga了
         // {
         //   tag: 'script',
@@ -114,6 +130,7 @@ export default defineConfig({
       ],
       customCss: [
         // 你的自定义 CSS 文件的相对路径
+        "./src/styles/fonts.css",
         "./src/styles/root.css",
         "./src/styles/custom.css",
         "./src/styles/md.css",

@@ -1,0 +1,67 @@
+/* DM Sans Variable Font Import */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Global Font Configuration */
+:root {
+  /* Define the custom font stack */
+  --moatkon-font-family: "DM Sans Variable", "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  /* Override Starlight's default font */
+  --__sl-font: var(--moatkon-font-family);
+  --sl-font: var(--moatkon-font-family);
+}
+
+/* Apply font to body and all elements */
+body {
+  font-family: var(--moatkon-font-family);
+}
+
+/* Ensure all text elements use the custom font */
+* {
+  font-family: inherit;
+}
+
+/* Specific overrides for Starlight components */
+.sl-markdown-content,
+.sl-markdown-content *,
+.sidebar-content,
+.sidebar-content *,
+.header,
+.header *,
+.footer,
+.footer *,
+.starlight-aside,
+.starlight-aside *,
+.sl-badge,
+.card,
+.sl-link-card {
+  font-family: var(--moatkon-font-family);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--moatkon-font-family);
+}
+
+/* Navigation elements */
+nav,
+nav *,
+.top-level,
+.top-level * {
+  font-family: var(--moatkon-font-family);
+}
+
+/* Form elements */
+input,
+textarea,
+select,
+button {
+  font-family: var(--moatkon-font-family);
+}
+
+/* Code elements - keep monospace for code */
+code,
+pre,
+.expressive-code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
