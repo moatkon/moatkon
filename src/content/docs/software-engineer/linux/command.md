@@ -3,7 +3,7 @@ title: Linux命令
 description: Linux命令
 template: doc
 draft: false
-lastUpdated: 2024-07-14 17:12:00
+lastUpdated: 2025-12-07 16:42:09
 ---
 :::note
 自己平时为了解决一些问题,花了时间和精力特地去网上查找的会在这里记录,以期望后续节省时间
@@ -22,4 +22,10 @@ grep -r "要搜索的字符串" .
 -i: 忽略大小写
 -l: 只显示文件名,不显示匹配的内容
 -n: 显示匹配内容所在的行号
+```
+
+#### 权限处理
+
+```sh title="将指定目录的rwx权限赋值给当前用户"
+chmod u=rwx /path/to/directory
 ```
