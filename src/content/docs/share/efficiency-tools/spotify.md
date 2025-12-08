@@ -2,7 +2,7 @@
 title: Spotify
 description: Spotify
 template: doc
-lastUpdated: 2025-12-08 17:53:54
+lastUpdated: 2025-12-08 17:54:34
 draft: false
 sidebar:
   badge:
@@ -27,7 +27,7 @@ Spotify详细介绍大家看Wikipedia即可,这里不在赘述→ [Wikipedia Spo
 
 在网易云音乐充了会员费用不久，发现Spotify我可以顺利注册并进入了(应该是换了梯子的原因)，十分开心。打开Spotify后，发现了新大陆，里面的很多歌曲都是免费的且可以顺利听到，我一下听了很多很多歌曲。
 
-Spotify在没有充钱的情况下，有少许广告(一天1-2个广告，我完全可以接受，就当英语语料听了),这些广告我完全可以接受。
+Spotify在没有充钱的情况下，有少许广告(一天1-2个广告，就当英语语料听了),这些广告我完全可以接受。
 
 于是我汇总了一下我喜欢上Spotify的原因:
 - 在国内收费的音乐，在Spotify可以免费听到
