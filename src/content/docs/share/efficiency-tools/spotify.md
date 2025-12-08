@@ -2,7 +2,7 @@
 title: Spotify
 description: Spotify
 template: doc
-lastUpdated: 2025-12-08 17:55:28
+lastUpdated: 2025-12-08 18:04:18
 draft: false
 sidebar:
   badge:
@@ -12,9 +12,7 @@ sidebar:
 
 ![](/share/efficiency-tools/spotify/2024_Spotify_Logo.svg)
 
-Spotify详细介绍大家看Wikipedia即可,这里不在赘述→ [Wikipedia Spotify](https://zh.wikipedia.org/wiki/Spotify)
-
-
+Spotify详细介绍大家看Wikipedia即可,这里不再赘述→ [Wikipedia Spotify](https://zh.wikipedia.org/wiki/Spotify)
 
 
 #### 我的使用感受
