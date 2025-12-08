@@ -2,7 +2,7 @@
 title: Spotify
 description: Spotify
 template: doc
-lastUpdated: 2025-12-08 17:54:34
+lastUpdated: 2025-12-08 17:55:28
 draft: false
 sidebar:
   badge:
@@ -29,7 +29,7 @@ Spotify详细介绍大家看Wikipedia即可,这里不在赘述→ [Wikipedia Spo
 
 Spotify在没有充钱的情况下，有少许广告(一天1-2个广告，就当英语语料听了),这些广告我完全可以接受。
 
-于是我汇总了一下我喜欢上Spotify的原因:
+#### 喜欢上Spotify的原因
 - 在国内收费的音乐，在Spotify可以免费听到
 - 简单、易用。非常纯粹的音乐软件。没有国内主流音乐软件花里胡哨的功能
 - 响应迅速。因为简单，所以快。打开就能听，不像国内主流音乐软件打开要加载一堆与音乐无关的东西，烦死了
