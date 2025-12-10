@@ -5,19 +5,46 @@ import MarkdownIt from 'markdown-it';
 
 const mdParser = new MarkdownIt();
 
-// 移除MDX组件标签的函数
-function removeMdxComponents(content) {
-  return content
-    // 移除import语句
-    .replace(/import\s+[^;]+;/g, '')
-    // 移除MDX组件标签，包括自闭合标签和带内容的标签
-    .replace(/<[A-Z][A-Za-z0-9]*[^>]*\/>/g, '')
-    .replace(/<[A-Z][A-Za-z0-9]*[^>]*>[\s\S]*?<\/[A-Z][A-Za-z0-9]*>/g, '')
-    // 移除HTML中的空段落标签
-    .replace(/<p>\s*<\/p>/g, '')
-    // 移除多余的空白行
-    .replace(/\n\s*\n/g, '\n\n')
-    .trim();
+// 自定义MDX组件渲染函数
+function renderMdxComponent(componentName, attributes) {
+  // 根据组件名称和属性渲染为相应的文本内容
+  switch (componentName) {
+    case 'Watched':
+      const date = attributes?.date;
+      const text = "之前看过,记录一下." + (date ? " 📝" + date : "");
+      return `<span style="background-color: var(--sl-color-gray-6); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.9em;">${text}</span>`;
+    
+    case 'WatchTime':
+      const watchDate = attributes?.date;
+      return `<span style="color: var(--sl-color-gray-3);"><br/>于 ${watchDate} 看完</span>`;
+      
+    default:
+      // 对于其他未知组件，返回空字符串
+      return '';
+  }
+}
+
+// 替换MDX组件标签为HTML的函数
+function replaceMdxComponentsWithHtml(content) {
+  // 匹配MDX组件标签的正则表达式
+  const componentRegex = /<([A-Z][A-Za-z0-9]*)\s*([^>]*)\/?>/g;
+  
+  return content.replace(componentRegex, (match, componentName, attrsString) => {
+    // 解析属性
+    const attributes = {};
+    const attrRegex = /(\w+)=(?:"([^"]*)"|{([^}]*)})/g;
+    let attrMatch;
+    
+    while ((attrMatch = attrRegex.exec(attrsString)) !== null) {
+      const key = attrMatch[1];
+      // 处理字符串值和表达式值
+      const value = attrMatch[2] || attrMatch[3];
+      attributes[key] = value;
+    }
+    
+    // 渲染组件为HTML
+    return renderMdxComponent(componentName, attributes);
+  });
 }
 
 export async function GET(context) {
@@ -31,22 +58,34 @@ export async function GET(context) {
       // 处理 MD 和 MDX 内容
       let htmlContent = '';
       if (post.body) {
-        // 先移除MDX组件标签
-        const cleanedContent = removeMdxComponents(post.body);
-        // 再转换为HTML
-        htmlContent = mdParser.render(cleanedContent);
+        try {
+          // 替换MDX组件标签为HTML内容
+          const processedContent = replaceMdxComponentsWithHtml(post.body);
+          
+          // 使用内置的rendered.html（如果可用）
+          if (post.rendered?.html) {
+            htmlContent = post.rendered.html;
+          } else {
+            // 否则使用Markdown-it处理内容
+            htmlContent = mdParser.render(processedContent);
+          }
+        } catch (error) {
+          // 出错时回退到原始处理方式
+          htmlContent = mdParser.render(post.body);
+        }
       }
       
       return {
         ...post,
         htmlContent: sanitizeHtml(htmlContent || '', {
-          allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'pre', 'code']),
+          allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'pre', 'code', 'span', 'br']),
           allowedAttributes: {
             ...sanitizeHtml.defaults.allowedAttributes,
             img: ['src', 'alt', 'title', 'width', 'height'],
             a: ['href', 'name', 'target', 'rel'],
             pre: ['class'],
-            code: ['class']
+            code: ['class'],
+            span: ['style']
           }
         })
       };
