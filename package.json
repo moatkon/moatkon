@@ -16,11 +16,18 @@
     "@astrojs/rss": "^4.0.14",
     "@astrojs/starlight": "^0.37.0",
     "@astrojs/starlight-docsearch": "^0.6.1",
+    "@mdx-js/mdx": "^3.1.1",
+    "@mdx-js/rollup": "^3.1.1",
     "astro": "^5.16.3",
     "astro-mermaid": "^1.0.3",
     "markdown-it": "^14.1.0",
     "mermaid": "^11.7.0",
     "prettier": "^3.4.2",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "remark-mdx": "^3.1.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
     "sanitize-html": "^2.14.0",
     "starlight-auto-drafts": "^0.2.0",
     "starlight-image-zoom": "^0.13.2",
@@ -31,6 +38,7 @@
     "starlight-sidebar-swipe": "^0.1.1",
     "starlight-ui-tweaks": "^0.1.0",
     "starlight-view-modes": "^0.7.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "unist-util-visit": "^5.0.0"
   }
 }
