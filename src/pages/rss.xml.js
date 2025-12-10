@@ -2,73 +2,75 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
+import { remark } from 'remark';
+import remarkMdx from 'remark-mdx';
+import remarkStringify from 'remark-stringify';
+import { visit } from 'unist-util-visit';
 
-const mdParser = new MarkdownIt();
-
-// 自定义MDX组件渲染函数
-function renderMdxComponent(componentName, attributes) {
-  // 根据组件名称和属性渲染为相应的文本内容
-  switch (componentName) {
-    case 'Watched':
-      const date = attributes?.date;
-      const text = "之前看过,记录一下." + (date ? " 📝" + date : "");
-      return `<span style="background-color: var(--sl-color-gray-6); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.9em;">${text}</span>`;
+// 创建一个插件来移除MDX节点
+function removeMdxNodes() {
+  return (tree) => {
+    // 移除MDX JSX元素
+    visit(tree, ['mdxJsxTextElement', 'mdxJsxFlowElement'], (node, index, parent) => {
+      if (parent && index !== undefined) {
+        parent.children.splice(index, 1);
+        return [visit.SKIP, index];
+      }
+    });
     
-    case 'WatchTime':
-      const watchDate = attributes?.date;
-      return `<span style="color: var(--sl-color-gray-3);"><br/>于 ${watchDate} 看完</span>`;
-      
-    default:
-      // 对于其他未知组件，返回空字符串
-      return '';
-  }
+    // 移除MDX ESM导入/导出
+    visit(tree, 'mdxjsEsm', (node, index, parent) => {
+      if (parent && index !== undefined) {
+        parent.children.splice(index, 1);
+        return [visit.SKIP, index];
+      }
+    });
+    
+    // 移除MDX表达式
+    visit(tree, ['mdxTextExpression', 'mdxFlowExpression'], (node, index, parent) => {
+      if (parent && index !== undefined) {
+        parent.children.splice(index, 1);
+        return [visit.SKIP, index];
+      }
+    });
+    
+    return tree;
+  };
 }
 
-// 替换MDX组件标签为HTML的函数
-function replaceMdxComponentsWithHtml(content) {
-  // 匹配MDX组件标签的正则表达式
-  const componentRegex = /<([A-Z][A-Za-z0-9]*)\s*([^>]*)\/?>/g;
-  
-  return content.replace(componentRegex, (match, componentName, attrsString) => {
-    // 解析属性
-    const attributes = {};
-    const attrRegex = /(\w+)=(?:"([^"]*)"|{([^}]*)})/g;
-    let attrMatch;
-    
-    while ((attrMatch = attrRegex.exec(attrsString)) !== null) {
-      const key = attrMatch[1];
-      // 处理字符串值和表达式值
-      const value = attrMatch[2] || attrMatch[3];
-      attributes[key] = value;
-    }
-    
-    // 渲染组件为HTML
-    return renderMdxComponent(componentName, attributes);
-  });
+// 将MDX内容转换为纯Markdown
+async function mdxToMarkdown(mdxContent) {
+  try {
+    const file = await remark()
+      .use(remarkMdx)
+      .use(removeMdxNodes)
+      .use(remarkStringify)
+      .process(mdxContent);
+    return String(file);
+  } catch (error) {
+    // 出错时回退到原始内容
+    return mdxContent;
+  }
 }
 
 export async function GET(context) {
   const docs = await getCollection('docs');
+  const mdParser = new MarkdownIt();
   
   // 预处理并添加 htmlContent
-  const processedDocs = docs
+  const processedDocs = await Promise.all(docs
     .filter(post => post.id !== '404')
     .filter(post => post.data.draft !== true)
-    .map((post) => {
+    .map(async (post) => {
       // 处理 MD 和 MDX 内容
       let htmlContent = '';
       if (post.body) {
         try {
-          // 替换MDX组件标签为HTML内容
-          const processedContent = replaceMdxComponentsWithHtml(post.body);
+          // 使用专业的MDX处理库将整个MDX文件转换为纯Markdown
+          const markdownContent = await mdxToMarkdown(post.body);
           
-          // 使用内置的rendered.html（如果可用）
-          if (post.rendered?.html) {
-            htmlContent = post.rendered.html;
-          } else {
-            // 否则使用Markdown-it处理内容
-            htmlContent = mdParser.render(processedContent);
-          }
+          // 使用Markdown-it处理转换后的Markdown内容
+          htmlContent = mdParser.render(markdownContent);
         } catch (error) {
           // 出错时回退到原始处理方式
           htmlContent = mdParser.render(post.body);
@@ -78,18 +80,21 @@ export async function GET(context) {
       return {
         ...post,
         htmlContent: sanitizeHtml(htmlContent || '', {
-          allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'pre', 'code', 'span', 'br']),
+          allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'pre', 'code', 'span', 'br', 'p', 'div', 'iframe']),
           allowedAttributes: {
             ...sanitizeHtml.defaults.allowedAttributes,
             img: ['src', 'alt', 'title', 'width', 'height'],
             a: ['href', 'name', 'target', 'rel'],
             pre: ['class'],
             code: ['class'],
-            span: ['style']
+            span: ['style'],
+            p: ['style'],
+            div: ['style'],
+            iframe: ['src', 'title', 'frameborder', 'allow', 'allowfullscreen', 'style']
           }
         })
       };
-    });
+    }));
   
   return rss({
     title: 'Moatkon',
