@@ -2,7 +2,7 @@
 title: 安装PVE及相关问题解决
 description: 安装PVE及相关问题解决
 template: doc
-lastUpdated: 2025-12-13 16:42:04
+lastUpdated: 2025-12-13 16:44:01
 sidebar:
   order: 3
 ---
@@ -64,3 +64,10 @@ source /etc/network/interfaces.d/*
 - gateway配置为路由器 LAN IP：192.168.3.1
 - address 自己配置,选择自己喜欢的即可
 
+
+设置完之后,重启网络设备:
+```sh
+systemctl restart networking
+```
+
+之后,再在笔记本电脑上即可以正常访问
