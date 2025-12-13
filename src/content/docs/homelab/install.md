@@ -2,7 +2,7 @@
 title: 安装PVE及相关问题解决
 description: 安装PVE及相关问题解决
 template: doc
-lastUpdated: 2025-12-13 16:58:17
+lastUpdated: 2025-12-13 17:07:02
 sidebar:
   order: 3
 ---
@@ -14,6 +14,10 @@ sidebar:
 ![](/homelab/Moatkon-HomeLab-install.svg)
 
 #### 遇到的问题
+
+##### 登录不上
+默认用户名是root,一开始我以为是我安装时的邮箱,所以一直登录不上,使用root就OK了
+
 ##### 在笔记本电脑上无法访问PVE的Web界面
 原因分析: PVE的网段和笔记本电脑的网段不是同一个。
 
@@ -77,3 +81,9 @@ systemctl restart networking
 原因: 根据部署架构,问题瓶颈在无线路由器。因为都是通过它来传输内容的。
 
 解决方案: 按照目前的玩法没有必要解决,多等一会就是了。把时间留给有意义的事情
+
+我想象中的解决方案:
+![](/homelab/Moatkon-HomeLab-exchange.svg)
+
+- Mac到PVE直接通过交换机转发
+- 路由器只负责上网，内网流量不经过路由器
