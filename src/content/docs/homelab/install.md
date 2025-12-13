@@ -2,7 +2,7 @@
 title: 安装PVE及相关问题解决
 description: 安装PVE及相关问题解决
 template: doc
-lastUpdated: 2025-12-13 16:49:58
+lastUpdated: 2025-12-13 16:58:17
 sidebar:
   order: 3
 ---
@@ -72,3 +72,8 @@ systemctl restart networking
 ```
 
 之后,再在笔记本电脑上即可以正常访问PVE Web界面。 `https://192.168.3.100:8006`
+
+##### 上传系统镜像太慢
+原因: 根据部署架构,问题瓶颈在无线路由器。因为都是通过它来传输内容的。
+
+解决方案: 按照目前的玩法没有必要解决,多等一会就是了。把时间留给有意义的事情
