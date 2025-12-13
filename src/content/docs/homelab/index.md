@@ -3,6 +3,8 @@ title: 为什么要搭建HomeLab
 description: HomeLab
 template: doc
 lastUpdated: 2025-12-13 10:47:56
+sidebar:
+  order: 1
 ---
 
 因为自己是软件工程师,当我看到HomeLab这个词,实话说,我就被深深吸引住了。HomeLab在我心里埋下了一颗种子。
