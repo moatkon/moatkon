@@ -2,7 +2,7 @@
 title: 安装PVE及相关问题解决
 description: 安装PVE及相关问题解决
 template: doc
-lastUpdated: 2025-12-13 16:44:01
+lastUpdated: 2025-12-13 16:49:58
 sidebar:
   order: 3
 ---
@@ -18,6 +18,7 @@ sidebar:
 原因分析: PVE的网段和笔记本电脑的网段不是同一个。
 
 之前的配置(cat /etc/network/interfaces):
+> 没有记录真实的配置，这里凭借印象简单写了一下以体现问题。不影响阐述问题
 ```sh
 auto lo
 iface lo inet loopback
@@ -70,4 +71,4 @@ source /etc/network/interfaces.d/*
 systemctl restart networking
 ```
 
-之后,再在笔记本电脑上即可以正常访问
+之后,再在笔记本电脑上即可以正常访问PVE Web界面。 `https://192.168.3.100:8006`
