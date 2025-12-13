@@ -22,7 +22,9 @@ sidebar:
 - 玩AI(这台主机不行，现阶段计划按量使用AI API KEY + 构建AI应用来玩一些案例)
 
 
-
-
+#### 后面规划
+- 交换机
+- PVE集群
+- 树莓派(Raspberry Pi)或者ZimaBoard来独立出PVE中比较重要的服务,不把所有的服务都放在PVE上
 
 
