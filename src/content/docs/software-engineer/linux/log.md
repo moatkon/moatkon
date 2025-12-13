@@ -3,7 +3,7 @@ title: 在Liunx上筛查日志技巧
 description: 在Liunx上筛查日志技巧
 template: doc
 tableOfContents: false
-lastUpdated: 2025-11-22 15:46:17
+lastUpdated: 2025-12-13 16:10:07
 ---
 :::tip
 日常工作中最常用的一些命令
@@ -49,6 +49,8 @@ cat -n test.log |tail -n +92|head -n 20
 # 上面命令的解释
 # 表示查询92行之后的日志
 tail -n +92
+# 表示查倒数一行
+tail -n 1
 # 则表示在前面的查询结果里再查前20条记录
 head -n 20
 ```
@@ -137,4 +139,20 @@ sort file | uniq –u # 可以把重复的行全部去掉，仅保留文件中�
 反向截取
 ```sh
 cat decrByUseCounter | cut -d ":" -f 1-4 --complement | more
+```
+
+
+#### grep
+
+```sh title="在当前目录下查找文件内容是否包含指定字符"
+grep -r "要搜索的字符串" .
+
+# 解释
+-r: 递归搜索,包括所有子目录
+"要搜索的字符串": 你想要查找的具体内容,用引号括起来
+.: 表示从当前目录开始搜索
+## 其他参数
+-i: 忽略大小写
+-l: 只显示文件名,不显示匹配的内容
+-n: 显示匹配内容所在的行号
 ```

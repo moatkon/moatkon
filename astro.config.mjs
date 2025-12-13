@@ -469,6 +469,11 @@ export default defineConfig({
             // {label: 'AI时代下，程序员的焦虑与出路',link: '/ai/ai-era-programmer-anxiety',badge: {text: 'Grok3',variant: 'default'}},
           ],
         },
+        {
+          label: 'HomeLab',
+          collapsed: true,
+          autogenerate: { directory: '/homelab'},
+        }
         // {
         //   label: '增长计划',
         //   collapsed: true,
