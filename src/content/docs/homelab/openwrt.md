@@ -2,7 +2,7 @@
 title: OpenWrt
 description: OpenWrt
 template: doc
-lastUpdated: 2025-12-14 22:53:12
+lastUpdated: 2025-12-14 22:55:15
 draft: true
 sidebar:
   order: 6
@@ -48,7 +48,7 @@ opkg install bash iptables dnsmasq-full curl ca-bundle ipset ip-full iptables-mo
 opkg install /tmp/openclash.ipk
 ```
 
-#### 报错:
+如果有以下报错:
 ```sh 
 Installing luci-app-openclash (0.47.028) to root...
 Installing dnsmasq-full (2.90-r4) to root...
@@ -69,13 +69,18 @@ Collected errors:
 * check_data_file_clashes: Package dnsmasq-full wants to install file /usr/share/dnsmasq/rfc6761.conf
     But that file is already provided by package  * dnsmasq
 * opkg_install_cmd: Cannot install package luci-app-openclash.
-# 方法 1: 先移除 dnsmasq,立即安装 dnsmasq-full(推荐)
+```
+
+解决方法:
+```sh
+# 先移除 dnsmasq,立即安装 dnsmasq-full(推荐)
 opkg remove dnsmasq && opkg install dnsmasq-full
 
 # 安装完之后,再执行
 opkg install /tmp/openclash.ipk
 ```
 
+
 #### 安装clash内核
-- 可以在openwrt内核中使用可视化界面安装
+- 可以在openwrt内核中使用可视化界面安装(推荐，失败了多试几次)
 - 也可以上传https://github.com/MetaCubeX/mihomo/releases clash内核。如果不使用命令行上传，可以借用openwrt上传pkg的按钮来，上传后使用shell将内核copy到clash目录即可，并修改一个名字即可。
