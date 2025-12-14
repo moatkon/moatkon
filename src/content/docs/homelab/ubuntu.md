@@ -1,9 +1,9 @@
 ---
-title: PVE-Ubuntu
+title: Ubuntu
 description: PVE软件架构
 template: doc
-lastUpdated: 2025-12-14 22:39:03
-draft: true
+lastUpdated: 2025-12-14 22:56:17
+draft: false
 sidebar:
   order: 7
 ---

@@ -2,8 +2,8 @@
 title: OpenWrt
 description: OpenWrt
 template: doc
-lastUpdated: 2025-12-14 22:55:15
-draft: true
+lastUpdated: 2025-12-14 22:56:17
+draft: false
 sidebar:
   order: 6
 ---
