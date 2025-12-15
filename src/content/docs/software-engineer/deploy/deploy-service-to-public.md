@@ -12,5 +12,13 @@ lastUpdated: 2025-11-16 17:09:29
 
 ![](/software-engineer/deploy/Moatkon-公网可以访问家用服务.png)
 
+### 卸载CF Tunnel
+```sh
+sudo cloudflared service uninstall
+```
+
 ### 进一步
 家用小型服务器,做7x24h无间断运行
+
+已经开始建设了,详见: [HomeLab](/homelab/)
+
