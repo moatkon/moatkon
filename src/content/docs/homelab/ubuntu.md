@@ -8,7 +8,7 @@ sidebar:
   order: 7
 ---
 
-#### 1.开启SSH
+#### 1. 开启SSH
 1. **更新系统包列表**：  
     首先确保你的 Ubuntu 系统是最新的。打开终端并输入以下命令：
     
@@ -81,8 +81,56 @@ sidebar:
 #### 2. 安装Docker
 https://docs.docker.com/engine/install/ubuntu/
 
+```sh
 sudo systemctl status docker
 
 sudo systemctl start docker
 
 sudo systemctl enable docker
+```
+
+#### 2. Ubuntu系统启动时,设定启动的服务
+
+##### 方法一:使用systemd
+
+1. **创建 systemd 服务文件**:
+```bash
+sudo nano /etc/systemd/system/docker-mycontainer.service
+```
+
+内容如下:
+```ini
+[Unit]
+Description=My Docker Container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/docker start my-container-name
+ExecStop=/usr/bin/docker stop my-container-name
+
+[Install]
+WantedBy=multi-user.target
+```
+
+2. **启用服务**:
+```bash
+sudo systemctl enable docker-mycontainer.service
+```
+
+##### 方法二:使用 Docker 的重启策略
+
+创建容器时就设置自动重启:
+
+```bash
+docker run -d --restart=always --name my-container-name image-name
+```
+
+或者修改现有容器:
+```bash
+docker update --restart=always my-container-name
+```
+
+这样 Docker 服务启动后会自动启动该容器。
