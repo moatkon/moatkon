@@ -6983,7 +6983,7 @@
                 <mxCell id="ynrxzjHSZDasdVViq4_2-34" value="CF Tunnel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
                     <mxGeometry x="140" y="730" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="ynrxzjHSZDasdVViq4_2-39" value="1. 解决了OpenWrt的Fake-IP导致无法隧传问题" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=7;align=left;verticalAlign=top;" vertex="1" parent="1">
+                <mxCell id="ynrxzjHSZDasdVViq4_2-39" value="1. 解决了OpenWrt的Fake-IP导致无法隧穿问题" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=7;align=left;verticalAlign=top;" vertex="1" parent="1">
                     <mxGeometry x="274" y="730" width="156" height="60" as="geometry"/>
                 </mxCell>
             </root>
