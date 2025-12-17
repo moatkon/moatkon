@@ -2,7 +2,7 @@
 title: Ollama
 description: Ollama
 template: doc
-lastUpdated: 2025-12-17 21:47:11
+lastUpdated: 2025-12-18 00:04:57
 draft: false
 sidebar:
   order: 6
@@ -33,3 +33,7 @@ https://docs.ollama.com/api/introduction
 
 #### Ollama 命令行操作文档
 https://docs.ollama.com/cli
+
+#### 推荐模型
+- [granite4](https://ollama.com/library/granite4): Granite 4.0 模型通过结合开源指令数据集（许可开放）和内部收集的合成数据集对其基础模型进行微调。它们具备更优的指令遵循（IF）和工具调用能力，使其在企业应用中更高效。支持中文
+- [qwen3](https://ollama.com/library/qwen3): Granite 4.0 模型通过结合开源指令数据集（许可开放）和内部收集的合成数据集对其基础模型进行微调。它们具备更优的指令遵循（IF）和工具调用能力，使其在企业应用中更高效。支持中文
