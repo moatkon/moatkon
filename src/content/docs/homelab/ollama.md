@@ -2,7 +2,7 @@
 title: Ollama
 description: Ollama
 template: doc
-lastUpdated: 2025-12-17 21:05:56
+lastUpdated: 2025-12-17 21:14:43
 draft: false
 sidebar:
   order: 6
@@ -22,3 +22,6 @@ sudo docker exec -it ollama ollama run qwen3-vl:8b
 
 #### Ollama模型库:
 https://ollama.com/library
+
+#### Ollama API 文档
+https://docs.ollama.com/api/introduction
