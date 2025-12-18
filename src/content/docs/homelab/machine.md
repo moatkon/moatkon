@@ -1,10 +1,13 @@
 ---
-title: HomeLab第一台机器
-description: HomeLab第一台机器
+title: HomeLab第一台机器:联想百应NUC13
+description: HomeLab第一台机器:联想百应NUC13
 template: doc
 lastUpdated: 2025-12-13 10:47:56
 sidebar:
   order: 2
+  badge:
+    text: 不要买
+    variant: danger
 ---
 
 自从有了搭建HomeLab的想法,看了很长时间的机器。一开始选择的【联想（Lenovo）ThinkCentre Q500迷你口袋主机 13代酷睿处理器i5-13420H 32G 1T固态】,但是迟迟没有发货(等了至少一天还在仓库里面),加上不是京东自营且开店时间是2025年9月30号,就取消了。最终选择了联想百应NUC13，京东自营，当天下单当天就到了。
@@ -31,3 +34,8 @@ sidebar:
 | 视频接口 | HDMI 接口 |
 | 类型 | 单主机 |
 | 机箱大小 | 0.5L |
+
+#### 警告⚠️: 已经退货,不要买
+
+主机看着很小巧,外观也感觉质量很不错。但是实际上不行,昨天(20251217)听到主机里面有电流的滋滋声音,后面在网上检索了一下,也有人反馈有类似问题。于是果断退货。
+
