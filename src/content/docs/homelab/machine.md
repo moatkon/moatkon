@@ -6,7 +6,7 @@ lastUpdated: 2025-12-13 10:47:56
 sidebar:
   order: 2
   badge:
-    text: 不要买
+    text: 已退货
     variant: danger
 ---
 
