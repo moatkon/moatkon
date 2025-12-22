@@ -1,6 +1,6 @@
 ---
-title: HomeLab第一台机器:联想百应NUC13
-description: HomeLab第一台机器:联想百应NUC13
+title: 第一台机器:联想百应NUC13
+description: 第一台机器:联想百应NUC13
 template: doc
 lastUpdated: 2025-12-13 10:47:56
 sidebar:
