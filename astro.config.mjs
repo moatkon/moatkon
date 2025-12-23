@@ -284,6 +284,11 @@ export default defineConfig({
               collapsed: true,
               items: [
                 {
+                  label: "案例·Case",
+                  collapsed: false,
+                  autogenerate: {directory: "/software-engineer/best-practices/case/"},
+                },
+                {
                   label: "通用能力建设",
                   collapsed: false,
                   autogenerate: {directory: "/software-engineer/best-practices/general-ability/"},
