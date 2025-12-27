@@ -1,8 +1,8 @@
 ---
 title: Ubuntu
-description: PVE软件架构
+description: Ubuntu
 template: doc
-lastUpdated: 2025-12-14 22:56:17
+lastUpdated: 2025-12-27 21:28:34
 draft: false
 sidebar:
   order: 7
@@ -134,3 +134,7 @@ docker update --restart=always my-container-name
 ```
 
 这样 Docker 服务启动后会自动启动该容器。
+
+
+#### 3. cloudflare/cloudflared
+docker run -d --name memos_tunnel cloudflare/cloudflared:latest tunnel --no-autoupdate run --token <token>
