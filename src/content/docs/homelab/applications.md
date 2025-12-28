@@ -2,7 +2,7 @@
 title: 应用
 description: 应用
 template: doc
-lastUpdated: 2025-12-29 00:33:43
+lastUpdated: 2025-12-29 00:36:53
 sidebar:
   order: 9
 ---
@@ -122,3 +122,13 @@ docker run -it --rm --name="draw" -p 8080:8080 -p 8443:8443 jgraph/drawio
 # 后台运行
 docker run -d --name="draw" -p 5232:8080 jgraph/drawio
 ```
+
+
+#### kan
+
+The open source Trello alternative.
+
+https://github.com/kanbn/kan
+
+自己搭建
+https://github.com/kanbn/kan?tab=readme-ov-file#self-hosting-
