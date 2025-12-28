@@ -2,7 +2,7 @@
 title: 应用
 description: 应用
 template: doc
-lastUpdated: 2025-12-28 22:54:54
+lastUpdated: 2025-12-29 00:33:43
 sidebar:
   order: 9
 ---
@@ -82,7 +82,7 @@ docker compose -f portainer-compose.yaml up -d
 ```
 
 
-### PVE 虚拟服务 备份与恢复
+#### PVE 虚拟服务 备份与恢复
 下载备份文件:
 ```sh
 scp root@192.168.3.100:/var/lib/vz/dump/vzdump-qemu-101-2025_12_18-07_27_42.vma .
@@ -96,8 +96,29 @@ scp vzdump-qemu-102-2025_12_18-07_22_44.vma root@192.168.1.3:/var/lib/vz/dump/
 ![alt text](/homelab/cli/upload_vam.png)
 
 
-### ssh指纹清理
+#### ssh指纹清理
 清除本地连接的ssh指纹:
 ```sh
 ssh-keygen -R 192.168.3.101
+```
+
+#### drawio
+- https://hub.docker.com/r/jgraph/drawio
+- https://github.com/jgraph/docker-drawio
+- https://github.com/jgraph/drawio
+
+```
+# 临时使用
+docker run -it --rm --name="draw" -p 8080:8080 -p 8443:8443 jgraph/drawio
+
+# --rm: 容器停止后自动删除容器
+#
+# -it:
+# -i（interactive）
+#      保持 STDIN 打开，允许你与容器交互
+# -t（tty）
+#      分配一个伪终端，方便在终端里看到输出
+
+# 后台运行
+docker run -d --name="draw" -p 5232:8080 jgraph/drawio
 ```

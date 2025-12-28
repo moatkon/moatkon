@@ -6749,7 +6749,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="GUKu6s7uOOzlh74pkdJQ" name="HomeLab-Arch-Deploy-Details">
-    <mxGraphModel dx="895" dy="2140" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="359" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6885,7 +6885,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="_tArRdA0fWzclJu3zoQu-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRR34uQUhnpt_qg370Y3-32" target="_tArRdA0fWzclJu3zoQu-1">
+        <mxCell id="_tArRdA0fWzclJu3zoQu-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="HRR34uQUhnpt_qg370Y3-32" target="_tArRdA0fWzclJu3zoQu-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HRR34uQUhnpt_qg370Y3-32" value="Docker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
@@ -6905,7 +6905,7 @@
             <mxPoint y="2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="K24opd8XtMaaVUayGzxt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="HRR34uQUhnpt_qg370Y3-39" target="NWdtWUDohappP08DV8ff-1">
+        <mxCell id="K24opd8XtMaaVUayGzxt-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="HRR34uQUhnpt_qg370Y3-39" target="NWdtWUDohappP08DV8ff-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1090" y="29" />
@@ -6929,28 +6929,31 @@
         <mxCell id="HRR34uQUhnpt_qg370Y3-38" value="1. 解决了OpenWrt的Fake-IP导致无法隧穿问题" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=7;align=left;verticalAlign=top;fillColor=none;" parent="H3L93ZQ6DI2dDLUNFjOR-4" vertex="1">
           <mxGeometry x="130" width="156" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="iP6xh1WDleH6M8Of8_wa-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" target="iP6xh1WDleH6M8Of8_wa-2">
+        <mxCell id="iP6xh1WDleH6M8Of8_wa-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" parent="1" target="iP6xh1WDleH6M8Of8_wa-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1471" y="-226.5" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="K24opd8XtMaaVUayGzxt-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iP6xh1WDleH6M8Of8_wa-2" target="NWdtWUDohappP08DV8ff-1">
+        <mxCell id="K24opd8XtMaaVUayGzxt-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="iP6xh1WDleH6M8Of8_wa-2" target="NWdtWUDohappP08DV8ff-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iP6xh1WDleH6M8Of8_wa-2" value="Ubuntu&lt;br&gt;基础服务(DB、Redis)&lt;br&gt;192.168.3.103" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="iP6xh1WDleH6M8Of8_wa-2" value="Ubuntu&lt;br&gt;基础服务(DB、Redis)&lt;br&gt;192.168.3.103" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="1590" y="-256.5" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="iP6xh1WDleH6M8Of8_wa-3" value="使用OpenWrt作为网关" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+        <mxCell id="iP6xh1WDleH6M8Of8_wa-3" value="使用OpenWrt作为网关" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1530" y="-240" as="geometry" />
         </mxCell>
-        <mxCell id="NWdtWUDohappP08DV8ff-1" value="Docker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="NWdtWUDohappP08DV8ff-1" value="Docker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="1590" y="-161.5" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="K24opd8XtMaaVUayGzxt-3" value="管理Docker" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+        <mxCell id="K24opd8XtMaaVUayGzxt-3" value="管理Docker" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1140" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="_tArRdA0fWzclJu3zoQu-1" value="Slash&lt;br&gt;链接跳转&lt;br&gt;192.168.3.101:5231" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="_tArRdA0fWzclJu3zoQu-1" value="Slash&lt;br&gt;链接跳转&lt;br&gt;192.168.3.101:5231" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="870" y="-51.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x-gQs4YFUp3a4WVM4jyC-1" value="Draw.io&lt;br&gt;&lt;br&gt;192.168.3.101:5232" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="860" y="70" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
