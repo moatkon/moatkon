@@ -9,14 +9,12 @@ sidebar:
 ---
 
 #### 实物
-比我想象中的小;确实很好看;我是特别喜欢这种风格的电脑
+- 比我想象中的小
+- 确实很好看
+- 个人特别喜欢这种风格的电脑
 
 ![](/homelab/thinkstation1.jpg)
 ![](/homelab/thinkstation2.jpg)
 ![](/homelab/thinkstation3.jpg)
-
-#### ThinkStation P3 Tiny Gen2
-![](/homelab/thinkstation_config.png)
-
 
 
