@@ -2,7 +2,7 @@
 title: 应用
 description: 应用
 template: doc
-lastUpdated: 2025-12-28 20:09:36
+lastUpdated: 2025-12-28 22:54:54
 sidebar:
   order: 9
 ---
@@ -56,7 +56,9 @@ networks:
     name: portainer_network
 ```
 
+```sh
 docker compose -f portainer-compose.yaml up -d
+```
 
 #### traefik
 
@@ -75,8 +77,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 ```
 
+```sh
 docker compose -f portainer-compose.yaml up -d
-
+```
 
 
 ### PVE 虚拟服务 备份与恢复
@@ -95,6 +98,6 @@ scp vzdump-qemu-102-2025_12_18-07_22_44.vma root@192.168.1.3:/var/lib/vz/dump/
 
 ### ssh指纹清理
 清除本地连接的ssh指纹:
-```
+```sh
 ssh-keygen -R 192.168.3.101
 ```
