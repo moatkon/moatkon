@@ -2,7 +2,7 @@
 title: 使用Docker搭建开发环境
 description: 使用Docker搭建开发环境
 template: doc
-lastUpdated: 2025-12-28 05:20:14
+lastUpdated: 2025-12-28 18:31:39
 ---
 
 import {LinkCard } from '@astrojs/starlight/components';
@@ -19,6 +19,10 @@ docker run --name mypostgres -d -p 5432:5432 -e POSTGRES_PASSWORD=123456 postgre
 ```sh
 docker pull mysql:5.7
 docker run --name mysql5.7 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+```
+
+```sh title="持久化数据"
+docker run --name mysql -v /home/moatkonbase/data/mysql/data:/var/lib/mysql -v /home/moatkonbase/data/mysql/conf:/etc/mysql/conf.d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysqlrootpwd -d mysql:lts
 ```
 
 ### Redis
