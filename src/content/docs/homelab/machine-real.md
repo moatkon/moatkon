@@ -8,6 +8,12 @@ sidebar:
   order: 8
 ---
 
+#### 实物
+比我想象中的小
+
+![](/homelab/thinkstation1.jpg)
+![](/homelab/thinkstation2.jpg)
+![](/homelab/thinkstation3.jpg)
 
 #### ThinkStation P3 Tiny Gen2
 
