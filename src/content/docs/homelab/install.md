@@ -2,18 +2,10 @@
 title: 安装PVE及相关问题解决
 description: 安装PVE及相关问题解决
 template: doc
-lastUpdated: 2025-12-14 10:49:00
+lastUpdated: 2025-12-28 21:37:30
 sidebar:
   order: 3
 ---
-
-### 部署架构
-
-刚玩,简单画一下部署架构
-
-![](/homelab/Moatkon-HomeLab-install.svg)
-
-### 遇到的问题
 
 #### 1.登录不上
 默认用户名是root,一开始我以为是我安装时的邮箱,所以一直登录不上,使用root就OK了
