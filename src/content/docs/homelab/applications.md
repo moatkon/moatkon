@@ -2,7 +2,7 @@
 title: 应用
 description: 应用
 template: doc
-lastUpdated: 2025-12-29 22:51:51
+lastUpdated: 2025-12-29 23:37:40
 sidebar:
   order: 9
 ---
@@ -140,3 +140,4 @@ https://www.postgresql.org/docs/18/index.html
 ```sh
 docker run -d --name postgres18 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v /home/moatkonbase/data/postgresql/data:/var/lib/postgresql postgres:18.1
 ```
+使用Dbeaver来连接,老的客户端工具已经不支持了18+了。
