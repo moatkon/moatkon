@@ -2,7 +2,7 @@
 title: 应用
 description: 应用
 template: doc
-lastUpdated: 2025-12-29 20:59:49
+lastUpdated: 2025-12-29 22:46:01
 sidebar:
   order: 9
 ---
@@ -132,3 +132,11 @@ https://github.com/kanbn/kan
 
 自己搭建
 https://github.com/kanbn/kan?tab=readme-ov-file#self-hosting-
+
+
+#### postgresql
+https://www.postgresql.org/docs/18/index.html
+
+```
+docker run -d --name postgres18 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v /home/moatkonbase/data/postgresql/data:/var/lib/postgresql/data postgres:18.1
+```
