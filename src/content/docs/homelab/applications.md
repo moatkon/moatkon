@@ -2,7 +2,7 @@
 title: 应用
 description: 应用
 template: doc
-lastUpdated: 2025-12-29 00:36:53
+lastUpdated: 2025-12-29 20:59:49
 sidebar:
   order: 9
 ---
@@ -34,7 +34,7 @@ docker run -d --name memos_tunnel cloudflare/cloudflared:latest tunnel --no-auto
 
 
 #### Portainer
-```sh title="portainer-compose.yml"
+```sh title="portainer-compose.yaml"
 services:
   portainer:
     container_name: portainer
@@ -62,7 +62,7 @@ docker compose -f portainer-compose.yaml up -d
 
 #### traefik
 
-```sh title="docker-compose.yml"
+```sh title="docker-compose.yaml"
 services:
   traefik:
     image: traefik:v3.6
@@ -78,7 +78,7 @@ services:
 ```
 
 ```sh
-docker compose -f portainer-compose.yaml up -d
+docker compose -f docker-compose.yaml up -d
 ```
 
 
