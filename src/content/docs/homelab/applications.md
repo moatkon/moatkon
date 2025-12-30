@@ -2,7 +2,7 @@
 title: 应用
 description: 应用
 template: doc
-lastUpdated: 2025-12-29 00:36:53
+lastUpdated: 2025-12-29 23:37:40
 sidebar:
   order: 9
 ---
@@ -34,7 +34,7 @@ docker run -d --name memos_tunnel cloudflare/cloudflared:latest tunnel --no-auto
 
 
 #### Portainer
-```sh title="portainer-compose.yml"
+```sh title="portainer-compose.yaml"
 services:
   portainer:
     container_name: portainer
@@ -62,7 +62,7 @@ docker compose -f portainer-compose.yaml up -d
 
 #### traefik
 
-```sh title="docker-compose.yml"
+```sh title="docker-compose.yaml"
 services:
   traefik:
     image: traefik:v3.6
@@ -78,7 +78,7 @@ services:
 ```
 
 ```sh
-docker compose -f portainer-compose.yaml up -d
+docker compose -f docker-compose.yaml up -d
 ```
 
 
@@ -132,3 +132,12 @@ https://github.com/kanbn/kan
 
 自己搭建
 https://github.com/kanbn/kan?tab=readme-ov-file#self-hosting-
+
+
+#### postgresql
+https://www.postgresql.org/docs/18/index.html
+
+```sh
+docker run -d --name postgres18 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v /home/moatkonbase/data/postgresql/data:/var/lib/postgresql postgres:18.1
+```
+使用Dbeaver来连接,老的客户端工具已经不支持了18+了。
