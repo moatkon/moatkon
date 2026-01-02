@@ -2,7 +2,7 @@
 title: 苹果生态
 description: 苹果生态
 template: doc
-lastUpdated: 2025-11-30 17:40:19
+lastUpdated: 2026-01-02 16:04:17
 sidebar:
   badge:
     text: Apple
@@ -10,7 +10,7 @@ sidebar:
 ---
 
 :::note[前提]
-以下内容是基于[我是软件工程师](/contact)的背景下的写的。其他行业另说
+以下内容是基于[我是软件工程师](https://links.moatkon.com)的背景下的写的。其他行业另说
 :::
 
 #### 使用统一生态的好处
