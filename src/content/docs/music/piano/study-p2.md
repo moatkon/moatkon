@@ -1,6 +1,6 @@
 ---
 title: 钢琴🎹乐理知识 第二部分
-lastUpdated: 2023-06-15T00:10:13Z
+lastUpdated: 2026-01-02 16:04:17
 template: doc
 ---
 > 历史回顾: [钢琴🎹乐理知识 第一部分](/music/piano/study-p1)
@@ -96,4 +96,4 @@ f-p表示第一遍弹奏用forte 的力度，第二遍弹奏用 piano 的力度
 
 <small>第二部分结束 Page 21~46</small>
 
-> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](/contact)
+> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](https://links.moatkon.com)

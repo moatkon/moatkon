@@ -1,6 +1,6 @@
 ---
 title: 钢琴🎹乐理知识 第三部分
-lastUpdated: 2023-06-16T00:15:13Z
+lastUpdated: 2026-01-02 16:04:17
 template: doc
 ---
 > 历史回顾: [钢琴🎹乐理知识 第二部分](/music/piano/study-p2)
@@ -46,4 +46,4 @@ template: doc
 <br />
 <small>第三部分结束 Page 47~63</small>
 
-> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](/contact)
+> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](https://links.moatkon.com)

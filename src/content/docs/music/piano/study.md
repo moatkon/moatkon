@@ -1,6 +1,6 @@
 ---
 title: 钢琴🎹学习
-lastUpdated: 2023-06-07T00:43:13Z
+lastUpdated: 2026-01-02 16:04:17
 template: doc
 ---
 ### 学习记录
@@ -31,4 +31,4 @@ template: doc
 
 <br/>
 
-> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](/contact)
+> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](https://links.moatkon.com)

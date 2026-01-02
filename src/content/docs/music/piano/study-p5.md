@@ -1,6 +1,6 @@
 ---
 title: 钢琴🎹乐理知识 第五部分
-lastUpdated: 2025-11-16 16:50:37
+lastUpdated: 2026-01-02 16:04:17
 template: doc
 ---
 > 历史回顾: [钢琴🎹乐理知识 第四部分](/music/piano/study-p4)
@@ -69,4 +69,4 @@ Demo:
 <br />
 <small>第三部分结束 Page 102~结束</small>
 
-> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](/contact)
+> 如果想一起学习钢琴,一起加油鼓励,可以[微信扫码联系](https://links.moatkon.com)
