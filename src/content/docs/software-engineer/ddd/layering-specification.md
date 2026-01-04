@@ -2,7 +2,7 @@
 title: DDD分层规范文档
 description: DDD分层规范文档
 template: doc
-lastUpdated: 2025-11-20 17:09:24
+lastUpdated: 2026-01-04 21:42:27
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 6
@@ -102,7 +102,7 @@ com.moatkon.{business-domain}.{module-name-short}
 - 聚合根: com.moatkon.archetype.domain
 - 对外API: com.moatkon.archetype.sdk
 
-### **5.3 团队协作与集成**
+### **5.2 团队协作与集成**
 
 - **契约(SDK)先行**: 在进行跨域功能开发前，提供方团队应先在 sdk 模块中定义好接口和DTO，并发布一个版本。
 - **通信方式**:
