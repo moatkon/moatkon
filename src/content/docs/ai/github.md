@@ -3,7 +3,7 @@ title: AI相关的Github项目
 description: AI相关的Github项目
 template: doc
 draft: false
-lastUpdated: 2025-07-11 17:36:53
+lastUpdated: 2026-01-04 23:07:41
 ---
 
 ### CherryStudio
@@ -15,3 +15,10 @@ lastUpdated: 2025-07-11 17:36:53
 官网: https://docs.newapi.pro/
 
 简介: New API 是一个新一代大模型网关与 AI 资产管理系统，基于 One API 进行二次开发。该项目旨在提供一个统一的接口来管理和使用各种 AI 模型服务，包括但不限于 OpenAI、Anthropic、Midjourney 等。
+
+### Elegant AI Provider Orchestration
+优雅的AI提供商编排 工具
+
+官网: https://alma.now
+
+A beautiful desktop application that unifies your AI experience. Seamlessly switch between OpenAI, Anthropic, Google Gemini, and custom providers.
