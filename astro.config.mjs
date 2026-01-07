@@ -409,6 +409,11 @@ export default defineConfig({
               collapsed: true,
               autogenerate: { directory: '/english/auxiliary-tools'},
             },
+            {
+              label: "NotebookLM",
+              collapsed: true,
+              autogenerate: { directory: '/english/notebooklm'},
+            },
           ],
         },
         {
