@@ -2,7 +2,7 @@
 title: 飞书
 description: 飞书
 template: doc
-lastUpdated: 2025-11-30 17:40:19
+lastUpdated: 2026-01-11 06:10:07
 sidebar:
   order: 8
   badge:
@@ -26,7 +26,7 @@ sidebar:
 
 ---
 
-我就在想,当初我在找[Milanote](/share/efficiency-tools/board/milanote)替代品的时候怎么就没有想到飞书呢,哈哈哈,完全把飞书这个产品忘了
+我就在想,当初我在找[Milanote](/share/efficiency-tools/milanote)替代品的时候怎么就没有想到飞书呢,哈哈哈,完全把飞书这个产品忘了
 
 > _20250623 update_: 我想起来为什么不用飞书了,因为我当时很在意数据存在哪里,我的第一目标是数据可控,所以排除了云服务
 
