@@ -6,6 +6,7 @@ tableOfContents: false
 draft: false
 lastUpdated: 2025-11-30 18:03:37
 sidebar:
+  order: 5.3
   badge:
     text: 画板
     variant: note

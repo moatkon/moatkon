@@ -4,6 +4,7 @@ description: Trello
 template: doc
 lastUpdated: 2026-01-02 16:04:17
 sidebar:
+  order: 5
   badge:
     text: 个人重度依赖
     variant: note

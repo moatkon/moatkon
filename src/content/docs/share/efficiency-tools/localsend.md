@@ -4,6 +4,7 @@ description: LocalSend
 template: doc
 lastUpdated: 2025-11-30 17:40:19
 sidebar:
+  order: 9
   badge:
     text: 文件传输
     variant: note
