@@ -4,6 +4,8 @@ description: 首页
 template: doc
 tableOfContents: false
 lastUpdated: 2025-11-30 17:40:19
+sidebar:
+  order: 1
 ---
 这里主要分享好用的工具,来提升工作效率。从而节省出大量的时间来给到美好的生活
 

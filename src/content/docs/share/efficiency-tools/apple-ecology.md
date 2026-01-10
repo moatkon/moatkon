@@ -4,6 +4,7 @@ description: 苹果生态
 template: doc
 lastUpdated: 2026-01-02 16:04:17
 sidebar:
+  order: 6
   badge:
     text: Apple
     variant: note

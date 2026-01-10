@@ -4,6 +4,7 @@ description: Zed
 template: doc
 lastUpdated: 2025-11-30 17:40:19
 sidebar:
+  order: 14
   badge:
     text: IDE
     variant: note

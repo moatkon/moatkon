@@ -5,6 +5,7 @@ template: doc
 tableOfContents: false
 lastUpdated: 2025-11-30 17:40:19
 sidebar:
+  order: 7
   badge:
     text: 浏览器
     variant: note

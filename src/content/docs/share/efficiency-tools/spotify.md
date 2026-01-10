@@ -5,6 +5,7 @@ template: doc
 lastUpdated: 2025-12-08 18:04:18
 draft: false
 sidebar:
+  order: 12
   badge:
     text: 音乐
     variant: note

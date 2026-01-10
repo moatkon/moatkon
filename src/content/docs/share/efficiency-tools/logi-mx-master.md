@@ -4,6 +4,7 @@ description: 效率工具
 template: doc
 lastUpdated: 2025-11-30 17:40:19
 sidebar:
+  order: 2
   badge:
     text: 鼠标
     variant: note

@@ -5,6 +5,7 @@ template: doc
 tableOfContents: false
 lastUpdated: 2025-11-30 17:40:19
 sidebar:
+  order: 10
   badge:
     text: 操作系统
     variant: note
