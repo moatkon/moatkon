@@ -4,7 +4,7 @@ description: Milanote
 template: doc
 tableOfContents: false
 draft: false
-lastUpdated: 2025-11-30 18:03:37
+lastUpdated: 2026-01-11 06:10:07
 sidebar:
   order: 5.1
   badge:
@@ -23,9 +23,9 @@ sidebar:
 #### 自己非常喜欢,但是价格太贵了
 ![](/share/efficiency-tools/board/milanote/price.png)
 
-因为价格太贵的原因,我在网上搜索[Milanote](https://www.milanote.com/refer/rcEQUbN1p4mHYALX38?utm_source=moatkon.com)的替代品,找到了国内的[小画桌](/share/efficiency-tools/board/xiaohuazhuo)
+因为价格太贵的原因,我在网上搜索[Milanote](https://www.milanote.com/refer/rcEQUbN1p4mHYALX38?utm_source=moatkon.com)的替代品,找到了国内的[小画桌](/share/efficiency-tools/xiaohuazhuo)
 
 ---
 :::note[20250621更新推荐]
-现在不推荐[小画桌](/share/efficiency-tools/board/xiaohuazhuo)了,推荐[飞书](/share/efficiency-tools/lark)
+现在不推荐[小画桌](/share/efficiency-tools/xiaohuazhuo)了,推荐[飞书](/share/efficiency-tools/lark)
 :::
