@@ -1,8 +1,8 @@
 ---
-title: 应用
-description: 应用
+title: 部署应用
+description: 部署应用
 template: doc
-lastUpdated: 2026-01-11 14:33:29
+lastUpdated: 2026-01-11 14:34:26
 sidebar:
   order: 9
 ---
