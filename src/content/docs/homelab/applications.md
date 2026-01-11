@@ -1,8 +1,8 @@
 ---
-title: 应用
-description: 应用
+title: 部署应用
+description: 部署应用
 template: doc
-lastUpdated: 2025-12-29 23:37:40
+lastUpdated: 2026-01-11 14:34:26
 sidebar:
   order: 9
 ---
@@ -141,3 +141,19 @@ https://www.postgresql.org/docs/18/index.html
 docker run -d --name postgres18 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v /home/moatkonbase/data/postgresql/data:/var/lib/postgresql postgres:18.1
 ```
 使用Dbeaver来连接,老的客户端工具已经不支持了18+了。
+
+
+#### Youtube等视频下载
+开源项目: https://github.com/alexta69/metube
+
+```sh title="youtube-download-compose.yaml"
+services:
+  metube:
+    image: ghcr.io/alexta69/metube
+    container_name: metube
+    restart: unless-stopped
+    ports:
+      - "8092:8081"
+    volumes:
+      - /home/moatkon/data/youtube_download:/downloads
+```
