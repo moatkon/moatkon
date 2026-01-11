@@ -2,12 +2,12 @@
 title: "Lenovo G40-70"
 description: ""
 template: doc
-lastUpdated: 2026-01-10 22:05:26
+lastUpdated: 2026-01-11 14:31:34
 draft: false
 sidebar:
   order: 2.2
   badge:
-    text: "第一台笔记本"
+    text: "2015年产品"
     variant: danger
 ---
 
@@ -20,6 +20,8 @@ sidebar:
 
 
 #### Lenovo G40-70 配置
+> 自己升级过内存(12GB)和硬盘(SSD)
+
 ```sh title="lscpu"
 # 简化信息
 
