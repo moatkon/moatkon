@@ -13,3 +13,7 @@ https://aigocode.com/invite/PQJ9BDT5
 
 #### AI Code Mirror
 https://www.aicodemirror.com/register?invitecode=4CMOGX
+
+
+#### 柏拉图AI
+https://api.bltcy.ai/register?aff=1MV387053
