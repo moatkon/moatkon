@@ -477,7 +477,6 @@ export default defineConfig({
             { label: "AI in Work", link: "/ai/in-work" },
             { label: "Vibe coding", link: "/ai/vibe-coding" },
             { label: "AI中转站", link: "/ai/transit-station" },
-            // {label: 'AI时代下，程序员的焦虑与出路',link: '/ai/ai-era-programmer-anxiety',badge: {text: 'Grok3',variant: 'default'}},
           ],
         },
         {
