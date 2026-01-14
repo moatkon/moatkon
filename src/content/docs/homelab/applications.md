@@ -62,6 +62,10 @@ docker compose -f portainer-compose.yaml up -d
 
 #### traefik
 
+```sh title="创建网络"
+docker network create traefik_network
+```
+
 ```sh title="docker-compose.yaml"
 services:
   traefik:
@@ -75,6 +79,9 @@ services:
       - "8082:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+networks:
+  traefik_network:
+    external: true
 ```
 
 ```sh
@@ -156,4 +163,31 @@ services:
       - "8092:8081"
     volumes:
       - /home/moatkon/data/youtube_download:/downloads
+```
+
+
+#### n8n
+```bash
+docker volume create n8n_data
+
+docker run -d \
+ --name n8n \
+ -p 5678:5678 \
+ -e GENERIC_TIMEZONE="Asia/Shanghai" \
+ -e TZ="Asia/Shanghai" \
+ -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
+ -e N8N_RUNNERS_ENABLED=true \
+ -e DB_TYPE=postgresdb \
+ -e DB_POSTGRESDB_DATABASE=n8n \
+ -e DB_POSTGRESDB_HOST=172.27.131.11 \
+ -e DB_POSTGRESDB_PORT=5432 \
+ -e DB_POSTGRESDB_USER=root \
+ -e DB_POSTGRESDB_SCHEMA=n8n \
+ -e DB_POSTGRESDB_PASSWORD=mysecretpassword \
+ -v n8n_data:/home/node/.n8n \
+ --label "traefik.enable=true" \
+ --label "traefik.http.routers.web-test-router.rule=Host(\"n8n.moatkon.com\")" \
+ --label "traefik.http.services.web-test-service.loadbalancer.server.port=5678" \
+ --network traefik_network \
+ docker.n8n.io/n8nio/n8n
 ```
