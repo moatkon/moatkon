@@ -140,6 +140,52 @@ https://github.com/kanbn/kan
 自己搭建
 https://github.com/kanbn/kan?tab=readme-ov-file#self-hosting-
 
+全示例 docker-compose.yml:
+https://github.com/kanbn/kan/blob/main/docker-compose.yml
+
+
+```sh title=".env"
+NEXT_PUBLIC_BASE_URL=http://172.27.131.11:3002
+BETTER_AUTH_SECRET=uqYWTsVP5pyNdhFuoq4m0rmCpM8EVcIpPkltL1g4wq4=
+POSTGRES_URL=postgresql://root:mysecretpassword@172.27.131.11:5432/kan_db
+NEXT_PUBLIC_ALLOW_CREDENTIALS=true
+NEXT_PUBLIC_DISABLE_SIGN_UP=false
+```
+
+
+```sh title="docker-compose.yml"
+services:
+  web:
+    image: ghcr.io/kanbn/kan:latest
+    container_name: kan-web
+    ports:
+      - "3002:3000"
+    networks:
+      - kan-network
+    env_file:
+      - .env
+    environment:
+      NEXT_PUBLIC_BASE_URL: ${NEXT_PUBLIC_BASE_URL}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      POSTGRES_URL: ${POSTGRES_URL}
+      NEXT_PUBLIC_ALLOW_CREDENTIALS: ${NEXT_PUBLIC_ALLOW_CREDENTIALS}
+      NEXT_PUBLIC_DISABLE_SIGN_UP: ${NEXT_PUBLIC_DISABLE_SIGN_UP}
+    restart: unless-stopped
+
+networks:
+  kan-network:
+
+volumes:
+  kan_postgres_data:
+```
+
+访问时请使用 http://172.27.131.11:3002 , 保证同源,否则无法注册、登录。我之前因为没有用同源url报了如下错误:
+```
+2026-01-14T09:45:21.966Z ERROR [Better Auth]: Invalid origin: http://localhost:3002
+```
+
+使用了NEXT_PUBLIC_BASE_URL配置的链接，就没有问题了
+
 
 #### postgresql
 https://www.postgresql.org/docs/18/index.html
