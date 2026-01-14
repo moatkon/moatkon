@@ -61,6 +61,9 @@ docker compose -f portainer-compose.yaml up -d
 ```
 
 #### traefik
+```sh title="创建网络"
+docker network create traefik_network
+```
 
 ```sh title="docker-compose.yaml"
 services:
