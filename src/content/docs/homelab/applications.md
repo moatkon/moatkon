@@ -1,6 +1,6 @@
 ---
-title: 部署应用
-description: 部署应用
+title: 应用部署
+description: 应用部署
 template: doc
 lastUpdated: 2026-01-11 14:34:26
 sidebar:
