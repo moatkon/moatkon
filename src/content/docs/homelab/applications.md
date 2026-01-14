@@ -143,7 +143,12 @@ https://github.com/kanbn/kan?tab=readme-ov-file#self-hosting-
 全示例 docker-compose.yml:
 https://github.com/kanbn/kan/blob/main/docker-compose.yml
 
+BETTER_AUTH_SECRET生成:
+```
+openssl rand -base64 32
+```
 
+环境变量配置文件:
 ```sh title=".env"
 NEXT_PUBLIC_BASE_URL=http://172.27.131.11:3002
 BETTER_AUTH_SECRET=uqYWTsVP5pyNdhFuoq4m0rmCpM8EVcIpPkltL1g4wq4=
@@ -152,7 +157,7 @@ NEXT_PUBLIC_ALLOW_CREDENTIALS=true
 NEXT_PUBLIC_DISABLE_SIGN_UP=false
 ```
 
-
+docker-compose配置:
 ```sh title="docker-compose.yml"
 services:
   web:
