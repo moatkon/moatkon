@@ -140,7 +140,7 @@ https://github.com/kanbn/kan
 自己搭建
 https://github.com/kanbn/kan?tab=readme-ov-file#self-hosting-
 
-docker-compose.yml:
+全示例 docker-compose.yml:
 https://github.com/kanbn/kan/blob/main/docker-compose.yml
 
 
