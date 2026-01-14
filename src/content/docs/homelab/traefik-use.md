@@ -67,3 +67,22 @@ curl http://localhost:8081
 curl -H "Host: hi.moatkon.com" http://localhost:8081
 # 应该返回 hello-world 页面（说明 Traefik 路由正常运行）
 ```
+
+
+#### 可以多起几个web-test来负载均衡
+
+```bash
+docker run -d  --name web-test2 --network traefik_network -p :8000  --label "traefik.enable=true" --label "traefik.http.routers.web-test-router.rule=Host(\"hi.moatkon.com\")" --label "traefik.http.services.web-test-service.loadbalancer.server.port=8000" crccheck/hello-world
+
+
+docker run -d  --name web-test3 --network traefik_network -p :8000  --label "traefik.enable=true" --label "traefik.http.routers.web-test-router.rule=Host(\"hi.moatkon.com\")" --label "traefik.http.services.web-test-service.loadbalancer.server.port=8000" crccheck/hello-world
+
+......
+
+```
+
+起了多个容器:
+![alt text](/homelab/traefix-use-more-containers.png)
+
+负载均衡:
+![alt text](/homelab/traefix-use-loadbalancer.png)
