@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-15 22:40:11
+lastUpdated: 2026-01-15 22:59:17
 sidebar:
   order: 9
 ---
@@ -238,8 +238,31 @@ docker run -d \
  -e DB_POSTGRESDB_PASSWORD=你的密码 \
  -v n8n_data:/home/node/.n8n \
  --label "traefik.enable=true" \
- --label "traefik.http.routers.web-test-router.rule=Host(\"n8n.moatkon.com\")" \
+ --label "traefik.http.routers.web-test-router.rule=Host(\"你的子域.moatkon.com\")" \
  --label "traefik.http.services.web-test-service.loadbalancer.server.port=5678" \
  --network traefik_network \
  docker.n8n.io/n8nio/n8n
+```
+
+
+#### vaultwarden 密码工具
+
+下载:
+https://bitwarden.com/download/
+
+Docker 
+https://hub.docker.com/r/vaultwarden/server
+
+```sh
+docker pull vaultwarden/server:latest
+docker run -d \
+--name vaultwarden \
+-v /你的数据目录/vaultwarden:/data/ \
+-p 8074:80 \
+--label "traefik.enable=true" \
+--label "traefik.http.routers.vaultwarden-router.rule=Host(\"你的子域.moatkon.com\")" \
+--label "traefik.http.services.vaultwarden-service.loadbalancer.server.port=80" \
+--network traefik_default \
+vaultwarden/server:latest
+
 ```
