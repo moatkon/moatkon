@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-11 14:34:26
+lastUpdated: 2026-01-15 22:40:11
 sidebar:
   order: 9
 ---
@@ -152,7 +152,7 @@ openssl rand -base64 32
 ```sh title=".env"
 NEXT_PUBLIC_BASE_URL=http://172.27.131.11:3002
 BETTER_AUTH_SECRET=uqYWTsVP5pyNdhFuoq4m0rmCpM8EVcIpPkltL1g4wq4=
-POSTGRES_URL=postgresql://root:mysecretpassword@172.27.131.11:5432/kan_db
+POSTGRES_URL=postgresql://root:你的密码@172.27.131.11:5432/kan_db
 NEXT_PUBLIC_ALLOW_CREDENTIALS=true
 NEXT_PUBLIC_DISABLE_SIGN_UP=false
 ```
@@ -196,7 +196,7 @@ volumes:
 https://www.postgresql.org/docs/18/index.html
 
 ```sh
-docker run -d --name postgres18 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v /home/moatkonbase/data/postgresql/data:/var/lib/postgresql postgres:18.1
+docker run -d --name postgres18 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=你的密码 -p 5432:5432 -v /home/moatkonbase/data/postgresql/data:/var/lib/postgresql postgres:18.1
 ```
 使用Dbeaver来连接,老的客户端工具已经不支持了18+了。
 
@@ -228,13 +228,14 @@ docker run -d \
  -e TZ="Asia/Shanghai" \
  -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
  -e N8N_RUNNERS_ENABLED=true \
+ -e N8N_SECURE_COOKIE=false \
  -e DB_TYPE=postgresdb \
  -e DB_POSTGRESDB_DATABASE=n8n \
- -e DB_POSTGRESDB_HOST=172.27.131.11 \
+ -e DB_POSTGRESDB_HOST=ip地址 \
  -e DB_POSTGRESDB_PORT=5432 \
  -e DB_POSTGRESDB_USER=root \
  -e DB_POSTGRESDB_SCHEMA=n8n \
- -e DB_POSTGRESDB_PASSWORD=mysecretpassword \
+ -e DB_POSTGRESDB_PASSWORD=你的密码 \
  -v n8n_data:/home/node/.n8n \
  --label "traefik.enable=true" \
  --label "traefik.http.routers.web-test-router.rule=Host(\"n8n.moatkon.com\")" \
