@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3" pages="77">
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3" pages="78">
   <diagram id="Ig9Hf4qjvYJwKQ29Uv4s" name="ArrayList">
-    <mxGraphModel dx="1083" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1076" dy="392" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6749,7 +6749,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="GUKu6s7uOOzlh74pkdJQ" name="HomeLab-Arch-Deploy-Details">
-    <mxGraphModel dx="1186" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1206" dy="1713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6904,7 +6904,7 @@
         <mxCell id="oasJEJwUywE3xPZ4k9OL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="HRR34uQUhnpt_qg370Y3-32" target="x-gQs4YFUp3a4WVM4jyC-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4_Hk6ddJaODnG9Oot65X-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HRR34uQUhnpt_qg370Y3-32" target="4_Hk6ddJaODnG9Oot65X-2">
+        <mxCell id="4_Hk6ddJaODnG9Oot65X-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="HRR34uQUhnpt_qg370Y3-32" target="4_Hk6ddJaODnG9Oot65X-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HRR34uQUhnpt_qg370Y3-32" value="Docker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
@@ -6981,8 +6981,69 @@
         <mxCell id="oasJEJwUywE3xPZ4k9OL-2" value="MySQL" style="whiteSpace=wrap;html=1;fillColor=none;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="1820" y="-161.5" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_Hk6ddJaODnG9Oot65X-2" value="视频下载&lt;br&gt;&lt;div&gt;&lt;br&gt;192.168.3.101:8092&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="4_Hk6ddJaODnG9Oot65X-2" value="视频下载&lt;br&gt;&lt;div&gt;&lt;br&gt;192.168.3.101:8092&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="870" y="-256.5" width="120" height="56.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Hv0iQdJDW9cdN1lgl29y" name="traefik-use">
+    <mxGraphModel dx="1186" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-24" value="保证被反代的服务在同一网络，可以通" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;dashed=1;arcSize=12;verticalAlign=bottom;fontSize=14;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="280" y="310" width="470" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-25" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=16;" parent="1" source="5TSEPTYngGQf3uhzpDhP-3" target="5TSEPTYngGQf3uhzpDhP-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-3" value="traefik" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;verticalAlign=top;fontSize=16;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="290" y="320" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-5" value="docker&amp;nbsp;&lt;span style=&quot;&quot;&gt;8081:80&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontSize=14;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="295" y="360" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-9" value="helloworld-web" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;verticalAlign=top;fontSize=16;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="560" y="320" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-10" value="docker&amp;nbsp;&lt;span style=&quot;&quot;&gt;6365:8000&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontSize=14;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="565" y="360" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-16" value="" style="edgeStyle=none;html=1;" parent="1" source="5TSEPTYngGQf3uhzpDhP-11" target="5TSEPTYngGQf3uhzpDhP-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-11" value="cloudflare tunnel" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;verticalAlign=top;fontSize=16;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="20" y="320" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-12" value="docker 部署" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontSize=14;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="25" y="360" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-19" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5TSEPTYngGQf3uhzpDhP-15" target="5TSEPTYngGQf3uhzpDhP-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-15" value="绑定域名&lt;br&gt;&lt;br&gt;hi.moatkon.com" style="whiteSpace=wrap;html=1;verticalAlign=middle;rounded=1;arcSize=6;fontSize=16;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="20" y="130" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-20" style="edgeStyle=none;html=1;" parent="1" target="5TSEPTYngGQf3uhzpDhP-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="200" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-17" value="内网&lt;br&gt;&lt;br&gt;http://&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;192.168.66.1&lt;/span&gt;:8081" style="whiteSpace=wrap;html=1;verticalAlign=middle;rounded=1;arcSize=6;fontSize=16;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="290" y="130" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-22" value="docker启动时配置按照traefik约定配置labels。&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;traefik的依据，和nginx的配置文件一样，这里只是通过docker的labels来实现类似功能。具体见下面的启动指令&lt;/span&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=16;align=left;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="760" y="310" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-23" value="不一定要用宿主机ip,只要网络能访问到就行" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=15;fontSize=14;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="480" y="130" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-27" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;遇到的问题:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;一开始使用的是http://localhost:8081,通过hi.moatkon.com访问总是显示502。localhost是tunnel docker内的网络，当然访问不通&lt;/font&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=18;fontSize=14;align=left;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="480" y="20" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5TSEPTYngGQf3uhzpDhP-28" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;&amp;nbsp; &amp;nbsp;traefik代理的是docker服务的原生端口(例如8000)，不是暴露出来端口。因为都用docker了，网络都是通的，就没必要用暴露出来的端口了&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;dashed=1;arcSize=24;verticalAlign=top;fontSize=14;align=left;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="280" y="440" width="470" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
