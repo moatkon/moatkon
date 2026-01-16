@@ -6754,7 +6754,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="PpKrbY9RMXv_0F2zDU3f-63" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;arcSize=1;strokeColor=#6C8EBF;align=left;fontStyle=1;fontSize=15;" vertex="1" parent="1">
-          <mxGeometry x="1670" y="-1170" width="890" height="1060" as="geometry" />
+          <mxGeometry x="1670" y="-1140" width="890" height="1030" as="geometry" />
         </mxCell>
         <mxCell id="PpKrbY9RMXv_0F2zDU3f-56" value="&amp;nbsp;物理网络层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;arcSize=14;verticalAlign=middle;strokeColor=#6c8ebf;align=left;fontStyle=1;fontSize=15;" vertex="1" parent="1">
           <mxGeometry x="1677" y="-201.5" width="715" height="86" as="geometry" />
@@ -6855,10 +6855,13 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Hv0iQdJDW9cdN1lgl29y" name="traefik-use">
-    <mxGraphModel dx="1186" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1574" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="rtvAipHuRaCxXZ3ASmRj-1" value="" style="whiteSpace=wrap;html=1;verticalAlign=middle;rounded=1;arcSize=2;fontSize=16;strokeColor=default;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="15" y="10" width="965" height="490" as="geometry" />
+        </mxCell>
         <mxCell id="5TSEPTYngGQf3uhzpDhP-24" value="保证被反代的服务在同一网络，可以通" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;dashed=1;arcSize=12;verticalAlign=bottom;fontSize=14;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="280" y="310" width="470" height="120" as="geometry" />
         </mxCell>
