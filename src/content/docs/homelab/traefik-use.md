@@ -77,8 +77,6 @@ docker run -d  --name web-test2 --network traefik_network -p :8000  --label "tra
 
 docker run -d  --name web-test3 --network traefik_network -p :8000  --label "traefik.enable=true" --label "traefik.http.routers.web-test-router.rule=Host(\"hi.moatkon.com\")" --label "traefik.http.services.web-test-service.loadbalancer.server.port=8000" crccheck/hello-world
 
-......
-
 ```
 
 起了多个容器:
