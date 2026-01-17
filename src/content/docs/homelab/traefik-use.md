@@ -12,7 +12,7 @@ sidebar:
 基于Cloudflare Tunnel来通过域名访问内网服务。
 
 #### 实现流程图
-![](/homelab/Moatkon-traefik-use.drawio.svg?v=2)
+![](/homelab/Moatkon-traefik-use.jpg?v=3)
 
 #### 项目部署
 ```sh
