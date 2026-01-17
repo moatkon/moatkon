@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-18 00:07:38
+lastUpdated: 2026-01-18 00:07:58
 sidebar:
   order: 9
 ---
@@ -278,7 +278,10 @@ https://www.pengyq.dev/posts/2025-02-01-emby/
 
 
 #### Excalidraw
+```
 docker build -t excalidraw/excalidraw .
 docker run  -d --name excalidraw -p 5000:80 excalidraw/excalidraw:latest
+```
+
 
 
