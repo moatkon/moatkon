@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-18 00:14:13
+lastUpdated: 2026-01-18 00:34:30
 sidebar:
   order: 9
 ---
@@ -107,27 +107,6 @@ scp vzdump-qemu-102-2025_12_18-07_22_44.vma root@192.168.1.3:/var/lib/vz/dump/
 清除本地连接的ssh指纹:
 ```sh
 ssh-keygen -R 192.168.3.101
-```
-
-#### drawio
-- https://hub.docker.com/r/jgraph/drawio
-- https://github.com/jgraph/docker-drawio
-- https://github.com/jgraph/drawio
-
-```
-# 临时使用
-docker run -it --rm --name="draw" -p 8080:8080 -p 8443:8443 jgraph/drawio
-
-# --rm: 容器停止后自动删除容器
-#
-# -it:
-# -i（interactive）
-#      保持 STDIN 打开，允许你与容器交互
-# -t（tty）
-#      分配一个伪终端，方便在终端里看到输出
-
-# 后台运行
-docker run -d --name="draw" -p 5232:8080 jgraph/drawio
 ```
 
 
