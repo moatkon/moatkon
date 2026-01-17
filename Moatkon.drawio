@@ -6749,7 +6749,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="GUKu6s7uOOzlh74pkdJQ" name="HomeLab-Arch-Deploy-Details">
-    <mxGraphModel dx="-959" dy="1619" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="-1106" dy="1523" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -6851,8 +6851,11 @@
         <mxCell id="PpKrbY9RMXv_0F2zDU3f-54" value="n8n&lt;br&gt;工作流自动化&lt;br&gt;192.168.3.101:5678" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" parent="1" vertex="1">
           <mxGeometry x="1821.25" y="-695.5" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BIHdjw0lXgDoJ37NOvzP-1" value="n8n&lt;br&gt;工作流自动化&lt;br&gt;192.168.3.101:5678" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" vertex="1" parent="1">
+        <mxCell id="BIHdjw0lXgDoJ37NOvzP-1" value="Excalidraw&lt;br&gt;白板&lt;br&gt;192.168.3.101:5000" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" parent="1" vertex="1">
           <mxGeometry x="1970" y="-695" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BIHdjw0lXgDoJ37NOvzP-2" value="Drawio&lt;br&gt;绘图&lt;br&gt;192.168.3.101:8444" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="-695" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
