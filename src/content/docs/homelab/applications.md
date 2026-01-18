@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-18 17:12:15
+lastUpdated: 2026-01-18 19:57:36
 sidebar:
   order: 9
 ---
@@ -318,10 +318,24 @@ docker run -d \
 http://192.168.3.103:9001/rustfs/console/browser
 
 
+#### 财务软件 Actual Budget
 
+https://github.com/actualbudget/actual
+
+https://actualbudget.org/docs/install/docker
+
+```bash
+docker run --pull=always --restart=unless-stopped -d -p 5006:5006 -v 你的挂载目录:/data --name my_actual_budget \
+--label "traefik.enable=true" \
+--label "traefik.http.routers.actual-budget-router.rule=Host(\"money.moatkon.com\")" \
+--label "traefik.http.services.actual-budget-service.loadbalancer.server.port=5006" \
+--network traefik_default \
+actualbudget/actual-server:latest
+```
 
 #### 待托管
 - []https://jellyfin.org/docs/general/installation/container
 - []https://docs.postiz.com/installation/docker
 - [] https://github.com/amruthpillai/reactive-resume 开源简历
-- [X] S3 --> RustFS 
+- [X] S3 --> RustFS
+- [X] 财务软件 --> actual budget

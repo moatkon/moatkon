@@ -2,7 +2,7 @@
 title: 最新部署情况
 description: 最新部署情况
 template: doc
-lastUpdated: 2026-01-17 09:59:29
+lastUpdated: 2026-01-18 19:57:36
 sidebar:
   order: 0
   badge:
@@ -10,4 +10,4 @@ sidebar:
     variant: default
 ---
 #### 部署细节
-![](/homelab/Moatkon-HomeLab-Arch-Deploy-Details.jpg?v=2)
+![](/homelab/Moatkon-HomeLab-Arch-Deploy-Details.jpg?v=3)
