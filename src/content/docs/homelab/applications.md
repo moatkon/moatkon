@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-18 22:20:00
+lastUpdated: 2026-01-19 00:02:37
 sidebar:
   order: 9
 ---
@@ -334,8 +334,8 @@ actualbudget/actual-server:latest
 ```
 
 #### 待托管
-- [ ]https://jellyfin.org/docs/general/installation/container
-- [ ]https://docs.postiz.com/installation/docker
+- [ ] https://jellyfin.org/docs/general/installation/container
+- [ ] https://docs.postiz.com/installation/docker
 - [ ] https://github.com/amruthpillai/reactive-resume 开源简历
 - [X] S3 --> RustFS
 - [X] 财务软件 --> actual budget
