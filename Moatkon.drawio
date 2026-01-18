@@ -6857,7 +6857,7 @@
         <mxCell id="BIHdjw0lXgDoJ37NOvzP-2" value="Drawio&lt;br&gt;绘图&lt;br&gt;192.168.3.101:8444" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" parent="1" vertex="1">
           <mxGeometry x="2120" y="-695" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="U6dECQqRaPZRqV77-EJ4-1" value="RustFS&lt;br&gt;&lt;br&gt;192.168.3.103:9003" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="U6dECQqRaPZRqV77-EJ4-1" value="RustFS&lt;br&gt;&lt;br&gt;192.168.3.103:9003" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="2120" y="-520" width="120" height="60" as="geometry" />
         </mxCell>
       </root>

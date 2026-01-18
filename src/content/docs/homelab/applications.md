@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-18 14:18:39
+lastUpdated: 2026-01-18 17:12:15
 sidebar:
   order: 9
 ---
@@ -321,7 +321,7 @@ http://192.168.3.103:9001/rustfs/console/browser
 
 
 #### 待托管
-- https://jellyfin.org/docs/general/installation/container
-- https://docs.postiz.com/installation/docker
-- [X] https://github.com/amruthpillai/reactive-resume 开源简历
-- S3
+- []https://jellyfin.org/docs/general/installation/container
+- []https://docs.postiz.com/installation/docker
+- [] https://github.com/amruthpillai/reactive-resume 开源简历
+- [X] S3 --> RustFS 
