@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-18 00:34:30
+lastUpdated: 2026-01-18 12:02:42
 sidebar:
   order: 9
 ---
@@ -269,3 +269,8 @@ https://www.drawio.com/blog/diagrams-docker-app
 ```
 docker run -d --name="draw" -p 8444:8080 -p 8443:8443 jgraph/drawio
 ```
+
+
+#### 待托管
+- https://jellyfin.org/docs/general/installation/container
+- https://docs.postiz.com/installation/docker
