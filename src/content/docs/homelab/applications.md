@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-18 12:02:42
+lastUpdated: 2026-01-18 14:18:39
 sidebar:
   order: 9
 ---
@@ -270,7 +270,58 @@ https://www.drawio.com/blog/diagrams-docker-app
 docker run -d --name="draw" -p 8444:8080 -p 8443:8443 jgraph/drawio
 ```
 
+#### 开源简历
+https://docs.rxresu.me/getting-started/quickstart
+
+https://github.com/amruthpillai/reactive-resume
+
+
+#### RustFS
+> 替代minio
+
+https://github.com/rustfs/rustfs
+
+https://rustfs.com/
+https://rustfs.com.cn/ 中文站点 
+
+根据 GitHub 的数据，RustFS 是增长最快的分布式对象存储。 RustFS 用热门安全的 Rust 语言开发，兼容 S3 协议。适用于 AI/ML 及海量数据存储、大数据、互联网、工业和保密存储等全部场景，支持国产保密设备和系统。
+
+**使用Docker安装**
+https://docs.rustfs.com.cn/installation/docker/
+
+```bash
+docker pull rustfs/rustfs
+
+# 修改宿主机目录权限
+sudo chown -R 1000:1000 自己的挂在地址
+# 或者更宽松的权限
+sudo chmod -R 777 自己的挂在地址
+
+
+docker run -d \
+  --name rustfs_local \
+  -e RUSTFS_ACCESS_KEY=自己设定 \
+  -e RUSTFS_SECRET_KEY=自己设定 \
+  -e RUSTFS_CONSOLE_ENABLE=true \
+  -e RUSTFS_SERVER_DOMAINS=example.com \
+  -p 9000:9000 \
+  -p 9001:9001 \
+  -v 自己的挂在地址:/data \
+  rustfs/rustfs:latest
+
+-p 9000:9000：映射宿主机 9000 Endpoint端口到容器
+-p 9001:9001：映射宿主机 9001 Console端口到容器
+
+```
+
+访问控制台
+http://192.168.3.103:9001/rustfs/console/browser
+
+
+
 
 #### 待托管
 - https://jellyfin.org/docs/general/installation/container
 - https://docs.postiz.com/installation/docker
+- [X] https://github.com/amruthpillai/reactive-resume 开源简历
+- S3
