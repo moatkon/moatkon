@@ -2,9 +2,9 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-19 00:02:37
+lastUpdated: 2026-01-24 10:17:19
 sidebar:
-  order: 9
+  order: 1.1
 ---
 
 #### Slash 短链跳转
@@ -332,6 +332,32 @@ docker run --pull=always --restart=unless-stopped -d -p 5006:5006 -v 你的挂�
 --network traefik_default \
 actualbudget/actual-server:latest
 ```
+
+#### Pulse
+监控
+
+https://github.com/rcourtman/Pulse/blob/main/docs/INSTALL.md
+
+
+```yaml
+services:
+  pulse:
+    image: rcourtman/pulse:latest
+    container_name: pulse
+    restart: unless-stopped
+    ports:
+      - "7655:7655"
+    volumes:
+      - pulse_data:/data
+    environment:
+      - PULSE_AUTH_USER=pulse
+      - PULSE_AUTH_PASS=pulseyrk123
+
+volumes:
+  pulse_data:
+```
+
+其他安装进到管理界面按照提示安装就好了
 
 #### 待托管
 - [ ] https://jellyfin.org/docs/general/installation/container

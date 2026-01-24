@@ -6867,6 +6867,9 @@
         <mxCell id="XLf2Tx7d09KYYMisBzgk-6" value="有线连接" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="2093" y="-240" width="60" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="havZ3MaHB2cos80T6B0H-1" value="Pulse&lt;br&gt;监控软件&lt;br&gt;192.168.3.101:7655" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" vertex="1" parent="1">
+          <mxGeometry x="1970" y="-630" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
