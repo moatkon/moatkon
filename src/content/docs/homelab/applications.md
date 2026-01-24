@@ -2,9 +2,9 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-24 10:16:51
+lastUpdated: 2026-01-24 10:17:19
 sidebar:
-  order: 9
+  order: 1.1
 ---
 
 #### Slash 短链跳转
