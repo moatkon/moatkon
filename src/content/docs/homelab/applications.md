@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-24 10:17:19
+lastUpdated: 2026-01-26 00:02:04
 sidebar:
   order: 1.1
 ---
@@ -245,15 +245,6 @@ docker run -d \
 vaultwarden/server:latest
 
 ```
-
-#### Emby
-> 暂未安装
-
-https://emby.media/docker-server.html
-
-https://hub.docker.com/r/emby/embyserver
-
-https://www.pengyq.dev/posts/2025-02-01-emby/
 
 
 #### Excalidraw
