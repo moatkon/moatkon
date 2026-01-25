@@ -2,7 +2,7 @@
 
 # 拉取最新代码到本地仓库
 echo "=========>>>开始检测指定文件夹下的文件变动,并更新lastUpdated时间"
-sh last_update.sh
+# sh last_update.sh
 echo "=========>>>lastUpdated end"
 echo ""
 
