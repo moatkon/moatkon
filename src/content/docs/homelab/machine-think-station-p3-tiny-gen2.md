@@ -2,12 +2,12 @@
 title: "真·第一台机器:ThinkStation P3 Tiny Gen2"
 description: "真·第一台机器:ThinkStation P3 Tiny Gen2"
 template: doc
-lastUpdated: 2026-01-01 12:27:04
+lastUpdated: 2026-01-26 00:03:12
 draft: false
 sidebar:
   order: 2.1
   badge:
-    text: 假第一台机器
+    text: 很喜欢这个产品
     variant: danger
 ---
 

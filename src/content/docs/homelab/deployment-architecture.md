@@ -2,7 +2,7 @@
 title: 最新部署情况
 description: 最新部署情况
 template: doc
-lastUpdated: 2026-01-24 10:19:47
+lastUpdated: 2026-01-26 00:02:04
 sidebar:
   order: 0
   badge:
@@ -18,5 +18,6 @@ sidebar:
 
 
 #### 自托管资源
-https://selfh.st/?utm_source=moatkon.com
+[https://selfh.st](https://selfh.st/?utm_source=moatkon.com)
+
 
