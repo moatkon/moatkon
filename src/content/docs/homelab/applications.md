@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-26 00:02:04
+lastUpdated: 2026-01-27 23:51:33
 sidebar:
   order: 1.1
 ---
@@ -349,6 +349,30 @@ volumes:
 ```
 
 其他安装进到管理界面按照提示安装就好了
+
+
+### Homarr
+
+https://homarr.dev/docs/getting-started/installation/docker
+
+```yaml
+#---------------------------------------------------------------------#
+#     Homarr - A simple, yet powerful dashboard for your server.      #
+#---------------------------------------------------------------------#
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/homarr-labs/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - ./homarr/appdata:/appdata
+    environment:
+      - SECRET_ENCRYPTION_KEY=493e6095c99cd15a6e60befddcec9a1d167b2b7219353e8c5e07ed0cacee8d21 # openssl rand -hex 32 生成
+    ports:
+      - '7575:7575'
+			
+```
 
 #### 待托管
 - [ ] https://jellyfin.org/docs/general/installation/container
