@@ -2,11 +2,11 @@
 title: 最新部署情况
 description: 最新部署情况
 template: doc
-lastUpdated: 2026-02-02 00:43:27
+lastUpdated: 2026-02-02 01:44:36
 sidebar:
   order: 0
   badge:
-    text: 保持最新
+    text: "保持最新"
     variant: default
 ---
 #### 折腾HomeLab的原因
