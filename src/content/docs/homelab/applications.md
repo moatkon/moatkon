@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-01-27 23:51:33
+lastUpdated: 2026-02-02 00:43:27
 sidebar:
   order: 1.1
 ---
@@ -11,6 +11,8 @@ sidebar:
 ``` sh
 docker run -d --name slash --publish 5231:5231 --volume /home/moatkon/codes/slash/:/var/opt/slash yourselfhosted/slash:latest
 ```
+
+> 不建议做导航面板使用,稍微有点重。
 
 #### MySQL 
 ```sh
@@ -351,7 +353,7 @@ volumes:
 其他安装进到管理界面按照提示安装就好了
 
 
-### Homarr
+#### Homarr
 
 https://homarr.dev/docs/getting-started/installation/docker
 
@@ -373,6 +375,30 @@ services:
       - '7575:7575'
 			
 ```
+
+> 对资源要求比较高,我的机器不Hold不住,所以换成静态的了
+
+#### DashLit
+
+https://github.com/codewec/dashlit
+
+```yml
+services:
+  app:
+    container_name: dashlit-app
+    image: ghcr.io/codewec/dashlit:latest
+    restart: unless-stopped
+    environment:
+      ORIGIN: '${ORIGIN:-http://localhost:1525}'
+    ports:
+      - '1525:3000'
+    volumes:
+      - /self-hosted/dashlit:/app/data
+```
+
+> `${ORIGIN}` 是访问地址,如实填写
+
+![](/homelab/applications/dashlit-use-demo.png)
 
 #### 待托管
 - [ ] https://jellyfin.org/docs/general/installation/container
