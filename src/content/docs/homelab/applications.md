@@ -2,11 +2,15 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-02-02 00:43:27
+lastUpdated: 2026-02-02 00:49:42
 sidebar:
   order: 1.1
   badge:
+<<<<<<< HEAD
     text: 保持最新
+=======
+    text: '🎉🎉🎉'
+>>>>>>> origin/dev
     variant: default
 ---
 
