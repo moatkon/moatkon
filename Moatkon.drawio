@@ -6804,7 +6804,7 @@
         <mxCell id="PpKrbY9RMXv_0F2zDU3f-33" value="Portainer&lt;br&gt;容器管理&lt;br&gt;192.168.3.101:9443" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" parent="1" vertex="1">
           <mxGeometry x="1821.25" y="-781.5" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="PpKrbY9RMXv_0F2zDU3f-35" value="Slash&lt;br&gt;缩短链接&lt;br&gt;192.168.3.101:5231" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="PpKrbY9RMXv_0F2zDU3f-35" value="Slash&lt;br&gt;短链&lt;br&gt;192.168.3.101:5231" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="1970" y="-860" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="PpKrbY9RMXv_0F2zDU3f-36" value="Traefik&lt;br&gt;&lt;div&gt;反向代理&lt;br&gt;192.168.3.101:8082&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;flipV=1;" parent="1" vertex="1">
@@ -6867,8 +6867,11 @@
         <mxCell id="XLf2Tx7d09KYYMisBzgk-6" value="有线连接" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="2093" y="-240" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="havZ3MaHB2cos80T6B0H-1" value="Pulse&lt;br&gt;监控软件&lt;br&gt;192.168.3.101:7655" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" vertex="1" parent="1">
+        <mxCell id="havZ3MaHB2cos80T6B0H-1" value="Pulse&lt;br&gt;监控软件&lt;br&gt;192.168.3.101:7655" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" parent="1" vertex="1">
           <mxGeometry x="1970" y="-630" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S2w6sviAyraVf3exlOw-1" value="DashLit&lt;br&gt;导航面板&lt;br&gt;192.168.3.101:1525" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;rounded=1;strokeColor=#d79b00;flipV=1;" vertex="1" parent="1">
+          <mxGeometry x="2119.5" y="-630" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
