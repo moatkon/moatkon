@@ -5,6 +5,9 @@ template: doc
 lastUpdated: 2026-02-02 00:43:27
 sidebar:
   order: 1.1
+  badge:
+    text: 保持最新
+    variant: default
 ---
 
 #### Slash 短链跳转
