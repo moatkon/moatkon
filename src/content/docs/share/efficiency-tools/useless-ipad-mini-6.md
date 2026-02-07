@@ -2,7 +2,7 @@
 title: iPad mini 6
 description: 分享一个对我无用的产品 —— iPad mini 6
 template: doc
-lastUpdated: 2025-11-30 18:03:37
+lastUpdated: 2026-02-07 18:20:48
 draft: false
 tableOfContents: false
 sidebar:
@@ -46,3 +46,8 @@ sidebar:
 
 
 ![](/share/just/iPadmini6/hero_endframe__gnx9z3uu3t6q_large.png)
+
+
+**Update 20260207**
+
+因为Homelab搭建了Jellyfin, iPad现在成了Homelab的移动终端。我最近频繁使用iPad看电影,美剧。以前都是把电影和美剧复制到iPad看。因为iPad空间小，复制不了很多资源。现在有了Jellyfin,就不用复制了。 64GB现在已经完全够用了。
