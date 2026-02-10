@@ -29,6 +29,9 @@ node openclaw.mjs gateway --allow-unconfigured --bind lan
 宿主机访问:
 http://172.27.131.11:18789/#token=e718d22618c540398d00d772194ebe9e7624069e37e85f99
 
+todo:
+- [ ] https 签发问题
+
 
 #### 遇到的问题
 
