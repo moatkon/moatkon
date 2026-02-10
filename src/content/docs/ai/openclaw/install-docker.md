@@ -9,7 +9,8 @@ lastUpdated: 2026-02-10 13:44:20
 ```sh
 git clone https://github.com/openclaw/openclaw.git
 cd openclaw/
-sudo ./docker-setup.sh
+# 不要使用sudo来运行脚本
+./docker-setup.sh
 ```
 
 #### 遇到的问题
@@ -53,7 +54,7 @@ docker pull node:22-bookworm
 问题3:
 Error: EACCES: permission denied, open '/home/node/.openclaw/.env'
 
-造成这个问题的原因是因为我: root 构建阶段 + 非 root 运行 + home 目录未授权
+造成这个问题的原因是因为我: root 构建阶段 + 非 root 运行 + home 目录未授权。所以一开始就不要使用sudo来运行脚本
 
 解决方案:
 在 Dockerfile 里，在切换 USER 之前，显式创建目录并授权：
