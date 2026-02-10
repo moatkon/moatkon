@@ -2,7 +2,7 @@
 title:  使用Docker安装OpenClaw
 description: 使用Docker安装OpenClaw
 template: doc
-draft:true
+draft: true
 lastUpdated: 2026-02-10 13:44:20
 ---
 
@@ -12,6 +12,19 @@ cd openclaw/
 # 不要使用sudo来运行脚本
 ./docker-setup.sh
 ```
+
+
+会在终端里面显示启动信息，但是此时不是在后台运行的，终端一关闭，openclaw就关闭了。因为镜像已经构建好了，在本地。可以通过docker images查看。我们可以使用images来启动，命令如下
+
+```
+docker run -d \
+--name openclaw \
+-p 18789:18789 \
+-e OPENCLAW_GATEWAY_TOKEN=终端里面的token \
+你本地的镜像 \
+node openclaw.mjs gateway --allow-unconfigured --bind lan
+```
+
 
 #### 遇到的问题
 
