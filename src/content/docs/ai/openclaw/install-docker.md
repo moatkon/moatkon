@@ -48,3 +48,19 @@ docker pull node:22-bookworm
 
 解决方案:
 找到 Dockerfile,注释掉 `RUN chown -R node:node /app` , 添加一行: `COPY --chown=node:node . /app`
+
+
+问题3:
+Error: EACCES: permission denied, open '/home/node/.openclaw/.env'
+
+造成这个问题的原因是因为我: root 构建阶段 + 非 root 运行 + home 目录未授权
+
+解决方案:
+在 Dockerfile 里，在切换 USER 之前，显式创建目录并授权：
+
+在 `USER node` 之前加：
+```
+RUN mkdir -p /home/node/.openclaw
+&& chown -R node:node /home/node
+```
+
