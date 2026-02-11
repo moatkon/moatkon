@@ -17,15 +17,14 @@ cd openclaw/
 会在终端里面显示启动信息，但是此时不是在后台运行的，终端一关闭，openclaw就关闭了。因为镜像已经构建好了，在本地。可以通过docker images查看。我们可以使用images来启动，命令如下
 
 ```
-
 docker run -d \
 --name openclaw \
 -p 18789:18789 \
--e OPENCLAW_GATEWAY_TOKEN=e718d22618c540398d00d772194ebe9e7624069e37e85f99 \
 openclaw:local \
 node openclaw.mjs gateway --allow-unconfigured --bind lan 
 ```
 
+docker基础指令: `docker exec -it openclaw node openclaw.mjs <command>`
 
 ![](/ai/openclaw/disconnect_1008.png)
 
@@ -40,6 +39,8 @@ docker exec -it openclaw node openclaw.mjs devices list
 docker exec -it openclaw node openclaw.mjs devices approve <Request>
 
 
+配置:
+docker exec -it openclaw node openclaw.mjs config
 
 
 宿主机访问:
@@ -98,3 +99,5 @@ RUN mkdir -p /home/node/.openclaw
 && chown -R node:node /home/node
 ```
 
+---
+- 教程: https://www.binance.com/zh-CN/square/post/36008200678113
