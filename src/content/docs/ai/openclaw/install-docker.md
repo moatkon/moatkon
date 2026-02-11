@@ -45,7 +45,7 @@ docker exec -it openclaw node openclaw.mjs config
 
 
 宿主机访问:
-http://172.27.131.11:18789/#token=e718d22618c540398d00d772194ebe9e7624069e37e85f99
+http://172.27.131.11:18789/#token=123456789abcdef
 
 
 #### 遇到的问题
