@@ -123,6 +123,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
       - NODE_ENV=production
+      - OPENCLAW_GATEWAY_TOKEN=123456789abcdef
     ports:
       - 18789:18789
     entrypoint: ["/bin/bash", "-c"]
