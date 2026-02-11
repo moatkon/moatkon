@@ -172,3 +172,14 @@ networks: {}
 
 docker compose -f c.yml up -d
 docker compose -f c.yml down -v
+
+
+# 进入容器
+docker exec -it openclaw-gateway bash
+
+# 运行初始化向导
+openclaw onboard
+
+# 完成后退出容器并重启服务：
+exit
+docker restart openclaw-gateway
