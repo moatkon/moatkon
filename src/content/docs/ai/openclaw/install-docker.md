@@ -2,7 +2,7 @@
 title:  使用Docker安装OpenClaw
 description: 使用Docker安装OpenClaw
 template: doc
-draft: true
+draft: false
 lastUpdated: 2026-02-10 13:44:20
 ---
 
@@ -10,8 +10,7 @@ lastUpdated: 2026-02-10 13:44:20
 
 
 
-
-```yml
+```yml title="openclaw compose 配置"
 version: "3.8"
 services:
   openclaw-gateway:
@@ -74,23 +73,66 @@ volumes:
 networks: {}
 ```
 
+##### 启动
 docker compose -f c.yml up -d
+
+##### 下线
 docker compose -f c.yml down -v
 
 
-# 进入容器
+#### 使用
+
+##### 进入容器
 docker exec -it openclaw-gateway bash
 
-# 运行初始化向导
+##### 运行初始化向导
 openclaw onboard
 
-# 完成后退出容器并重启服务：
+##### 完成后退出容器并重启服务：
 exit
 docker restart openclaw-gateway
 
-# 重新生成令牌
+##### 重新生成令牌
 docker exec -it openclaw-gateway openclaw dashboard --no-open
-# 查看设备列表
+##### 查看设备列表
 docker exec -it openclaw-gateway openclaw devices list
-# 审核通过设备
+##### 审核通过设备
 docker exec -it openclaw-gateway openclaw devices approve <Request>
+
+
+---
+
+#### 接入国内模型:
+参考: https://damodev.csdn.net/697dff7b7c1d88441d90f0e4.html
+
+```sh
+docker exec -it openclaw-gateway bash
+
+openclaw config set 'models.providers.deepseek' --json '{
+  "baseUrl": "https://api.deepseek.com/v1",
+  "apiKey": "sk-62eb36e1d6104543922454dfcfe5d31e",
+  "api": "openai-completions",
+  "models": [
+    { "id": "deepseek-chat", "name": "DeepSeek Chat" },
+    { "id": "deepseek-reasoner", "name": "DeepSeek Reasoner" }
+  ]
+}'
+```
+
+设置 models.mode 为 merge
+
+```sh
+openclaw config set models.mode merge
+```
+
+设置默认模型（以deepseek-chat为例）:
+```sh
+openclaw models set deepseek/deepseek-chat
+```
+
+重启:
+docker restart openclaw-gateway
+
+
+安装成功:
+![](/ai/openclaw/success_install.png)
