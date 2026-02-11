@@ -169,3 +169,6 @@ volumes:
 
 networks: {}
 ```
+
+docker compose -f c.yml up -d
+docker compose -f c.yml down -v
