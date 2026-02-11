@@ -27,14 +27,17 @@ node openclaw.mjs gateway --allow-unconfigured --bind lan
 ```
 
 
-设备配对 
+![](/ai/openclaw/disconnect_1008.png)
+
+设备:
 docker exec -it openclaw node openclaw.mjs devices list
 
 
 
+![](/ai/openclaw/pair.png)
 
 设备审核同意
-  docker exec -it openclaw node openclaw.mjs devices approve <Request>
+docker exec -it openclaw node openclaw.mjs devices approve <Request>
 
 
 
