@@ -20,6 +20,7 @@ cd openclaw/
 docker run -d \
 --name openclaw \
 -p 18789:18789 \
+-e OPENCLAW_GATEWAY_TOKEN=123456789abcdef \
 openclaw:local \
 node openclaw.mjs gateway --allow-unconfigured --bind lan 
 ```
