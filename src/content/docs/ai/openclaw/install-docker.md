@@ -102,3 +102,4 @@ RUN mkdir -p /home/node/.openclaw
 
 ---
 - 教程: https://www.binance.com/zh-CN/square/post/36008200678113
+- https://brave2049.com/groups/artificial-intelligence-learning/forum/discussion/clawdbotdocker-bu-shu-yu-yun-wei-shi-zhan-jiao-cheng-2026-ban/
