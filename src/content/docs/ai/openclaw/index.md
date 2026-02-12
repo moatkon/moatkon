@@ -32,8 +32,12 @@ echo $OPENCLAW_IMAGE
 ```sh
 ./docker-setup.sh
 
-# 后面去初始化。失败成功与否都没有关系。主要是让其生成配置文件
+按照实际情况配置
 ```
+
+退出 docker-setup后 容器消失.
+
+
 
 打开自己机器上家目录里面的.openclaw
 
@@ -41,8 +45,33 @@ echo $OPENCLAW_IMAGE
 cd ~/.openclaw
 vim openclaw.json
 
-# gateway.bind 值改为lan   改完之后openclaw会自动加载,不用重启
+# gateway.bind 值改为lan 
 ```
+
+编辑 docker-setup.sh, 注释
+#docker compose "${COMPOSE_ARGS[@]}" run --rm openclaw-cli onboard --no-install-daemon
+
+再次执行 ./docker-setup.sh
+
+
+进入容器 docker exec -it openclaw-gateway bash
+在容器里面 printenv | grep OPENCLAW 获取到真实token，配置到配置文件
+
+
+node dist/index.js devices list
+
+
+
+
+----------------
+----------------
+----------------
+----------------
+----------------
+
+
+
+
 
 上面docker-setup.sh的核心职责是拼装docker-compose.yml,可以找到直接操作或者编辑
 
