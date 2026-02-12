@@ -50,6 +50,7 @@ vim openclaw.json
 services:
   openclaw-gateway:
     image: ${OPENCLAW_IMAGE:-openclaw:local}
+    container_name: openclaw-gateway
     environment:
       HOME: /home/node
       TERM: xterm-256color
@@ -95,6 +96,25 @@ services:
 #     entrypoint: ["node", "dist/index.js"]
 ```
 
+一些基于docker-compose.yml操作的指令
 
+```sh
 docker compose -f /home/moatkon/docker_app/openclaw/docker-compose.yml up -d
 
+WhatsApp (QR):
+docker compose -f /home/moatkon/docker_app/openclaw/docker-compose.yml run --rm openclaw-cli channels login
+
+Telegram (bot token):
+docker compose -f /home/moatkon/docker_app/openclaw/docker-compose.yml run --rm openclaw-cli channels add --channel telegram --token <token>
+
+Discord (bot token):
+docker compose -f /home/moatkon/docker_app/openclaw/docker-compose.yml run --rm openclaw-cli channels add --channel discord --token <token>
+
+docker compose -f /home/moatkon/docker_app/openclaw/docker-compose.yml exec openclaw-gateway node dist/index.js health --token "f4cd538bc9f7128e93077604dfc29e5a01094ea24cbbfd107f27d5648fd37378"
+```
+
+不过我不喜欢这么操作。我喜欢
+
+docker exec -it 容器名 node dist/index.js 指令
+
+docker exec -it openclaw-gateway node dist/index.js devices list
