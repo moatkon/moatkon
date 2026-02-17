@@ -3,7 +3,7 @@ title:  在Docker中安装OpenClaw
 description: 在Docker中安装OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-17 11:00:46
+lastUpdated: 2026-02-17 11:04:04
 ---
 
 #### 安装
@@ -109,7 +109,7 @@ ls -R /home/node/.openclaw/extensions
 
 /app/dist/index.js pairing list feishu
 
-openclaw pairing approve feishu <code> 
+/app/dist/index.js pairing approve feishu <code> 
 ```
 
 
