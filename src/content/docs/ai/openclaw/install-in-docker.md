@@ -3,7 +3,7 @@ title:  在Docker中安装OpenClaw
 description: 在Docker中安装OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-17 09:51:04
+lastUpdated: 2026-02-17 10:16:26
 ---
 
 #### 安装
@@ -107,7 +107,7 @@ ls -R /home/node/.openclaw/extensions
 
 /app/dist/index.js pairing list feishu
 
-openclaw pairing approve feishu E48K88D2 
+openclaw pairing approve feishu <code> 
 ```
 
 
@@ -122,13 +122,127 @@ openclaw pairing approve feishu E48K88D2
 受保护命令需要：设备已 pairing 或在 approvals allowlist 鼓励列表里，你当前飞书账号可能只是完成了 pairing，但没有被加入 allowlist。
 
 在容器里执行：
-
+```
 /app/dist/index.js approvals allowlist add feishu
+```
 
-
-
-
-
-```sh title="添加审核权限"
+```sh title="添加其他审核权限"
 dist/index.js approvals allowlist add local
+```
+
+这样就可以创建cron jobs了
+
+#### openclaw.json
+我配置的是kimi模型,可以有你自行选择.
+
+```json
+{
+  "wizard": {
+    "lastRunAt": "2026-02-16T17:37:58.993Z",
+    "lastRunVersion": "2026.2.15",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "moonshot:default": {
+        "provider": "moonshot",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 256000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "moonshot/kimi-k2.5"
+      },
+      "models": {
+        "moonshot/kimi-k2.5": {
+          "alias": "Kimi"
+        }
+      },
+      "workspace": "/root/.openclaw/workspace"
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "feishu": {
+      "appId": "飞书应用Id",
+      "appSecret": "飞书密匙",
+      "domain": "feishu",
+      "enabled": true,
+      "groupPolicy": "open"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "你的token"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": { "allowInsecureAuth": true },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "plugins": {
+    "load": {
+      "paths": [
+        "/app/extensions/feishu"
+      ]
+    },
+    "entries": {
+      "feishu": {
+        "enabled": true
+      }
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.2.15",
+    "lastTouchedAt": "2026-02-16T17:37:59.012Z"
+  }
+}
 ```
