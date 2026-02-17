@@ -472,6 +472,13 @@ export default defineConfig({
                 { label: "知识库开发记录", link: "/ai/dify/knowledge-base" },
               ],
             },
+            {
+              label: "OpenClaw",
+              collapsed: true,
+              items: [
+                { label: "在Docker中安装OpenClaw", link: "/ai/openclaw/install-in-docker" },
+              ],
+            },
             { label: "Gemini Cli", link: "/ai/gemini/cli" },
             { label: "AI相关的Github项目", link: "/ai/github" },
             { label: "AI in Work", link: "/ai/in-work" },
