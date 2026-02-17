@@ -2,7 +2,7 @@
 title:  使用Docker安装OpenClaw
 description: 使用Docker安装OpenClaw
 template: doc
-draft: false
+draft: true
 lastUpdated: 2026-02-10 13:44:20
 ---
 
@@ -84,9 +84,6 @@ services:
       HOME: /home/node
       TERM: xterm-256color
       OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN}
-      CLAUDE_AI_SESSION_KEY: ${CLAUDE_AI_SESSION_KEY}
-      CLAUDE_WEB_SESSION_KEY: ${CLAUDE_WEB_SESSION_KEY}
-      CLAUDE_WEB_COOKIE: ${CLAUDE_WEB_COOKIE}
     volumes:
       - ${OPENCLAW_CONFIG_DIR}:/home/node/.openclaw
       - ${OPENCLAW_WORKSPACE_DIR}:/home/node/.openclaw/workspace
@@ -147,3 +144,16 @@ docker compose -f /home/moatkon/docker_app/openclaw/docker-compose.yml exec open
 docker exec -it 容器名 node dist/index.js 指令
 
 docker exec -it openclaw-gateway node dist/index.js devices list
+
+
+
+
+---
+
+
+docker run -d \
+  --name openclaw-gateway \
+  -p 18789:18789 \
+  -e OPENCLAW_GATEWAY_TOKEN=28c86ec6634fa9286f1d9df65c2ed74a41012843fbb59677ffd93b9b416f6c47 \
+  alpine/openclaw \
+  node openclaw.mjs gateway --bind lan
