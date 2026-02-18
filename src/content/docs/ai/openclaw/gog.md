@@ -3,7 +3,7 @@ title: gog安装
 description: gog安装
 template: doc
 draft: false
-lastUpdated: 2026-02-18 19:10:55
+lastUpdated: 2026-02-18 22:25:25
 ---
 
 #### gog可以做什么?
@@ -25,3 +25,8 @@ Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
 
 #### 配置好之后，就可以在飞书收发邮件了
 ![](/ai/openclaw/gog/send_success.png)
+
+#### 解决问题
+
+1. **发送 /new 之后,授权消息失效了**
+原因就是没有持久化。直接让openclaw来持久化,帮你操作，不用自己找解决方案
