@@ -3,7 +3,7 @@ title:  在Docker中安装OpenClaw
 description: 在Docker中安装OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-18 14:24:02
+lastUpdated: 2026-02-18 14:25:48
 ---
 
 #### 安装
@@ -135,7 +135,7 @@ dist/index.js approvals allowlist add local
 这样就可以创建cron jobs了
 
 #### openclaw.json
-我配置的是kimi模型,可以有你自行选择.
+我配置的是kimi模型,可以由你自行选择.
 
 ```json
 {
