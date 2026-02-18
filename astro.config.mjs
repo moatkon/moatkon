@@ -475,9 +475,7 @@ export default defineConfig({
             {
               label: "OpenClaw",
               collapsed: true,
-              items: [
-                { label: "在Docker中安装OpenClaw", link: "/ai/openclaw/install-in-docker" },
-              ],
+              autogenerate: { directory: '/ai/openclaw'}
             },
             { label: "Gemini Cli", link: "/ai/gemini/cli" },
             { label: "AI相关的Github项目", link: "/ai/github" },

@@ -3,7 +3,9 @@ title:  在Docker中安装OpenClaw
 description: 在Docker中安装OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-18 14:25:48
+lastUpdated: 2026-02-18 19:10:55
+sidebar:
+  order: 0
 ---
 
 #### 安装
