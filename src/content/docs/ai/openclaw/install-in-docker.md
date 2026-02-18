@@ -3,7 +3,7 @@ title:  在Docker中安装OpenClaw
 description: 在Docker中安装OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-17 11:04:04
+lastUpdated: 2026-02-18 14:24:02
 ---
 
 #### 安装
@@ -78,7 +78,7 @@ gateway.bind改为lan
 #### 飞书安装
 按照官方文档来, https://docs.openclaw.ai/zh-CN/channels/feishu
 
-我遇到一个问题，就是飞书插件重复。建议有心使用openclaw官方的,不要再自行安装
+我遇到一个问题，就是飞书插件重复。建议优先使用openclaw官方的,不要再自行安装
 
 飞书插件警告:
 ```
