@@ -3,7 +3,7 @@ title: gog安装
 description: gog安装
 template: doc
 draft: false
-lastUpdated: 2026-02-19 20:44:26
+lastUpdated: 2026-02-19 23:02:22
 sidebar:
   order: 10
 ---
@@ -16,7 +16,9 @@ Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
 #### 安装前置要求需要Homebrew
 系统需要安装Homebrew才可以
 
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 安装完之后,再在onboard上下载gog就可以了。
 
