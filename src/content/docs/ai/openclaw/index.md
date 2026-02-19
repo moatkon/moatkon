@@ -3,9 +3,9 @@ title: OpenClaw
 description: OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-19 20:42:35
+lastUpdated: 2026-02-19 20:43:01
 sidebar:
-  order: 0
+  order: 10
 ---
 
 ![](/ai/openclaw/openclaw-logo-text-dark.avif)
