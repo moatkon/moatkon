@@ -3,7 +3,9 @@ title: gog安装
 description: gog安装
 template: doc
 draft: false
-lastUpdated: 2026-02-18 22:25:25
+lastUpdated: 2026-02-19 20:42:10
+sidebar:
+  order: 5
 ---
 
 #### gog可以做什么?
