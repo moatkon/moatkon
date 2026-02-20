@@ -3,7 +3,7 @@ title:  在Docker中安装OpenClaw
 description: 在Docker中安装OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-20 21:39:46
+lastUpdated: 2026-02-20 21:43:17
 sidebar:
   order: 5
 ---
@@ -251,7 +251,7 @@ dist/index.js approvals allowlist add local
 }
 ```
 
-#### 如何继承语音?
+#### 如何集成语音?
 直接让OpenClaw自己集成。
 
 **我这边第一次失败了**
