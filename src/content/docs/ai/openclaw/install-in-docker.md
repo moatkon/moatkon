@@ -3,7 +3,7 @@ title:  在Docker中安装OpenClaw
 description: 在Docker中安装OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-20 21:43:17
+lastUpdated: 2026-02-20 21:45:10
 sidebar:
   order: 5
 ---
@@ -255,7 +255,7 @@ dist/index.js approvals allowlist add local
 直接让OpenClaw自己集成。
 
 **我这边第一次失败了**
-失败后，OpenClaw自己写了一个脚本，让我执行。我执行后发现是磁盘空间不足导致的。所以如果磁盘空间够，第一次就会成功。失败的原因我让ChatGPT看了一下，是因为默认下载的是Whisper GPU版本。这个文件太大了。而且我的机器没有GPU.所以切换了CPU版本,手动安装成功之后，告诉OpenClaw安装好了，她自己会检测。后面就可以愉快的使用语言了。
+失败后，OpenClaw自己写了一个脚本，让我执行。我执行后发现是磁盘空间不足导致的。所以如果磁盘空间够，第一次就会成功。失败的原因我让ChatGPT看了一下，是因为默认下载的是Whisper GPU版本。这个文件太大了。而且我的机器没有GPU.所以切换了CPU版本,手动安装成功之后，告诉OpenClaw安装好了，她自己会检测。后面就可以愉快的使用语音了。
 
 ```
 pip install torch --index-url https://download.pytorch.org/whl/cpu
