@@ -3,7 +3,7 @@ title: OpenClaw
 description: OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-20 09:27:18
+lastUpdated: 2026-02-20 09:33:55
 sidebar:
   order: 0
 ---
@@ -24,3 +24,7 @@ sidebar:
 **eg.**
 
 ![网站部署](/ai/openclaw/deploy_moatkon.png)
+![trello](/ai/openclaw/trello.png)
+![gmail](/ai/openclaw/gmail.png)
+![gmail_send](/ai/openclaw/gmail_send.png)
+![网stock署](/ai/openclaw/stock.png)
