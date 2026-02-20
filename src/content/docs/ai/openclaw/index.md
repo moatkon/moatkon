@@ -3,7 +3,7 @@ title: OpenClaw
 description: OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-19 20:44:26
+lastUpdated: 2026-02-20 09:19:24
 sidebar:
   order: 0
 ---
@@ -18,3 +18,4 @@ sidebar:
 - Google服务(除Google相册),例如,Gmail
 - Trello
 - 定时任务
+- 接管Dify网站部署workflow。现在我只需要给OpenClaw发送消息就能完成网站部署
