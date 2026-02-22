@@ -3,7 +3,7 @@ title: OpenClaw
 description: OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-02-20 19:51:41
+lastUpdated: 2026-02-22 11:31:50
 sidebar:
   order: 0
 ---
@@ -19,6 +19,7 @@ sidebar:
 - Trello
 - 定时任务
 - 接管Dify网站部署workflow。现在我只需要给OpenClaw发送消息就能完成网站部署
+- 家庭健康管理
 
 
 **eg.**
