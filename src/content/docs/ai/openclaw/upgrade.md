@@ -3,7 +3,7 @@ title: 升级OpenClaw
 description: 升级OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-03-11 22:37:36
+lastUpdated: 2026-03-11 22:59:44
 sidebar:
   order: 20
 ---
@@ -27,7 +27,7 @@ alpine/openclaw:latest \
 node openclaw.mjs gateway --allow-unconfigured --bind lan
 ```
 
-升级的时候我是将之前的openClaw停止了,所以换了一个端口 18790。
+升级的时候我是将之前的OpenClaw停止了,所以换了一个端口 18790。
 
 如果通过 http://192.168.3.101:18790/overview 访问,会报错
 
