@@ -3,7 +3,7 @@ title: Git
 description: git
 template: doc
 tableOfContents: false
-lastUpdated: 2025-11-22 15:36:08
+lastUpdated: 2026-03-11 10:22:09
 sidebar:
   badge:
     text: 常用命令
@@ -228,3 +228,5 @@ git config --system core.longpaths true
 ```bash
 https://<username>:<access token>@github.com/<username>/<repositoryname>.git
 ```
+自己常用命令:
+https://moatkon:<access token>@github.com/moatkon/moatkon.git
