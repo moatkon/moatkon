@@ -1,4 +1,4 @@
 git checkout main
-git merge v0512
+git merge dev
 git push
-git checkout v0512
+git checkout dev
