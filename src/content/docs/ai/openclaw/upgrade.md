@@ -3,10 +3,12 @@ title: 升级OpenClaw
 description: 升级OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-03-12 20:29:54
+lastUpdated: 2026-03-12 20:56:46
 sidebar:
   order: 20
 ---
+
+#### 20260311
 
 从2026.2.15升级到2026.3.8
 
@@ -48,7 +50,8 @@ ssh -L 18790:127.0.0.1:18790 moatkon@192.168.3.101
 ![](/ai/openclaw/upgrade_20260308.png)
 
 
-20260312 升级到2026.3.11之后发现可以直接收取邮件了。不用在初始化环境了。
+#### 20260312 
+升级到2026.3.11之后发现可以直接收取邮件了。不用在初始化环境了。
 
 ```sh title="以前在容器中做的brew等初始化"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
