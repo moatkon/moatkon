@@ -3,7 +3,7 @@ title: 升级OpenClaw
 description: 升级OpenClaw
 template: doc
 draft: false
-lastUpdated: 2026-03-11 22:59:44
+lastUpdated: 2026-03-12 20:20:26
 sidebar:
   order: 20
 ---
@@ -46,3 +46,14 @@ ssh -L 18790:127.0.0.1:18790 moatkon@192.168.3.101
 再在本地机器访问 http://127.0.0.1:18790/overview ,然后填入token就可以了
 
 ![](/ai/openclaw/upgrade_20260308.png)
+
+
+初始化:
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> /root/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >> /root/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+apt-get install build-essential
+brew install gcc
+```
