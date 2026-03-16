@@ -14,8 +14,7 @@
     "npm": ">=10"
   },
   "overrides": {
-    "@astrojs/sitemap": "3.6.1",
-    "zod": "3.25.76"
+    "@astrojs/sitemap": "3.6.1"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.7",
@@ -31,6 +30,8 @@
     "markdown-it": "^14.1.0",
     "mermaid": "^11.7.0",
     "prettier": "^3.4.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "remark-mdx": "^3.1.1",

@@ -12,6 +12,7 @@ import sanitizeHtml from 'sanitize-html';
  * @returns {Promise<string>} - 转换后的 HTML 内容
  */
 async function mdxToHtml(mdxContent, siteUrl) {
+  if (!mdxContent) return '';
   try {
     // 移除 import 语句和 JSX 组件，因为它们无法在 RSS 中渲染
     let cleanedContent = mdxContent
