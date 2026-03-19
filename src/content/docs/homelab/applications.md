@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-02-02 01:50:48
+lastUpdated: 2026-03-19 23:29:24
 sidebar:
   order: 1.1
   badge:
@@ -402,6 +402,18 @@ services:
 > `${ORIGIN}` 是访问地址,如实填写
 
 ![](/homelab/applications/dashlit-use-demo.png)
+
+
+#### Wallos
+订阅管理软件
+
+```sh
+docker run -d --name wallos -v /home/moatkon/codes/memos-self-hosted/wallos/db:/var/www/html/db \
+-v /home/moatkon/codes/memos-self-hosted/wallos/logos:/var/www/html/images/uploads/logos \
+-e TZ=Asia/Beijing -p 8282:80 --restart unless-stopped \
+--health-cmd=NONE \
+bellamy/wallos:latest
+```
 
 #### 待托管
 - [ ] https://jellyfin.org/docs/general/installation/container
