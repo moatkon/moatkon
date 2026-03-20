@@ -3,7 +3,7 @@ title: 发布moatkon网站及其子域
 description: 基于Dify发布moatkon网站
 template: doc
 draft: false
-lastUpdated: 2025-07-30 11:31:43
+lastUpdated: 2026-03-20 14:39:07
 ---
 
 #### 说明
@@ -14,3 +14,13 @@ lastUpdated: 2025-07-30 11:31:43
 
 #### 20250730 迭代支持
 ![](/ai/dify/project/deploy2.png)
+
+#### 20260219
+已经让OpenClaw来接管了。我只需要和OpenClaw说
+- 部署moatkon
+- 部署blog
+- 部署subs
+- 部署resume
+- 部署links
+
+就能完成对应的部署
