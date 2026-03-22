@@ -2,7 +2,7 @@
 title: 应用部署
 description: 应用部署
 template: doc
-lastUpdated: 2026-03-19 23:29:24
+lastUpdated: 2026-03-23 00:11:12
 sidebar:
   order: 1.1
   badge:
@@ -411,7 +411,6 @@ services:
 docker run -d --name wallos -v /home/moatkon/codes/memos-self-hosted/wallos/db:/var/www/html/db \
 -v /home/moatkon/codes/memos-self-hosted/wallos/logos:/var/www/html/images/uploads/logos \
 -e TZ=Asia/Beijing -p 8282:80 --restart unless-stopped \
---health-cmd=NONE \
 bellamy/wallos:latest
 ```
 
