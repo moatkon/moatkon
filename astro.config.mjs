@@ -46,9 +46,9 @@ export default defineConfig({
           // ],
           ad: { // 不能赋写TableOfContents组件
             image: "/kofi.svg",
-            title: "Coffee",
-            description: "One cup of coffee, twice the motivation.",
-            buttonLabel: "Buy me a coffee",
+            title: "赞助",
+            description: "一杯咖啡，双倍动力。",
+            buttonLabel: "点一杯咖啡",
             buttonHref: "https://ko-fi.com/moatkon",
           },
         }),
