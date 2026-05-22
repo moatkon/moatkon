@@ -477,10 +477,14 @@ export default defineConfig({
               collapsed: true,
               autogenerate: { directory: '/ai/openclaw'}
             },
+            {
+              label: "VibeCoding",
+              collapsed: true,
+              autogenerate: { directory: '/ai/vibe-coding'}
+            },
             { label: "Gemini Cli", link: "/ai/gemini/cli" },
             { label: "AI相关的Github项目", link: "/ai/github" },
             { label: "AI in Work", link: "/ai/in-work" },
-            { label: "Vibe coding", link: "/ai/vibe-coding" },
             { label: "AI中转站", link: "/ai/transit-station" },
           ],
         },
