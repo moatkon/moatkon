@@ -3,9 +3,9 @@ title: Reeder
 description: Mac上体验最好的RSS阅读器
 template: doc
 tableOfContents: false
-lastUpdated: 2026-01-11 05:43:19
+lastUpdated: 2026-07-28 16:53:44
 sidebar:
-  order: 99
+  order: 16
   badge:
     text: RSS阅读器
     variant: note
