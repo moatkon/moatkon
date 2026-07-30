@@ -3,9 +3,9 @@ title: DBX
 description: Arc
 template: doc
 tableOfContents: false
-lastUpdated: 2026-07-28 16:53:44
+lastUpdated: 2026-07-30 23:57:17
 sidebar:
-  order: 15
+  order: 17
   badge:
     text: 数据库管理工具
     variant: note
