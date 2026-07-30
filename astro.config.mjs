@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
-const isPrd = process.env.VERCEL_ENV == "production";
+const isPrd = process.env.NODE_ENV === "production";
 import starlightImageZoom from 'starlight-image-zoom';
 import starlightSidebarSwipe from 'starlight-sidebar-swipe';
 import starlightScrollToTop from "starlight-scroll-to-top";
@@ -18,6 +18,7 @@ export default defineConfig({
   integrations: [
     mermaid({
       theme: "forest",
+      enableLog: false,
     }),
     starlight({
       expressiveCode: {
