@@ -1,9 +1,9 @@
 ---
 title: DBX
-description: Arc
+description: DBX
 template: doc
 tableOfContents: false
-lastUpdated: 2026-07-30 23:57:17
+lastUpdated: 2026-08-03 00:54:23
 sidebar:
   order: 17
   badge:
