@@ -1,7 +1,17 @@
 ---
-import Default from '@astrojs/starlight/components/TableOfContents.astro'
-import Sponsors from './common/Sponsors.astro'
+import StarlightTweaksTOC from 'starlight-ui-tweaks/overrides/TableOfContents.astro'
+import X2PostPromo from './common/X2PostPromo.astro'
 ---
 
-<Default {...Astro.props}><slot/></Default>
-<Sponsors/>
+<div class="x2post-toc-wrapper">
+  <StarlightTweaksTOC />
+  <X2PostPromo />
+</div>
+
+<style>
+  .x2post-toc-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>

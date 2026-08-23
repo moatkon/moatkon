@@ -147,7 +147,7 @@ export default defineConfig({
       components: {
         Footer: "./src/components/Footer.astro",
         Header: './src/components/Header.astro',
-        // TableOfContents: './src/components/TableOfContents.astro',
+        TableOfContents: './src/components/TableOfContents.astro',
       },
       social: [
         // { icon: 'x.com', label: '@moatkon', href: 'https://x.com/moatkon' },

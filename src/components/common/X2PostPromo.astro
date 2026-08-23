@@ -1,0 +1,84 @@
+---
+// 右侧目录栏 (On this page) 下方的 X2Post 宣发卡片, 所有文章详情页统一展示。
+---
+
+<div class="x2post-cta">
+  <img
+    src="/x2post.svg"
+    alt="X2Post"
+    class="x2post-logo"
+    width="56"
+    height="56"
+  />
+  <div class="x2post-text">
+    <p class="x2post-title">X2Post 社区</p>
+    <p class="x2post-desc">认真分享 · 友善讨论</p>
+  </div>
+  <a
+    href="https://x2post.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="x2post-button"
+  >
+    去社区看看
+  </a>
+</div>
+
+<style>
+  .x2post-cta {
+    border: 1px solid var(--sl-color-text-accent);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--sl-color-gray-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .x2post-logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+  }
+
+  .x2post-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .x2post-title {
+    color: var(--sl-color-text);
+    font-size: var(--sl-text-h5);
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .x2post-desc {
+    color: var(--sl-color-text);
+    font-size: var(--sl-text-sm);
+    margin: 0;
+  }
+
+  .x2post-button {
+    background: var(--sl-color-text-accent);
+    color: var(--sl-color-black);
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: var(--sl-text-base);
+    min-width: 100%;
+  }
+
+  .x2post-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+</style>
