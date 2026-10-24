@@ -8,17 +8,30 @@ hero:
    light: ../../assets/moatkon.svg
    dark: ../../assets/moatkon.svg
   actions:
+    - text: 开始阅读
+      link: /software-engineer/readme/
+      icon: open-book
+      variant: secondary
     - text: 联系我
       link: https://links.moatkon.com
       icon: right-arrow
       variant: secondary
-lastUpdated: 2026-08-23 12:47:13
+    - text: 进入 X2Post 社区
+      link: https://x2post.com
+      icon: external
+      variant: primary
+      attrs:
+        target: _blank
+        rel: noopener noreferrer
+lastUpdated: 2026-10-24 13:52:07
 ---
 
 
 
 import { CardGrid, LinkCard,Steps,Card,Icon,Badge} from '@astrojs/starlight/components';
+import X2PostBanner from '../../components/common/X2PostBanner.astro';
 
+<X2PostBanner />
 
 <CardGrid>
 	<LinkCard
