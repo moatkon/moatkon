@@ -1,6 +1,7 @@
 ---
 title: 钢琴🎹学习
-lastUpdated: 2026-01-02 16:04:17
+description: "钢琴学习记录与乐理笔记的索引，按部分整理练习内容与心得。"
+lastUpdated: 2026-10-24 14:33:01
 template: doc
 ---
 ### 学习记录

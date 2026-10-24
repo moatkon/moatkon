@@ -3,7 +3,7 @@ title: 首页
 description: 首页
 template: doc
 tableOfContents: false
-lastUpdated: 2025-11-30 17:40:19
+lastUpdated: 2026-10-24 14:33:01
 sidebar:
   order: 1
 ---
@@ -17,12 +17,12 @@ sidebar:
 
 ##### 项目管理
 1. [Trello](/share/efficiency-tools/trello)
-2. [Focalboard](/share/efficiency-tools/board/focalboard)
+2. [Focalboard](/share/efficiency-tools/focalboard)
 
 
 ##### 画板
-1. [Milanote](/share/efficiency-tools/board/milanote)
-2. [小画桌](/share/efficiency-tools/board/xiaohuazhuo)
+1. [Milanote](/share/efficiency-tools/milanote)
+2. [小画桌](/share/efficiency-tools/xiaohuazhuo)
 
 
 ##### 生态

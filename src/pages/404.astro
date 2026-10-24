@@ -1,0 +1,19 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+const tagline =
+  '页面未找到。请检查 URL 或尝试使用搜索栏。<br />Page not found. Check the URL or try the search bar.';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: '404',
+    description: '页面未找到 · Page not found',
+    template: 'splash',
+    editUrl: false,
+    hero: {
+      tagline,
+      actions: [{ text: '回到首页', link: '/', icon: 'right-arrow', variant: 'primary' }],
+    },
+  }}
+/>

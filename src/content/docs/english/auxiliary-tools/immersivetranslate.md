@@ -3,7 +3,7 @@ title: 沉浸式翻译
 description: 沉浸式翻译
 template: doc
 tableOfContents: false
-lastUpdated: 2025-11-30 17:31:16
+lastUpdated: 2026-10-24 14:33:01
 sidebar:
   badge:
     text: 对照翻译
@@ -17,12 +17,12 @@ sidebar:
 #### 沉浸式翻译解决了以上痛点
 **官网:[沉浸式翻译](https://immersive-translate.owenyoung.com?utm_source=moatkon.com)**
 <div align="center">
-    <img src="/english/immersive-translate/immersive-translate-logo.png" />
+    <img src="/english/immersive-translate/immersive-translate-logo.png" alt="沉浸式翻译 Logo" width="221" height="200" loading="lazy" decoding="async" />
 </div>
 
 一图胜千言,下面是【沉浸式翻译】的效果,特别清爽,舒适!
 <div align="center">
-    <img src="/english/immersive-translate/immersive-translate-demo.png" />
+    <img src="/english/immersive-translate/immersive-translate-demo.png" alt="沉浸式翻译双语对照效果演示" width="601" height="620" loading="lazy" decoding="async" />
 </div>
 
 <!-- 今天发现这个软件,将会大大提升我的英语水平,因为我最近正在高强度学习英语,我的目标就是**常用的**英语可以看懂,可以听懂和可以说。写不是我的目标,因为我没有想着使用英语来写作之类的,我只想使用英语来生活。 -->

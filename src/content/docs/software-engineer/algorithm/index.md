@@ -1,10 +1,10 @@
 ---
 title: 算法
-description: 算法
+description: "数据结构与算法学习笔记：二叉树、查找、链表等常见主题。"
 template: doc
-lastUpdated: 2024-03-22 22:20:17
+lastUpdated: 2026-10-24 14:33:01
 ---
-# 一、二叉树(Binary Search Tree)
+## 一、二叉树(Binary Search Tree)
 ![](/software-engineer/drawio/Moatkon-BinarySearchTree.drawio.svg)
 
 ## 特性
@@ -20,14 +20,14 @@ lastUpdated: 2024-03-22 22:20:17
 
 ![](/software-engineer/drawio/Moatkon-BinarySearchTreeNoBalance.drawio.svg)
 
-# 二、平衡二叉树
+## 二、平衡二叉树
 具有二叉查找树的全部特性
 
 每个节点的左子树和右子树的【高度差】至多等于1
 
 ![](/software-engineer/drawio/Moatkon-BinarySearchTreeBalance.drawio.svg)
 
-# 三、红黑树(Red Black Tree)
+## 三、红黑树(Red Black Tree)
 平衡树是为了解决二叉查找树退化为链表的情况，而红黑树是为了解决平衡树在插入、删除等操作需要频繁调整的情况
 
 红黑树是一种自平衡的二叉查找树，除了符合二叉查找树的基本特性外，还具有一下附加特性
@@ -50,7 +50,7 @@ lastUpdated: 2024-03-22 22:20:17
 - 所以简单说，查询多选择AVL树，查询更新次数差不多选红黑树
 - AVL树顺序插入和删除时有20%左右的性能优势，红黑树随机操作15%左右优势，现实应用当然一般都是随机情况，所以红黑树得到了更广泛的应用 索引为B+树 Hashmap为红黑树
 
-# 其他数据结构
+## 其他数据结构
 - 完全平衡二叉树
 - 哈希表
 - B树

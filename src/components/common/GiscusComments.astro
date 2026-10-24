@@ -31,6 +31,8 @@
     observer.observe(container);
 
     function loadGiscus() {
+      if (!container) return;
+
       // 动态设置正确的初始主题
       const theme = document.documentElement.getAttribute('data-theme');
       const giscusTheme = theme === 'light' ? 'light' : 'dark_dimmed';

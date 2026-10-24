@@ -1,6 +1,7 @@
 ---
 title: 钢琴🎹乐理知识 第三部分
-lastUpdated: 2026-01-02 16:04:17
+description: "钢琴乐理学习第三部分：认识并练习中央 C。"
+lastUpdated: 2026-10-24 14:33:01
 template: doc
 ---
 > 历史回顾: [钢琴🎹乐理知识 第二部分](/music/piano/study-p2)

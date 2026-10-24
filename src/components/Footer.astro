@@ -8,8 +8,8 @@ import GiscusComments from "./common/GiscusComments.astro";
 const isHomepage = Astro.locals.starlightRoute.id === '';
 // 404页面
 const isNotFound = Astro.locals.starlightRoute.id === '404';
-// 是否是生产环境
-const isPrd = process.env.VERCEL_ENV == 'production';
+// 是否是生产环境 (构建时判断, 不依赖具体部署平台)
+const isPrd = import.meta.env.PROD;
 
 // 判断是否应该显示评论
 // 只在非首页、非404页面、生产环境下显示评论

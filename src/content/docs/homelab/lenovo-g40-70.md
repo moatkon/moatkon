@@ -1,8 +1,8 @@
 ---
 title: "Lenovo G40-70"
-description: ""
+description: "把 2015 年的 Lenovo G40-70 笔记本升级内存与 SSD，安装 PVE 作为 HomeLab 节点。"
 template: doc
-lastUpdated: 2026-01-11 14:31:34
+lastUpdated: 2026-10-24 14:33:01
 draft: false
 sidebar:
   order: 2.2

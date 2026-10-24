@@ -10,11 +10,16 @@ import mermaid from "astro-mermaid";
 import starlightAutoDrafts from "starlight-auto-drafts";
 import starlightPageActions from 'starlight-page-actions';
 import starlightUiTweaks from 'starlight-ui-tweaks';
+import rehypeImageAttributes from './src/plugins/rehype-image-attributes.mjs';
 
 const siteUrl = isPrd ? "https://moatkon.com" : "http://localhost:4321";
+const fontUrl = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap';
 
 export default defineConfig({
   site: siteUrl,
+  markdown: {
+    rehypePlugins: [rehypeImageAttributes],
+  },
   integrations: [
     mermaid({
       theme: "forest",
@@ -26,6 +31,8 @@ export default defineConfig({
         // themes:['starlight-dark']
       },
       favicon: "/favicon.ico",
+      // 使用 src/pages/404.astro 自定义 404 页面
+      disable404Route: true,
       // defaultLocale: 'root',
       // locales: {
       //   root: {
@@ -94,6 +101,68 @@ export default defineConfig({
             href: "https://fonts.gstatic.com",
             crossorigin: "anonymous",
           },
+        },
+        // 字体样式异步加载, 避免阻塞首屏渲染
+        {
+          tag: "link",
+          attrs: {
+            rel: "stylesheet",
+            href: fontUrl,
+            media: "print",
+            onload: "this.media='all'",
+          },
+        },
+        // 主题色, 移动端浏览器地址栏跟随明暗主题
+        {
+          tag: "meta",
+          attrs: {
+            name: "theme-color",
+            content: "#100f0f",
+            media: "(prefers-color-scheme: dark)",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "theme-color",
+            content: "#fffcf0",
+            media: "(prefers-color-scheme: light)",
+          },
+        },
+        // RSS 订阅发现
+        {
+          tag: "link",
+          attrs: {
+            rel: "alternate",
+            type: "application/rss+xml",
+            title: "Moatkon",
+            href: `${siteUrl}/rss.xml`,
+          },
+        },
+        // 社交分享预览图
+        {
+          tag: "meta",
+          attrs: { property: "og:image", content: `${siteUrl}/og-image.png` },
+        },
+        {
+          tag: "meta",
+          attrs: { property: "og:image:alt", content: "Moatkon 护城河" },
+        },
+        {
+          tag: "meta",
+          attrs: { property: "og:image:type", content: "image/png" },
+        },
+        {
+          tag: "meta",
+          attrs: { property: "og:image:width", content: "1200" },
+        },
+        {
+          tag: "meta",
+          attrs: { property: "og:image:height", content: "630" },
+        },
+        {
+          tag: "meta",
+          attrs: { name: "twitter:image", content: `${siteUrl}/og-image.png` },
         },
         //ga 已经使用cf标记管理来设置ga了
         // {

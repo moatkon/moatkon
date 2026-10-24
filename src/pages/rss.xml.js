@@ -2,7 +2,6 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
-import remarkMdx from 'remark-mdx';
 import sanitizeHtml from 'sanitize-html';
 
 /**
@@ -63,7 +62,7 @@ async function mdxToHtml(mdxContent, siteUrl) {
     // 转换图片 src
     html = html.replace(
       /<img\s+([^>]*?)src=["']\/([^"']+)["']([^>]*)>/g,
-      (match, before, path, after) => {
+      (_match, before, path, after) => {
         const fullUrl = `${baseUrl}/${path}`;
         return `<img ${before}src="${fullUrl}"${after}>`;
       }
@@ -72,7 +71,7 @@ async function mdxToHtml(mdxContent, siteUrl) {
     // 转换链接 href（仅转换站内链接，以 / 开头但不是 // 开头的）
     html = html.replace(
       /<a\s+([^>]*?)href=["'](\/[^/"'][^"']*)["']([^>]*)>/g,
-      (match, before, path, after) => {
+      (_match, before, path, after) => {
         const fullUrl = `${baseUrl}${path}`;
         return `<a ${before}href="${fullUrl}"${after}>`;
       }
@@ -91,23 +90,27 @@ export async function GET(context) {
   const siteUrl = context.site ? context.site.toString() : 'https://moatkon.com';
 
   // 过滤并处理文章
-  const processedDocs = await Promise.all(
-    docs
-      .filter(post => post.slug !== '404')
-      .filter(post => post.data.draft !== true)
-      .map(async (post) => {
-        // 将 MDX body 转换为 HTML，并转换图片为完整 URL
-        const content = await mdxToHtml(post.body, siteUrl);
+  const processedDocs = (
+    await Promise.all(
+      docs
+        // 404 页面不是文章, 不应出现在订阅源中
+        .filter(post => post.id !== '404' && !post.id.endsWith('/404'))
+        .filter(post => post.data.draft !== true)
+        .map(async (post) => {
+          // 将 MDX body 转换为 HTML，并转换图片为完整 URL
+          const content = await mdxToHtml(post.body, siteUrl);
 
-        return {
-          title: post.data.title,
-          description: post.data.description,
-          pubDate: post.data.lastUpdated || new Date('2024-01-01'),
-          link: `/${post.id}/`,
-          content: content, // 添加完整的 HTML 内容
-        };
-      })
-  );
+          return {
+            title: post.data.title,
+            description: post.data.description,
+            pubDate: post.data.lastUpdated || new Date('2024-01-01'),
+            // 首页的 id 是 index, 对应地址是 / 而不是 /index/
+            link: post.id === 'index' ? '/' : `/${post.id}/`,
+            content: content, // 添加完整的 HTML 内容
+          };
+        })
+    )
+  ).sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
   return rss({
     title: 'Moatkon',

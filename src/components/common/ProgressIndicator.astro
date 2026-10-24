@@ -3,9 +3,7 @@
 </div>
 
 <script>
-  window.addEventListener("scroll", function () {
-    updateProgressScroll();
-  });
+  window.addEventListener("scroll", updateProgressScroll, { passive: true });
   window.addEventListener("load", function () {
     updateProgressScroll();
   });
@@ -17,8 +15,10 @@
         var scrollTop = window.scrollY || document.documentElement.scrollTop;
         var scrollHeight =
           document.documentElement.scrollHeight - window.innerHeight;
-        var progress = (scrollTop / scrollHeight) * 100;
-        progressScroll.style.width = progress + "%";
+        var progress =
+          scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        progressScroll.style.width =
+          Math.min(100, Math.max(0, progress)) + "%";
       }
     }
   }

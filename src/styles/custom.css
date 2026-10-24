@@ -137,24 +137,24 @@
 
 /* 定义滚动条的轨道 */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* 轨道的背景颜色 */
+    background: var(--sl-color-gray-6); /* 轨道的背景颜色 */
     border-radius: 10px; /* 轨道的圆角 */
 }
 
 /* 定义滚动条的滑块 */
 ::-webkit-scrollbar-thumb {
-    background: #888; /* 滑块的背景颜色 */
+    background: var(--sl-color-gray-5); /* 滑块的背景颜色 */
     border-radius: 10px; /* 滑块的圆角 */
 }
 
 /* 定义滚动条滑块在悬停时的样式 */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* 滑块悬停时的背景颜色 */
+    background: var(--sl-color-gray-4); /* 滑块悬停时的背景颜色 */
 }
 
 /* 定义滚动条的角落（水平和垂直滚动条交汇处） */
 ::-webkit-scrollbar-corner {
-    background: #f1f1f1; /* 角落的背景颜色 */
+    background: var(--sl-color-gray-6); /* 角落的背景颜色 */
 }
 
 

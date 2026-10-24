@@ -2,7 +2,7 @@
 title: 如何设置超时
 description: 如何设置超时
 template: doc
-lastUpdated: 2024-01-15 22:32:00
+lastUpdated: 2026-10-24 14:33:01
 tableOfContents: 
     minHeadingLevel: 1
     maxHeadingLevel: 5
@@ -55,7 +55,7 @@ feign:
 
 Github: [okhttp](https://github.com/square/okhttp)
 
-OkHttp官网: [square.github.io/okhttp/](square.github.io/okhttp/)
+OkHttp官网: [square.github.io/okhttp/](https://square.github.io/okhttp/)
 
 示例代码: [ConfigureTimeouts.java](https://github.com/square/okhttp/blob/master/samples/guide/src/main/java/okhttp3/recipes/ConfigureTimeouts.java)
 ```java {5-7} title="OkHttp设置超时"

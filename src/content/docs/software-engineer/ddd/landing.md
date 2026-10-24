@@ -2,7 +2,7 @@
 title: DDD在公司的实践记录
 description: DDD在公司的实践记录
 template: doc
-lastUpdated: 2025-11-20 17:13:30
+lastUpdated: 2026-10-24 14:33:01
 tableOfContents:
    minHeadingLevel: 1
    maxHeadingLevel: 6
@@ -20,7 +20,7 @@ import {  LinkCard } from '@astrojs/starlight/components';
 <LinkCard
 		title="软件工程师"
 		description="学习、总结、输出、Positive cycle"
-		href="/software-engineer/ddd/ddd-share"
+		href="/software-engineer/ddd/share"
 	/> -->
 
 

@@ -40,12 +40,6 @@
 	padding: 0.25rem;
 }
 
-:root[data-theme="dark"] .sl-markdown-content img:active {
-	background-color: #FFFCF0; /* 保留白色底色 */
-	transform: scale(1.5); /* 点击放大效果 */
-	transition: transform 0.3s ease;
-}
-
 :root[data-theme="dark"] .starlight-image-zoom-dialog img {
 	background-color: #FFFCF0; /* 保留白色底色 */
 	border-radius: 0.5rem;
